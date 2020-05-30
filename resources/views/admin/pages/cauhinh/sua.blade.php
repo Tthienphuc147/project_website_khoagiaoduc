@@ -29,35 +29,51 @@
 					@endif
                 </div>
                 <div class="card-body card-block">
-                    <form action="quantri/loaibaiviet/chinhsua/{{$id}}" method="post" enctype="multipart/form-data" class="form-horizontal">
+                    <form action="quantri/cauhinh/chinhsua" method="post" enctype="multipart/form-data" class="form-horizontal">
                     {{csrf_field()}}
                         <div class="row form-group">
                             <div class="col col-md-3">
-                                <label for="text-input" class=" form-control-label">Tên</label>
+                                <label for="text-input" class=" form-control-label">Email</label>
                             </div>
                             <div class="col-12 col-md-9">
-                                <input type="text" id="ten" name="ten" placeholder="{{$data_loai_bai_viet->ten}}" class="form-control" >
+                                <input type="text" id="ten" name="email" placeholder="{{$data->email}}" class="form-control" >
+                                
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col col-md-3">
+                                <label for="text-input" class=" form-control-label">Số điện thoại</label>
+                            </div>
+                            <div class="col-12 col-md-9">
+                                <input type="text" id="ten" name="so_dien_thoai" placeholder="{{$data->so_dien_thoai}}" class="form-control" >
+                                
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col col-md-3">
+                                <label for="text-input" class=" form-control-label">Số điện thoại khoa</label>
+                            </div>
+                            <div class="col-12 col-md-9">
+                                <input type="text"  name="so_dien_thoai_khoa" placeholder="{{$data->so_dien_thoai_khoa}}" class="form-control" >
+                                
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col col-md-3">
+                                <label for="text-input" class=" form-control-label">Mô tả</label>
+                            </div>
+                            <div class="col-12 col-md-9">
+                                <input type="text-aria"  name="mo_ta" placeholder="{{$data->mo_ta}}" class="form-control" >
                                 
                             </div>
                         </div>
                         
                         
-                        <div class="row form-group">
-                            <div class="col col-md-3">
-                                <label for="selectLg" class=" form-control-label">Chọn danh mục</label>
-                            </div>
-                            <div class="col-12 col-md-9">
-                                <select name="id_danh_muc_bai_viet" id="id_danh_muc_bai_viet" class="form-control-lg form-control">
-                                    @foreach($data as $item)
-                                    <option value="{{$item->id}}">{{$item->ten}}</option>
-                                    @endforeach;
-                                </select>
-                            </div>
-                        </div>
                         <div class="card-footer">
                             <button type="submit" class="btn btn-primary btn-sm">
                                 <i class="fa fa-dot-circle-o"></i> Submit
                             </button>
+                            
                         </div>
                         
                     </form>

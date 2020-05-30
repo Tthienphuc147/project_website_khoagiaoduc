@@ -36,7 +36,7 @@
                                 <label for="text-input" class=" form-control-label">Tên</label>
                             </div>
                             <div class="col-12 col-md-9">
-                                <input type="text" id="ten" name="ten" placeholder="Tên loại tin tức" class="form-control" require>
+                                <input type="text" id="ten" name="ten" placeholder="Tên loại tin tức" class="form-control" required>
                                 
                             </div>
                         </div>

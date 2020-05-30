@@ -168,7 +168,7 @@
                         <i class="fas fa-copy"></i>Cấu hình WEBSITE</a>
                     <ul class="list-unstyled navbar__sub-list js-sub-list">
                         <li>
-                            <a href="">Chỉnh sửa</a>
+                            <a href="/quantri/cauhinh/chinhsua">Chỉnh sửa</a>
                         </li>
                     </ul>
                 </li>
