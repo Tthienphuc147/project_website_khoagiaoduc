@@ -37,8 +37,8 @@
                                 <label for="text-input" class=" form-control-label">Chọn tuần</label>
                             </div>
                             <div class="col-12 col-md-9">
-                                <input type="week" id="tuan" name="tuan"  class="form-control" required>
-                                
+                            <input type="week" id="tuan" name="tuan"  placeholder="{{$data->thoi_gian_bat_dau}}" class="form-control" required>
+
                             </div>
                         </div>
                         <div class="row form-group">
@@ -47,7 +47,7 @@
                             </div>
                             <div class="col-12 col-md-9">
                             <textarea type="input"  name="noi_dung" id="demo"  class="form-control" >{{$data->noi_dung}}</textarea>
-                                
+
                             </div>
                         </div>
                         <script>
@@ -61,17 +61,17 @@
                     filebrowserFlashUploadUrl: '../../public/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash'
                 });
                 </script>
-                        
-                        
+
+
                         <div class="card-footer">
                             <button type="submit" class="btn btn-primary btn-sm">
                                 <i class="fa fa-dot-circle-o"></i> Submit
                             </button>
                         </div>
-                        
+
                     </form>
-                </div> 
-                
+                </div>
+
             </div>
           </div>
     </div>
