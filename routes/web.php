@@ -52,6 +52,24 @@ Route::group(['prefix'=>'quantri','middleware'=>'check.login.admin'] , function(
         Route::post('chinhsua/{id}','Admin\LoaiVanBanController@update');
         Route::get('xoa/{id}','Admin\LoaiVanBanController@destroy');
     });
+    //van_ban
+    Route::group(['prefix' => 'vanban'], function(){
+        Route::get('danhsach', 'Admin\VanBanController@index');
+        Route::get('themview', 'Admin\VanBanController@indexThemView');
+        Route::post ('them','Admin\VanBanController@store');
+        Route::get('chinhsua/{id}','Admin\VanBanController@show');
+        Route::post('chinhsua/{id}','Admin\VanBanController@update');
+        Route::get('xoa/{id}','Admin\VanBanController@destroy');
+    });
+    //slides
+    Route::group(['prefix' => 'slides'], function(){
+        Route::get('danhsach', 'Admin\SlidesController@index');
+        Route::get('themview', 'Admin\SlidesController@indexThemView');
+        Route::post ('them','Admin\SlidesController@store');
+        Route::get('chinhsua/{id}','Admin\SlidesController@show');
+        Route::post('chinhsua/{id}','Admin\SlidesController@update');
+        Route::get('xoa/{id}','Admin\SlidesController@destroy');
+    });
     Route::group(['prefix'=>'loaibaiviet'] , function(){
         Route::get('danhsach','Admin\LoaiBaiVietController@index');
         Route::get('themview','Admin\LoaiBaiVietController@indexThemView');
