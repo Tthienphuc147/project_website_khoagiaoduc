@@ -7,6 +7,7 @@
     <title>Trang quản trị - Khoa Giáo Dục - Mầm Non</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="admin/images/logo.png" type="image/x-icon">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <base href="{{ asset('') }}">
      <!-- Fontfaces CSS-->
@@ -26,9 +27,12 @@
      <link href="{{ asset('admin/vendor/slick/slick.css') }}" rel="stylesheet" media="all">
      <link href="{{ asset('admin/vendor/select2/select2.min.css') }}" rel="stylesheet" media="all">
      <link href="{{ asset('admin/vendor/perfect-scrollbar/perfect-scrollbar.css') }}" rel="stylesheet" media="all">
+     <link rel="stylesheet" href="{{ asset('css/notifications/Lobibox.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/notifications/notifications.css') }}">
 
      <!-- Main CSS-->
      <link href="{{ asset('admin/css/theme.css') }}" rel="stylesheet" media="all">
+     @yield('admin_css')
     {{-- <link rel="shortcut icon" type="image/x-icon" href="user/assets/images/logo.png"> --}}
 </head>
 
@@ -63,7 +67,8 @@
 
     <!-- Main JS-->
     <script src="{{ asset('admin/js/main.js') }}"></script>
-
+    <script src="{{ asset('js/notifications/Lobibox.js') }}"></script>
+    @yield('admin_script')
 </body>
 
 </html>

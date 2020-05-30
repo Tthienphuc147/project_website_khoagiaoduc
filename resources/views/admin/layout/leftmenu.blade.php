@@ -21,7 +21,25 @@
                 </li>
                 <li class="has-sub">
                     <a class="js-arrow" href="#">
-                        <i class="fas fa-copy"></i>Bài viết giới thiệu</a>
+                        <i class="fas fa-copy"></i>Quản lý trang giới thiệu</a>
+                    <ul class="list-unstyled navbar__sub-list js-sub-list">
+                        <li>
+                            <a href="">Quản lý</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="has-sub">
+                    <a class="js-arrow" href="#">
+                        <i class="fas fa-copy"></i>Danh mục bài viết</a>
+                    <ul class="list-unstyled navbar__sub-list js-sub-list">
+                        <li>
+                            <a href="quantri/danhmucbaiviet/danhsach">Danh sách</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="has-sub">
+                    <a class="js-arrow" href="#">
+                        <i class="fas fa-copy"></i>Loại bài viết</a>
                     <ul class="list-unstyled navbar__sub-list js-sub-list">
                         <li>
                             <a href="">Danh sách</a>
@@ -33,103 +51,7 @@
                 </li>
                 <li class="has-sub">
                     <a class="js-arrow" href="#">
-                        <i class="fas fa-copy"></i>Loại tin tức</a>
-                    <ul class="list-unstyled navbar__sub-list js-sub-list">
-                        <li>
-                            <a href="">Danh sách</a>
-                        </li>
-                        <li>
-                            <a href="">Thêm</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="has-sub">
-                    <a class="js-arrow" href="#">
-                        <i class="fas fa-copy"></i>Bài viết tin tức</a>
-                    <ul class="list-unstyled navbar__sub-list js-sub-list">
-                        <li>
-                            <a href="">Danh sách</a>
-                        </li>
-                        <li>
-                            <a href="">Thêm</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="has-sub">
-                    <a class="js-arrow" href="#">
-                        <i class="fas fa-copy"></i>Bài viết đào tạo</a>
-                    <ul class="list-unstyled navbar__sub-list js-sub-list">
-                        <li>
-                            <a href="">Danh sách</a>
-                        </li>
-                        <li>
-                            <a href="">Thêm</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="has-sub">
-                    <a class="js-arrow" href="#">
-                        <i class="fas fa-copy"></i>Bài viết NCKH</a>
-                    <ul class="list-unstyled navbar__sub-list js-sub-list">
-                        <li>
-                            <a href="">Danh sách</a>
-                        </li>
-                        <li>
-                            <a href="">Thêm</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="has-sub">
-                    <a class="js-arrow" href="#">
-                        <i class="fas fa-copy"></i>Bài viết về sinh viên</a>
-                    <ul class="list-unstyled navbar__sub-list js-sub-list">
-                        <li>
-                            <a href="">Danh sách</a>
-                        </li>
-                        <li>
-                            <a href="">Thêm</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="has-sub">
-                    <a class="js-arrow" href="#">
-                        <i class="fas fa-copy"></i>Bài viết về hợp tác</a>
-                    <ul class="list-unstyled navbar__sub-list js-sub-list">
-                        <li>
-                            <a href="">Danh sách</a>
-                        </li>
-                        <li>
-                            <a href="">Thêm</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="has-sub">
-                    <a class="js-arrow" href="#">
-                        <i class="fas fa-copy"></i>Bài viết về tuyển sinh</a>
-                    <ul class="list-unstyled navbar__sub-list js-sub-list">
-                        <li>
-                            <a href="">Danh sách</a>
-                        </li>
-                        <li>
-                            <a href="">Thêm</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="has-sub">
-                    <a class="js-arrow" href="#">
-                        <i class="fas fa-copy"></i>Bài viết về tuyển dụng</a>
-                    <ul class="list-unstyled navbar__sub-list js-sub-list">
-                        <li>
-                            <a href="">Danh sách</a>
-                        </li>
-                        <li>
-                            <a href="">Thêm</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="has-sub">
-                    <a class="js-arrow" href="#">
-                        <i class="fas fa-copy"></i>Lịch công tác</a>
+                        <i class="fas fa-copy"></i>Bài viết</a>
                     <ul class="list-unstyled navbar__sub-list js-sub-list">
                         <li>
                             <a href="">Danh sách</a>
@@ -213,7 +135,7 @@
                 </li>
                 <li class="has-sub">
                     <a class="js-arrow" href="#">
-                        <i class="fas fa-copy"></i>Liên hệ</a>
+                        <i class="fas fa-copy"></i>Góc hỏi đáp</a>
                     <ul class="list-unstyled navbar__sub-list js-sub-list">
                         <li>
                             <a href="">Danh sách</a>
@@ -229,6 +151,15 @@
                         </li>
                         <li>
                             <a href="">Thêm</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="has-sub">
+                    <a class="js-arrow" href="#">
+                        <i class="fas fa-copy"></i>Lịch công tac</a>
+                    <ul class="list-unstyled navbar__sub-list js-sub-list">
+                        <li>
+                            <a href="">Chỉnh sửa</a>
                         </li>
                     </ul>
                 </li>

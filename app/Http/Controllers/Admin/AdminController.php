@@ -10,4 +10,7 @@ class AdminController extends Controller
     public function trangchu(){
         return view('admin.pages.homepage');
     }
+    public function loi404(){
+        return view('admin.pages.error404');
+    }
 }

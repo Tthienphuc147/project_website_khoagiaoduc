@@ -14649,3 +14649,20 @@ section {
 .vue-lists ul, .vue-lists ol {
     padding-left: 30px;
 }
+
+
+.datatable-dashv1-list .form-control{
+	height:35px;
+}
+.datatable-dashv1-list .btn-default{
+	outline:none
+}
+.datatable-dashv1-list .editable-submit{
+	background:#006DF0;
+	color:#fff;
+	border:1px solid #006DF0;
+}
+.datatable-dashv1-list .btn-default:hover, .datatable-dashv1-list .btn-default:focus, .datatable-dashv1-list .btn-default:active, .datatable-dashv1-list .editable-submit:hover, .datatable-dashv1-list .editable-submit:focus, .datatable-dashv1-list .editable-submit:active{
+	background:#006DF0;
+	color:#fff;
+}
