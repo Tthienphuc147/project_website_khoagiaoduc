@@ -60,6 +60,10 @@ Route::group(['prefix'=>'quantri','middleware'=>'check.login.admin'] , function(
         Route::post('chinhsua/{id}','Admin\LoaiBaiVietController@update');
         Route::get('xoa/{id}','Admin\LoaiBaiVietController@destroy');
     });
+    Route::group(['prefix'=>'cauhinh'] , function(){
+        Route::get('chinhsua','Admin\CauHinhWebsiteController@show');
+        Route::post('chinhsua','Admin\CauHinhWebsiteController@update');
+    });
 
 //loi404
     Route::get('loi404','Admin\AdminController@loi404');
