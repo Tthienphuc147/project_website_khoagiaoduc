@@ -25,54 +25,56 @@
                                             <ul class="submenu">
                                                 <li><a href="">Thông điệp của khoa</a></li>
                                                 <li><a href="">Lịch sử hình thành & phát triển</a></li>
-                                                <li><a href="">Cơ cấu trúc</a></li>
+                                                <li><a href="">Cơ cấu tổ chức</a></li>
                                             </ul>
                                         </li>
                                         <li><a href="">Tin tức</a>
                                             <ul class="submenu">
-                                                <li><a href="">Tin tức hoạt động</a></li>
-                                                <li><a href="">Thông báo</a></li>
+                                                @foreach ($all_share_danh_muc_tin_tuc as $item)
+                                                <li><a href="/loai-bai-viet/{{changeTitle($item->ten)}}a{{$item->id}}">{{$item->ten}}</a></li>
+                                                @endforeach
                                             </ul>
                                         </li>
                                         <li><a href="">Đào tạo</a>
                                             <ul class="submenu">
-                                                <li><a href="">Sau đại học</a></li>
-                                                <li><a href="">Đại học</a></li>
-                                                <li><a href="">Kiểm định chất lượng</a></li>
-                                                <li><a href="">Kiểm định chương trình</a></li>
+                                                @foreach ($all_share_danh_muc_dao_tao as $item)
+                                                <li><a href="/loai-bai-viet/{{changeTitle($item->ten)}}a{{$item->id}}">{{$item->ten}}</a></li>
+                                                @endforeach
                                             </ul>
                                         </li>
                                         <li><a href="">Nghiên cứu khoa học</a>
                                             <ul class="submenu">
-                                                <li><a href="">Cán bộ giảng viên</a></li>
-                                                <li><a href="">Học viên</a></li>
-                                                <li><a href="">Sinh viên</a></li>
+                                                @foreach ($all_share_danh_muc_ngkh as $item)
+                                                <li><a href="/loai-bai-viet/{{changeTitle($item->ten)}}a{{$item->id}}">{{$item->ten}}</a></li>
+                                                @endforeach
                                             </ul>
                                         </li>
                                         <li><a href="">Học liệu</a>
                                             <ul class="submenu">
-                                                <li><a href="">Giới thiệu sách</a></li>
-                                                <li><a href="">Tư liệu</a></li>
-                                                <li><a href="">Bài giảng</a></li>
+                                                @foreach ($all_share_danh_muc_hoc_lieu as $item)
+                                                <li><a href="/loai-bai-viet/{{changeTitle($item->ten)}}a{{$item->id}}">{{$item->ten}}</a></li>
+                                                @endforeach
                                             </ul>
                                         </li>
                                         <li><a href="">Sinh viên</a>
                                             <ul class="submenu">
-                                                <li><a href="">Hoạt động Đoàn - Hội</a></li>
-                                                <li><a href="">Câu lạc bộ</a></li>
-                                                <li><a href="">Cựu sinh viên</a></li>
+                                                @foreach ($all_share_danh_muc_sinh_vien as $item)
+                                                <li><a href="/loai-bai-viet/{{changeTitle($item->ten)}}a{{$item->id}}">{{$item->ten}}</a></li>
+                                                @endforeach
                                             </ul>
                                         </li>
                                         <li><a href="">Hợp tác</a>
                                             <ul class="submenu">
-                                                <li><a href="">Hợp tác quốc tế</a></li>
-                                                <li><a href="">Hợp tác trong nước</a></li>
+                                                @foreach ($all_share_danh_muc_hop_tac as $item)
+                                                <li><a href="/loai-bai-viet/{{changeTitle($item->ten)}}a{{$item->id}}">{{$item->ten}}</a></li>
+                                                @endforeach
                                             </ul>
                                         </li>
                                         <li><a href="">Tuyển sinh</a>
                                             <ul class="submenu">
-                                                <li><a href="">Thông tin tuyển sinh</a></li>
-                                                <li><a href="">Việc làm sau tốt nghiệp</a></li>
+                                                @foreach ($all_share_danh_muc_tuyen_sinh as $item)
+                                                <li><a href="/loai-bai-viet/{{changeTitle($item->ten)}}a{{$item->id}}">{{$item->ten}}</a></li>
+                                                @endforeach
                                             </ul>
                                         </li>
                                     </ul>

@@ -10,6 +10,9 @@ Route::group(['prefix'=>''] , function(){
     });
     Route::get('trang-chu','User\HomeController@show')->name('trangchinh');
     Route::get('bai-viet/{tenkhongdau}a{id}','User\BaiVietController@getBaiViet');
+    Route::get('loai-bai-viet/{tenkhongdau}a{id}','User\LoaiBaiVietController@getLoaiBaiViet');
+    Route::get('lien-he','User\ThongTinLienHeController@getLienHe');
+    Route::post('lien-he','User\ThongTinLienHeController@postLienHe');
 });
 // ----------------------------------------- //
 
@@ -97,6 +100,22 @@ Route::group(['prefix'=>'quantri','middleware'=>'check.login.admin'] , function(
         Route::get('chinhsua/{id1}','Admin\BaiVietController@show');
         Route::post('chinhsua/{id1}','Admin\BaiVietController@update');
         Route::get('xoa/{id}/{id1}','Admin\BaiVietController@destroy');
+    });
+    Route::group(['prefix'=>'media'] , function(){
+        Route::get('danhsach','Admin\MediaController@index');
+        Route::get('themview','Admin\MediaController@indexThemView');
+        Route::post('them','Admin\MediaController@store');
+        Route::get('chinhsua/{id1}','Admin\MediaController@show');
+        Route::post('chinhsua/{id1}','Admin\MediaController@update');
+        Route::get('xoa/{id}','Admin\MediaController@destroy');
+    });
+
+    //lien_he
+
+    Route::group(['prefix'=>'gochoidap'] , function(){
+        Route::get('hotro','Admin\HoTroController@indexDanhSachHoTro');
+        Route::get('hotro/xoa/{id}','Admin\HoTroController@destroyHoTro');
+        Route::post('hotro/changeisread','Admin\HoTroController@changeIsRead');
     });
 
 //loi404

@@ -13,7 +13,7 @@
                             <div class="trending-animated">
                                 <ul id="js-news" class="js-hidden">
                                     @foreach ($thong_bao_noi_bat as $item)
-                                    <li class="news-item"><a href="/bai-viet/{{changeTitle($item->tieu_de)}}a{{$item->id}}">{{$item->tieu_de}}</a></li>
+                                    <li class="news-item"><a href="/bai-viet/{{changeTitle($item->tieu_de)}}a{{$item->id}}" title="{{$item->tieu_de}}">{{$item->tieu_de}}</a></li>
                                     @endforeach
                                 </ul>
                             </div>
@@ -58,7 +58,7 @@
                                 <img src="https://img.giaoduc.net.vn/w1050/Uploaded/2020/zgtzgo/2018_08_15/suphamdanang.jpg" alt="">
                                 <div class="trend-top-cap">
                                     <span>{{$tin_tuc_noi_bat->ten_loai}}</span>
-                                    <h2 class="pr-2"><a href="details.html">{{$tin_tuc_noi_bat->tieu_de}}</h2>
+                                    <h2 class="pr-2"><a href="/bai-viet/{{changeTitle($tin_tuc_noi_bat->tieu_de)}}a{{$tin_tuc_noi_bat->id}}" title="{{$tin_tuc_noi_bat->tieu_de}}">{{limitStrlen($tin_tuc_noi_bat->tieu_de, 300)}}</h2>
                                 </div>
                             </div>
                         </div>
@@ -73,7 +73,7 @@
                                         </div>
                                         <div class="trend-bottom-cap">
                                             <span class="color1">{{$item->ten_loai}}</span>
-                                            <h4><a href="details.html">{{$item->tieu_de}}</a></h4>
+                                            <h4><a href="/bai-viet/{{changeTitle($item->tieu_de)}}a{{$item->id}}" title="{{$item->tieu_de}}">{{limitStrlen($item->tieu_de, 130)}}</a></h4>
                                         </div>
                                     </div>
                                 </div>
@@ -140,7 +140,7 @@
                                 <div class="weekly2-caption">
                                     <span class="color1">{{$item->ten_loai}}</span>
                                     <p>{{date('d-m-Y', strtotime($item->created_at))}}</p>
-                                    <h4><a href="#">{{$item->tieu_de}}</a></h4>
+                                    <h4><a href="/bai-viet/{{changeTitle($item->tieu_de)}}a{{$item->id}}" title="{{$item->tieu_de}}">{{limitStrlen($item->tieu_de, 100)}}</a></h4>
                                 </div>
                             </div>
                             @endforeach
@@ -179,7 +179,7 @@
                                                 </div>
                                                 <div class="what-cap">
                                                     <span class="color1">{{$item->ten_loai}}</span>
-                                                    <h4><a href="#">{{$item->tieu_de}}</a></h4>
+                                                    <h4><a href="/bai-viet/{{changeTitle($item->tieu_de)}}a{{$item->id}}" title="{{$item->tieu_de}}">{{limitStrlen($item->tieu_de, 100)}}</a></h4>
                                                 </div>
                                             </div>
                                         </div>
@@ -263,7 +263,7 @@
                                 </div>
                                 <div class="what-cap">
                                     <span class="color1">{{$item->ten_loai}}</span>
-                                    <h4><a href="#">{{$item->tieu_de}}</a></h4>
+                                    <h4><a href="/bai-viet/{{changeTitle($item->tieu_de)}}a{{$item->id}}" title="{{$item->tieu_de}}">{{limitStrlen($item->tieu_de, 100)}}</a></h4>
                                 </div>
                             </div>
                             @endforeach
