@@ -43,7 +43,10 @@ Route::group(['prefix'=>'quantri','middleware'=>'check.login.admin'] , function(
         Route::post('chinhsua/{id}','Admin\DanhMucBaiVietController@update');
         Route::get('xoa/{id}','Admin\DanhMucBaiVietController@destroy');
     });
-
+    //loai_van_ban
+    Route::group(['prefix' => 'loaivanban']) , function(){
+        Route::get('danhsach', 'Admin\LoaiVanBanController@index');
+    }
 //loi404
     Route::get('loi404','Admin\AdminController@loi404');
 
