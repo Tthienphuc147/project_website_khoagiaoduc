@@ -98,6 +98,14 @@ Route::group(['prefix'=>'quantri','middleware'=>'check.login.admin'] , function(
         Route::post('chinhsua/{id1}','Admin\BaiVietController@update');
         Route::get('xoa/{id}/{id1}','Admin\BaiVietController@destroy');
     });
+    Route::group(['prefix'=>'media'] , function(){
+        Route::get('danhsach','Admin\MediaController@index');
+        Route::get('themview','Admin\MediaController@indexThemView');
+        Route::post('them','Admin\MediaController@store');
+        Route::get('chinhsua/{id1}','Admin\MediaController@show');
+        Route::post('chinhsua/{id1}','Admin\MediaController@update');
+        Route::get('xoa/{id}','Admin\MediaController@destroy');
+    });
 
 //loi404
     Route::get('loi404','Admin\AdminController@loi404');
