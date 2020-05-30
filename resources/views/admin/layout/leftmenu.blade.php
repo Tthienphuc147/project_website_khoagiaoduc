@@ -45,7 +45,7 @@
                             <a href="quantri/loaibaiviet/danhsach">Danh sách</a>
                         </li>
                         <li>
-                            <a href="">Thêm</a>
+                            <a href="quantri/loaibaiviet/themview">Thêm</a>
                         </li>
                     </ul>
                 </li>

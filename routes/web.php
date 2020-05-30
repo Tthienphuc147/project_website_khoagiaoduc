@@ -45,6 +45,7 @@ Route::group(['prefix'=>'quantri','middleware'=>'check.login.admin'] , function(
     });
     Route::group(['prefix'=>'loaibaiviet'] , function(){
         Route::get('danhsach','Admin\LoaiBaiVietController@index');
+        Route::get('themview','Admin\LoaiBaiVietController@indexThemView');
         Route::post('them','Admin\LoaiBaiVietController@store');
         Route::get('chinhsua/{id}','Admin\LoaiBaiVietController@edit');
         Route::post('chinhsua/{id}','Admin\LoaiBaiVietController@update');

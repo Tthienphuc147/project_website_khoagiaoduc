@@ -16,8 +16,12 @@ class LoaiBaiVietController extends Controller
     public function index()
     {
         $loai_bai_viets=LoaiBaiViet::all();
-        
+
         return view("admin.pages.loaibaiviet.danhsach")->with('data',$loai_bai_viets);
+    }
+    public function indexThemView()
+    {
+        return view("admin.pages.loaibaiviet.them");
     }
 
     /**
