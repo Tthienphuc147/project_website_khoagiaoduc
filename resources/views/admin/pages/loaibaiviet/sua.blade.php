@@ -17,7 +17,7 @@
 <div class="main-content">
 
     <div class="container">
-        <h3 class="pb-3">Thêm loại bài viết</h3>
+        <h3 class="pb-3">Sửa loại bài viết</h3>
         <div class="row">
           <div class="col-12">
             <div class="card">

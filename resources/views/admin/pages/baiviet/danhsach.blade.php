@@ -39,7 +39,7 @@
                         <div class="main-sparkline13-hd">
                             <div class="row">
                                 <div class="col-md-9">
-                                     <h1>Danh sách loại bài viết</h1>
+                                     <h1>Danh sách bài viết</h1>
                                 </div>
                                 
                                 <div class="col-md-3">
@@ -57,7 +57,7 @@
                                         <li role="menuitem"><a href="javascript:void(0)" onclick="orderByData('id', 'DESC')">ID </a></li>
                                         <li role="menuitem"><a href="javascript:void(0)" onclick="orderByData('ten', 'DESC')">Tên </a></li>
                                     </ul>
-                                    <button class="btn btn-success pull-right" onclick="showModalAdd()">Thêm mới</button>
+                                    <a href="quantri/baiviet/themview"><button class="btn btn-success pull-right">Thêm mới</button></a>
                                 </div>
                             </div>
                         </div>
@@ -74,33 +74,29 @@
                             <table id="table" data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="true" data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true" data-show-export="true" data-click-to-select="true" data-toolbar="#toolbar" data-unique-id="id">
                                 <thead>
                                     <tr>
-                                        <th data-field="state" data-checkbox="true"></th>
+                                    <th data-field="state" data-checkbox="true"></th>
                                         <th data-field="id">ID</th>
-                                        <th data-field="ten">Tên</th>
+                                        <th data-field="timestart">Tiêu đề</th>
+                                        <th data-field="timeend">Tóm tắt</th>
                                         <th data-field="option">Tùy chọn</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach($data as $item)
+                                    @foreach($data as $key=>$item)
                                     <tr>
-                                        <td></td>
-                                        <td>{{ $item->id }}</td>
-                                        <td>{{ $item->ten }}</td>
+                                    <td></td>
+                                        <td>{{ $key+1 }}</td>
+                                        <td>{{$item->tieu_de}}</td>
+                                        <td>{{$item->tom_tat}}</td>
                                         <td>
-                                            <a href="quantri/loaibaiviet/chinhsua/{{$item->id}}"><button title="Chỉnh sửa" class="pd-setting-ed" >
+                                            <a href="quantri/baiviet/chinhsua/{{$item->id}}"><button title="Chỉnh sửa" class="pd-setting-ed" >
                                                 <i class="fa fa-pencil-square-o mr-3" aria-hidden="true"></i>
                                             </button>
                                             </a>
-                                            <a href="quantri/loaibaiviet/xoa/{{$item->id}}">
+                                            <a href="quantri/baiviet/xoa/{{$id}}/{{$item->id}}">
                                             <button title="Xóa" class="pd-setting-ed">
                                                 <i class="fa fa-trash mr-3" aria-hidden="true"></i>
                                             </button>
-                                            </a>
-                                            <a href="quantri/baiviet/danhsach/{{$item->id}}">
-                                            <button title="Danhsach" class="pd-setting-ed">
-                                                <i class="fa fa-eye mr-3" aria-hidden="true"></i>
-                                            </button>
-                                            </a>
                                         </td>
                                     </tr>
                                     @endforeach

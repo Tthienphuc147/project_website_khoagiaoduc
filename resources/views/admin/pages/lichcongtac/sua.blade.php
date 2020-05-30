@@ -14,10 +14,11 @@
 @endsection
 
 @section('admin_content')
+
 <div class="main-content">
 
     <div class="container">
-        <h3 class="pb-3">Sửa cấu hình website</h3>
+        <h3 class="pb-3">Sửa tuần công tác</h3>
         <div class="row">
           <div class="col-12">
             <div class="card">
@@ -29,51 +30,43 @@
 					@endif
                 </div>
                 <div class="card-body card-block">
-                    <form action="quantri/cauhinh/chinhsua" method="post" enctype="multipart/form-data" class="form-horizontal">
+                    <form action="quantri/lichcongtac/chinhsua/{{$id}}" method="post" enctype="multipart/form-data" class="form-horizontal">
                     {{csrf_field()}}
                         <div class="row form-group">
                             <div class="col col-md-3">
-                                <label for="text-input" class=" form-control-label">Email</label>
+                                <label for="text-input" class=" form-control-label">Chọn tuần</label>
                             </div>
                             <div class="col-12 col-md-9">
-                                <input type="text" id="ten" name="email" placeholder="{{$data->email}}" class="form-control" >
+                                <input type="week" id="tuan" name="tuan"  class="form-control" required>
                                 
                             </div>
                         </div>
                         <div class="row form-group">
                             <div class="col col-md-3">
-                                <label for="text-input" class=" form-control-label">Số điện thoại</label>
+                                <label for="text-input" class=" form-control-label">Nội dung</label>
                             </div>
                             <div class="col-12 col-md-9">
-                                <input type="text" id="ten" name="so_dien_thoai" placeholder="{{$data->so_dien_thoai}}" class="form-control" >
+                            <textarea type="input"  name="noi_dung" id="demo"  class="form-control" >{{$data->noi_dung}}</textarea>
                                 
                             </div>
                         </div>
-                        <div class="row form-group">
-                            <div class="col col-md-3">
-                                <label for="text-input" class=" form-control-label">Số điện thoại khoa</label>
-                            </div>
-                            <div class="col-12 col-md-9">
-                                <input type="text"  name="so_dien_thoai_khoa" placeholder="{{$data->so_dien_thoai_khoa}}" class="form-control" >
-                                
-                            </div>
-                        </div>
-                        <div class="row form-group">
-                            <div class="col col-md-3">
-                                <label for="text-input" class=" form-control-label">Mô tả</label>
-                            </div>
-                            <div class="col-12 col-md-9">
-                                <textarea type="input"  name="mo_ta" placeholder="{{$data->mo_ta}}" class="form-control" ></textarea>
-                                
-                            </div>
-                        </div>
+                        <script>
+                CKEDITOR.replace('demo', {
+                    language: 'vi',
+                    filebrowserBrowseUrl: '../../public/ckfinder/ckfinder.html',
+                    filebrowserImageBrowseUrl: '../../public/ckfinder/ckfinder.html?type=Images',
+                    filebrowserFlashBrowseUrl: '../../public/ckfinder/ckfinder.html?type=Flash',
+                    filebrowserUploadUrl: '../../public/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
+                    filebrowserImageUploadUrl: '../../public/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
+                    filebrowserFlashUploadUrl: '../../public/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash'
+                });
+                </script>
                         
                         
                         <div class="card-footer">
                             <button type="submit" class="btn btn-primary btn-sm">
                                 <i class="fa fa-dot-circle-o"></i> Submit
                             </button>
-                            
                         </div>
                         
                     </form>

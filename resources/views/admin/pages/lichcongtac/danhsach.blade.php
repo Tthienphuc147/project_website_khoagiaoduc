@@ -39,7 +39,7 @@
                         <div class="main-sparkline13-hd">
                             <div class="row">
                                 <div class="col-md-9">
-                                     <h1>Danh sách loại bài viết</h1>
+                                     <h1>Danh sách Lịch công tác</h1>
                                 </div>
                                 
                                 <div class="col-md-3">
@@ -74,33 +74,29 @@
                             <table id="table" data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="true" data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true" data-show-export="true" data-click-to-select="true" data-toolbar="#toolbar" data-unique-id="id">
                                 <thead>
                                     <tr>
-                                        <th data-field="state" data-checkbox="true"></th>
+                                    <th data-field="state" data-checkbox="true"></th>
                                         <th data-field="id">ID</th>
-                                        <th data-field="ten">Tên</th>
+                                        <th data-field="timestart">Thời gian bắt đầu</th>
+                                        <th data-field="timeend">Thời gian kế thúc</th>
                                         <th data-field="option">Tùy chọn</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach($data as $item)
+                                    @foreach($data as $key=>$item)
                                     <tr>
-                                        <td></td>
-                                        <td>{{ $item->id }}</td>
-                                        <td>{{ $item->ten }}</td>
+                                    <td></td>
+                                        <td>{{ $key+1 }}</td>
+                                        <td>{{$item->thoi_gian_bat_dau}}</td>
+                                        <td>{{$item->thoi_gian_ket_thuc}}</td>
                                         <td>
-                                            <a href="quantri/loaibaiviet/chinhsua/{{$item->id}}"><button title="Chỉnh sửa" class="pd-setting-ed" >
+                                            <a href="quantri/lichcongtac/chinhsua/{{$item->id}}"><button title="Chỉnh sửa" class="pd-setting-ed" >
                                                 <i class="fa fa-pencil-square-o mr-3" aria-hidden="true"></i>
                                             </button>
                                             </a>
-                                            <a href="quantri/loaibaiviet/xoa/{{$item->id}}">
+                                            <a href="quantri/lichcongtac/xoa/{{$item->id}}">
                                             <button title="Xóa" class="pd-setting-ed">
                                                 <i class="fa fa-trash mr-3" aria-hidden="true"></i>
                                             </button>
-                                            </a>
-                                            <a href="quantri/baiviet/danhsach/{{$item->id}}">
-                                            <button title="Danhsach" class="pd-setting-ed">
-                                                <i class="fa fa-eye mr-3" aria-hidden="true"></i>
-                                            </button>
-                                            </a>
                                         </td>
                                     </tr>
                                     @endforeach
