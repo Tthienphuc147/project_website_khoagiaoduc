@@ -46,6 +46,11 @@ Route::group(['prefix'=>'quantri','middleware'=>'check.login.admin'] , function(
     //loai_van_ban
     Route::group(['prefix' => 'loaivanban'] , function(){
         Route::get('danhsach', 'Admin\LoaiVanBanController@index');
+        Route::get('themview', 'Admin\LoaiVanBanController@indexThemView');
+        Route::post ('them','Admin\LoaiVanBanController@store');
+        Route::get('chinhsua/{id}','Admin\LoaiVanBanController@show');
+        Route::post('chinhsua/{id}','Admin\LoaiVanBanController@update');
+        Route::get('xoa/{id}','Admin\LoaiVanBanController@destroy');
     });
     Route::group(['prefix'=>'loaibaiviet'] , function(){
         Route::get('danhsach','Admin\LoaiBaiVietController@index');
