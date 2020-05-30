@@ -95,6 +95,12 @@
                                             <button title="Xóa" class="pd-setting-ed">
                                                 <i class="fa fa-trash mr-3" aria-hidden="true"></i>
                                             </button>
+                                            </a>
+                                            <a href="quantri/baiviet/danhsach/{{$item->id}}">
+                                            <button title="Danhsach" class="pd-setting-ed">
+                                                <i class="fa fa-eye mr-3" aria-hidden="true"></i>
+                                            </button>
+                                            </a>
                                         </td>
                                     </tr>
                                     @endforeach
