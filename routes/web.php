@@ -43,6 +43,13 @@ Route::group(['prefix'=>'quantri','middleware'=>'check.login.admin'] , function(
         Route::post('chinhsua/{id}','Admin\DanhMucBaiVietController@update');
         Route::get('xoa/{id}','Admin\DanhMucBaiVietController@destroy');
     });
+    Route::group(['prefix'=>'loaibaiviet'] , function(){
+        Route::get('danhsach','Admin\LoaiBaiVietController@index');
+        Route::post('them','Admin\LoaiBaiVietController@store');
+        Route::get('chinhsua/{id}','Admin\LoaiBaiVietController@edit');
+        Route::post('chinhsua/{id}','Admin\LoaiBaiVietController@update');
+        Route::get('xoa/{id}','Admin\LoaiBaiVietController@destroy');
+    });
 
 //loi404
     Route::get('loi404','Admin\AdminController@loi404');
