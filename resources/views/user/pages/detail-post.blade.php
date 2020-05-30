@@ -17,7 +17,12 @@
                         </div>
 
                     </div>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
+                        <li class="breadcrumb-item active">{{$loai_bai_viet}}</li>
+                      </ol>
                 </div>
+
             </div>
            <div class="row">
                 <div class="col-lg-8">
@@ -43,16 +48,18 @@
                     <div class="blog_right_sidebar">
                         <aside class="single_sidebar_widget popular_post_widget">
                             <h3 class="widget_title">Tin tức liên quan</h3>
-
+                            @foreach ($bai_viet_lien_quan as $item)
                             <div class="media post_item">
-                                <img src="assets/img/post/post_1.png" alt="post">
+                                <img src="user/img/tintuc.jpg" alt="post" width="100px">
                                 <div class="media-body">
-                                    <a href="single-blog.html">
-                                        <h3>From life was you fish...</h3>
+                                    <a href="/bai-viet/{{changeTitle($item->tieu_de)}}a{{$item->id}}">
+                                        <h3>{{$item->tieu_de}}</h3>
                                     </a>
-                                    <p>January 12, 2019</p>
+                                    <p>{{date('d-m-Y', strtotime($item->created_at))}}</p>
                                 </div>
                             </div>
+                            @endforeach
+
                         </aside>
 
 

@@ -2630,18 +2630,19 @@ hr {
 .whats-news-area .whats-news-caption .single-what-news .what-cap,
 .about-area .whats-news-caption .single-what-news .what-cap,
 .contact-section .whats-news-caption .single-what-news .what-cap {
-  padding: 25px 20px 10px 0;
-  background: #fff;
-  position: absolute;
-  bottom: -63px;
-  left: 0;
-  width: 80%;
-  border-radius: 0 7px 0 0;
-  -webkit-transition: all 0.4s ease-out 0s;
-  -moz-transition: all 0.4s ease-out 0s;
-  -ms-transition: all 0.4s ease-out 0s;
-  -o-transition: all 0.4s ease-out 0s;
-  transition: all 0.4s ease-out 0s;
+    padding: 25px 20px 10px 0;
+    background: #fff;
+    position: absolute;
+    bottom: -94px;
+    left: 0;
+    width: 90%;
+    border-radius: 0 7px 0 0;
+    -webkit-transition: all 0.4s ease-out 0s;
+    -moz-transition: all 0.4s ease-out 0s;
+    -ms-transition: all 0.4s ease-out 0s;
+    -o-transition: all 0.4s ease-out 0s;
+    transition: all 0.4s ease-out 0s;
+    height: 10rem;
 }
 .whats-news-area .whats-news-caption .single-what-news .what-cap span,
 .about-area .whats-news-caption .single-what-news .what-cap span,
@@ -2984,18 +2985,19 @@ hr {
   width: 100%;
 }
 .recent-articles .single-recent .what-cap {
-  padding: 25px 20px 10px 0;
-  background: #fff;
-  position: absolute;
-  bottom: -63px;
-  left: 0;
-  width: 80%;
-  border-radius: 0 7px 0 0;
-  -webkit-transition: all 0.4s ease-out 0s;
-  -moz-transition: all 0.4s ease-out 0s;
-  -ms-transition: all 0.4s ease-out 0s;
-  -o-transition: all 0.4s ease-out 0s;
-  transition: all 0.4s ease-out 0s;
+    padding: 25px 20px 10px 0;
+    background: #fff;
+    position: absolute;
+    bottom: -60px;
+    left: 0;
+    width: 85%;
+    height: 10rem;
+    border-radius: 0 7px 0 0;
+    -webkit-transition: all 0.4s ease-out 0s;
+    -moz-transition: all 0.4s ease-out 0s;
+    -ms-transition: all 0.4s ease-out 0s;
+    -o-transition: all 0.4s ease-out 0s;
+    transition: all 0.4s ease-out 0s;
 }
 .recent-articles .single-recent .what-cap span {
   color: #000;
@@ -5663,4 +5665,7 @@ del {
 .box-shadow {
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
     padding: 15px 20px;
+}
+.breadcrumb-item a{
+    color: #1967bb;
 }

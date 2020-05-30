@@ -10,6 +10,9 @@ Route::group(['prefix'=>''] , function(){
     });
     Route::get('trang-chu','User\HomeController@show')->name('trangchinh');
     Route::get('bai-viet/{tenkhongdau}a{id}','User\BaiVietController@getBaiViet');
+    Route::get('loai-bai-viet/{tenkhongdau}a{id}','User\LoaiBaiVietController@getLoaiBaiViet');
+    Route::get('lien-he','User\ThongTinLienHeController@getLienHe');
+    Route::post('lien-he','User\ThongTinLienHeController@postLienHe');
 });
 // ----------------------------------------- //
 
@@ -50,6 +53,14 @@ Route::group(['prefix'=>'quantri','middleware'=>'check.login.admin'] , function(
         Route::get('chinhsua/{id}','Admin\LoaiBaiVietController@edit');
         Route::post('chinhsua/{id}','Admin\LoaiBaiVietController@update');
         Route::get('xoa/{id}','Admin\LoaiBaiVietController@destroy');
+    });
+
+    //lien_he
+
+    Route::group(['prefix'=>'gochoidap'] , function(){
+        Route::get('hotro','Admin\HoTroController@indexDanhSachHoTro');
+        Route::get('hotro/xoa/{id}','Admin\HoTroController@destroyHoTro');
+        Route::post('hotro/changeisread','Admin\HoTroController@changeIsRead');
     });
 
 //loi404

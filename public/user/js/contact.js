@@ -1,9 +1,9 @@
 $(document).ready(function(){
-    
+
     (function($) {
         "use strict";
 
-    
+
     jQuery.validator.addMethod('answercheck', function (value, element) {
         return this.optional(element) || /^\bcat\b$/.test(value)
     }, "type the correct answer -_-");
@@ -12,53 +12,54 @@ $(document).ready(function(){
     $(function() {
         $('#contactForm').validate({
             rules: {
-                name: {
+                ten: {
                     required: true,
-                    minlength: 2
                 },
-                subject: {
+                tieu_de_lien_he: {
                     required: true,
-                    minlength: 4
                 },
-                number: {
+                so_dien_thoai: {
                     required: true,
-                    minlength: 5
+                    minlength: 10
                 },
                 email: {
                     required: true,
                     email: true
                 },
-                message: {
+                noi_dung_lien_he: {
                     required: true,
-                    minlength: 20
+                },
+                lop_lien_he: {
+                    required: true,
                 }
             },
             messages: {
-                name: {
-                    required: "come on, you have a name, don't you?",
-                    minlength: "your name must consist of at least 2 characters"
+                ten: {
+                    required: "Trường này bắt buộc phải nhập !",
                 },
-                subject: {
-                    required: "come on, you have a subject, don't you?",
-                    minlength: "your subject must consist of at least 4 characters"
+                tieu_de_lien_he: {
+                    required: "Trường này bắt buộc phải nhập !",
                 },
-                number: {
-                    required: "come on, you have a number, don't you?",
-                    minlength: "your Number must consist of at least 5 characters"
+                so_dien_thoai: {
+                    required: "Trường này bắt buộc phải nhập !",
+                    minlength: "Số điện thoại phải có ít nhất 10 số"
                 },
                 email: {
-                    required: "no email, no message"
+                    required: "Trường này bắt buộc phải nhập !",
+                    email: "Email không hợp lệ !"
                 },
-                message: {
-                    required: "um...yea, you have to write something to send this form.",
-                    minlength: "thats all? really?"
+                noi_dung_lien_he: {
+                    required: "Trường này bắt buộc phải nhập !",
+                },
+                lop_lien_he: {
+                    required: "Trường này bắt buộc phải nhập !",
                 }
             },
             submitHandler: function(form) {
                 $(form).ajaxSubmit({
                     type:"POST",
                     data: $(form).serialize(),
-                    url:"contact_process.php",
+                    url:"lien-he",
                     success: function() {
                         $('#contactForm :input').attr('disabled', 'disabled');
                         $('#contactForm').fadeTo( "slow", 1, function() {
@@ -80,6 +81,6 @@ $(document).ready(function(){
             }
         })
     })
-        
+
  })(jQuery)
 })

@@ -138,7 +138,7 @@
                         <i class="fas fa-copy"></i>Góc hỏi đáp</a>
                     <ul class="list-unstyled navbar__sub-list js-sub-list">
                         <li>
-                            <a href="">Danh sách</a>
+                            <a href="/quantri/gochoidap/hotro">Danh sách</a>
                         </li>
                     </ul>
                 </li>
