@@ -156,10 +156,13 @@
                 </li>
                 <li class="has-sub">
                     <a class="js-arrow" href="#">
-                        <i class="fas fa-copy"></i>Lịch công tac</a>
+                        <i class="fas fa-copy"></i>Lịch công tác</a>
                     <ul class="list-unstyled navbar__sub-list js-sub-list">
                         <li>
-                            <a href="">Chỉnh sửa</a>
+                            <a href="/quantri/lichcongtac/danhsach">Danh sách</a>
+                        </li>
+                        <li>
+                            <a href="/quantri/lichcongtac/themview">Thêm</a>
                         </li>
                     </ul>
                 </li>

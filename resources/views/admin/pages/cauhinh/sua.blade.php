@@ -17,7 +17,7 @@
 <div class="main-content">
 
     <div class="container">
-        <h3 class="pb-3">Thêm loại bài viết</h3>
+        <h3 class="pb-3">Sửa cấu hình website</h3>
         <div class="row">
           <div class="col-12">
             <div class="card">
@@ -63,7 +63,7 @@
                                 <label for="text-input" class=" form-control-label">Mô tả</label>
                             </div>
                             <div class="col-12 col-md-9">
-                                <input type="text-aria"  name="mo_ta" placeholder="{{$data->mo_ta}}" class="form-control" >
+                                <textarea type="input"  name="mo_ta" placeholder="{{$data->mo_ta}}" class="form-control" ></textarea>
                                 
                             </div>
                         </div>

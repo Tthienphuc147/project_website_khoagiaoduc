@@ -64,6 +64,14 @@ Route::group(['prefix'=>'quantri','middleware'=>'check.login.admin'] , function(
         Route::get('chinhsua','Admin\CauHinhWebsiteController@show');
         Route::post('chinhsua','Admin\CauHinhWebsiteController@update');
     });
+    Route::group(['prefix'=>'lichcongtac'] , function(){
+        Route::get('danhsach','Admin\LichCongTacController@index');
+        Route::get('themview','Admin\LichCongTacController@indexThemView');
+        Route::post('them','Admin\LichCongTacController@store');
+        Route::get('chinhsua/{id}','Admin\LichCongTacController@show');
+        Route::post('chinhsua/{id}','Admin\LichCongTacController@update');
+        Route::get('xoa/{id}','Admin\LichCongTacController@destroy');
+    });
 
 //loi404
     Route::get('loi404','Admin\AdminController@loi404');
