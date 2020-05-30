@@ -92,10 +92,10 @@
                         <i class="fas fa-copy"></i>Slide</a>
                     <ul class="list-unstyled navbar__sub-list js-sub-list">
                         <li>
-                            <a href="">Danh sách</a>
+                            <a href="quantri/slides/danhsach">Danh sách</a>
                         </li>
                         <li>
-                            <a href="">Thêm</a>
+                            <a href="quantri/slides/themview">Thêm</a>
                         </li>
                     </ul>
                 </li>

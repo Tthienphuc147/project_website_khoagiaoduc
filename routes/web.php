@@ -57,7 +57,7 @@ Route::group(['prefix'=>'quantri','middleware'=>'check.login.admin'] , function(
     });
     //van_ban
     Route::group(['prefix' => 'vanban'], function(){
-        Route::get('danhsach', 'Admin\VanBanController@index');
+        Route::get('danhsach/{id}', 'Admin\VanBanController@index');
         Route::get('themview', 'Admin\VanBanController@indexThemView');
         Route::post ('them','Admin\VanBanController@store');
         Route::get('chinhsua/{id}','Admin\VanBanController@show');
