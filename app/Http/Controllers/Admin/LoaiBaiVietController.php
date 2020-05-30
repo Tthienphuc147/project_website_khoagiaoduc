@@ -82,11 +82,11 @@ class LoaiBaiVietController extends Controller
     public function update(Request $request, $id)
     {
         $loai_bai_viet=LoaiBaiViet::find($id);
-        if(!empty($loai_bai_viet)&&$request->input('ten')!=""){
+        if(!empty($loai_bai_viet)){
             try{
                 DB::beginTransaction();
                 $loai_bai_viet->id_danh_muc_bai_viet=$request->input('id_danh_muc_bai_viet');
-                $loai_bai_viet->ten=$request->input('ten');
+                if($request->input('ten')!="")$loai_bai_viet->ten=$request->input('ten');
                 $loai_bai_viet->save();
                 $danh_muc_bai_viets=DanhMucBaiViet::all();
                 DB::commit();
