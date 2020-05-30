@@ -29,6 +29,7 @@
      <link href="{{ asset('admin/vendor/perfect-scrollbar/perfect-scrollbar.css') }}" rel="stylesheet" media="all">
      <link rel="stylesheet" href="{{ asset('css/notifications/Lobibox.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/notifications/notifications.css') }}">
+    <script src="{{asset('../ckeditor/ckeditor.js')}}"></script>
 
      <!-- Main CSS-->
      <link href="{{ asset('admin/css/theme.css') }}" rel="stylesheet" media="all">
