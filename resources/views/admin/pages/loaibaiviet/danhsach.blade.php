@@ -21,7 +21,7 @@
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="sparkline13-list">
-
+                    
                 </div>
             </div>
         </div>
@@ -41,6 +41,7 @@
                                 <div class="col-md-9">
                                      <h1>Danh sách loại bài viết</h1>
                                 </div>
+                                
                                 <div class="col-md-3">
                                     <div class="dropdown keep-open btn-group" id="mr-sort-asc">
                                         <button class="btn btn-default dropdown-toggle" title="Sắp xếp tăng" type="button" data-toggle="dropdown"><i class="fa fa-arrow-up" aria-hidden="true"></i>
@@ -61,6 +62,12 @@
                             </div>
                         </div>
                     </div>
+                    @if (isset($message))
+						<div class="alert alert-danger">
+							{{$message}}
+						</div>
+					@endif
+                </div>
                     <div class="sparkline13-graph">
                         <div class="datatable-dashv1-list custom-datatable-overright">
 
@@ -80,10 +87,12 @@
                                         <td>{{ $item->id }}</td>
                                         <td>{{ $item->ten }}</td>
                                         <td>
-                                            <button title="Chỉnh sửa" class="pd-setting-ed" onclick="editID({{$item->id}}, this)">
+                                            <a href="quantri/loaibaiviet/chinhsua/{{$item->id}}"><button title="Chỉnh sửa" class="pd-setting-ed" >
                                                 <i class="fa fa-pencil-square-o mr-3" aria-hidden="true"></i>
                                             </button>
-                                            <button title="Xóa" class="pd-setting-ed" onclick="deleteID({{$item->id }});">
+                                            </a>
+                                            <a href="quantri/loaibaiviet/xoa/{{$item->id}}">
+                                            <button title="Xóa" class="pd-setting-ed">
                                                 <i class="fa fa-trash mr-3" aria-hidden="true"></i>
                                             </button>
                                         </td>

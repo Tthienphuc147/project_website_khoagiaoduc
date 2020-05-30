@@ -29,14 +29,14 @@
 					@endif
                 </div>
                 <div class="card-body card-block">
-                    <form action="quantri/loaibaiviet/them" method="post" enctype="multipart/form-data" class="form-horizontal">
+                    <form action="quantri/loaibaiviet/chinhsua/{{$id}}" method="post" enctype="multipart/form-data" class="form-horizontal">
                     {{csrf_field()}}
                         <div class="row form-group">
                             <div class="col col-md-3">
                                 <label for="text-input" class=" form-control-label">Tên</label>
                             </div>
                             <div class="col-12 col-md-9">
-                                <input type="text" id="ten" name="ten" placeholder="Tên loại tin tức" class="form-control" require>
+                                <input type="text" id="ten" name="ten" placeholder="{{$data_loai_bai_viet->ten}}" class="form-control" require>
                                 
                             </div>
                         </div>
@@ -56,7 +56,7 @@
                         </div>
                         <div class="card-footer">
                             <button type="submit" class="btn btn-primary btn-sm">
-                                <i class="fa fa-dot-circle-o"></i> Thêm loại bài viết
+                                <i class="fa fa-dot-circle-o"></i> Submit
                             </button>
                             <a href="quantri/loaibaiviet/themview">
                             <button type="reset" class="btn btn-danger btn-sm">
