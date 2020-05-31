@@ -57,24 +57,10 @@
                         <div class="main-sparkline13-hd">
                             <div class="row">
                                 <div class="col-md-9">
-                                     <h1>Danh sách văn bản</h1>
+                                     <h3>Danh sách văn bản</h3>
                                 </div>
-                                <div class="col-md-3">
-                                    <div class="dropdown keep-open btn-group" id="mr-sort-asc">
-                                        <button class="btn btn-default dropdown-toggle" title="Sắp xếp tăng" type="button" data-toggle="dropdown"><i class="fa fa-arrow-up" aria-hidden="true"></i>
-                                        <span class="caret"></span></button>
-                                        <ul class="dropdown-menu animated zoomIn">
-                                          <li><a href="javascript:void(0)" onclick="orderByData('id', 'ASC')">ID</a></li>
-                                          <li><a href="javascript:void(0)" onclick="orderByData('ten', 'ASC')">Tên</a></li>
-                                        </ul>
-                                    </div>
-
-                                    <button class="btn btn-default dropdown-toggle" id="mr-sort-desc" title="Sắp xếp giảm" data-toggle="dropdown" type="button"><i class="fa fa-arrow-down" aria-hidden="true"></i> <span class="caret"></span></button>
-                                    <ul class="dropdown-menu animated zoomIn" role="menu">
-                                        <li role="menuitem"><a href="javascript:void(0)" onclick="orderByData('id', 'DESC')">ID </a></li>
-                                        <li role="menuitem"><a href="javascript:void(0)" onclick="orderByData('ten', 'DESC')">Tên </a></li>
-                                    </ul>
-                                    <button class="btn btn-success pull-right" onclick="window.location.href='quantri/vanban/themview'">Thêm mới</button>
+                                <div class="col-md-3 d-flex justify-content-md-end">
+                                    <a href="quantri/vanban/themview"><button class="btn btn-success pull-right">Thêm mới</button></a>
                                 </div>
                             </div>
                         </div>
@@ -82,7 +68,7 @@
                     <div class="sparkline13-graph">
                         <div class="datatable-dashv1-list custom-datatable-overright">
 
-                            <table id="table" data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="true" data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true" data-show-export="true" data-click-to-select="true" data-toolbar="#toolbar" data-unique-id="id">
+                            <table id="table" class="table-style" data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="true" data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true" data-show-export="true" data-click-to-select="true" data-toolbar="#toolbar" data-unique-id="id">
                                 <thead>
                                     <tr>
                                         <th data-field="state" data-checkbox="true"></th>
@@ -100,11 +86,11 @@
                                         <td>{{ $item->ten }}</td>
                                         <td>{{ $item->mo_ta }}</td>
                                         <td>
-                                            <a href="quantri/slides/chinhsua/{{$item->id}}"><button title="Chỉnh sửa" class="pd-setting-ed" >
+                                            <a href="quantri/vanban/chinhsua/{{$item->id}}"><button title="Chỉnh sửa" class="pd-setting-ed" >
                                                 <i class="fa fa-pencil-square-o mr-3" aria-hidden="true"></i>
                                             </button>
                                             </a>
-                                            <a href="quantri/slides/xoa/{{$item->id}}">
+                                            <a href="quantri/vanban/xoa/{{$item->id}}">
                                             <button title="Xóa" class="pd-setting-ed">
                                                 <i class="fa fa-trash mr-3" aria-hidden="true"></i>
                                             </button>

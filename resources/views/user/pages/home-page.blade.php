@@ -55,7 +55,12 @@
                         <!-- Trending Top -->
                         <div class="trending-top mb-30">
                             <div class="trend-top-img">
-                                <img src="https://img.giaoduc.net.vn/w1050/Uploaded/2020/zgtzgo/2018_08_15/suphamdanang.jpg" alt="">
+                                @if ($tin_tuc_noi_bat->hinh_anh_mo_ta)
+
+                                <img src="{{$tin_tuc_noi_bat->hinh_anh_mo_ta}}" alt="">
+                                @else
+                                <img src="user/img/tintuc.jpg" alt="">
+                                @endif
                                 <div class="trend-top-cap">
                                     <span>{{$tin_tuc_noi_bat->ten_loai}}</span>
                                     <h2 class="pr-2"><a href="/bai-viet/{{changeTitle($tin_tuc_noi_bat->tieu_de)}}a{{$tin_tuc_noi_bat->id}}" title="{{$tin_tuc_noi_bat->tieu_de}}">{{limitStrlen($tin_tuc_noi_bat->tieu_de, 300)}}</h2>
@@ -69,7 +74,12 @@
                                 <div class="col-lg-4">
                                     <div class="single-bottom mb-35">
                                         <div class="trend-bottom-img mb-30">
-                                            <img src="http://ued.udn.vn/uploads/news/2019_12/4.jpg" alt="">
+                                            @if ($item->hinh_anh_mo_ta)
+                                            <img src="{{$item->hinh_anh_mo_ta}}" alt="">
+                                            @else
+                                            <img src="user/img/tintuc.jpg" alt="">
+                                            @endif
+
                                         </div>
                                         <div class="trend-bottom-cap">
                                             <span class="color1">{{$item->ten_loai}}</span>
@@ -85,28 +95,29 @@
                     <!-- Riht content -->
                     <div class="col-lg-4">
                         <div class="trand-right-single d-flex">
+                            <div class="inner">
+                                <select name="weblink" class="w-100" id="cboWebLink" onchange="window.open(this.options[this.selectedIndex].value,'_blank');cboWebLink.option[0].selected=true">
+                                    <option  value="#">-- Liên kết website --</option>
+                                        <option value="http://thuvien.ued.udn.vn:8080/dspace/">Thư viện Đại học Sư Phạm Đà Nẵng</option>
+                                        <option value="http://qlkh.ued.udn.vn/">Phòng khoa học và hợp tác quốc tế</option>
+                                        <option value="http://daotao.ued.udn.vn/">Phòng đào tạo</option>
+                                        <option value="http://khaothi.ued.udn.vn/">Phòng khảo thí và đảm bảo chất lượng giáo dục</option>
+                                        <option value="https://www.facebook.com/Li%C3%AAn-chi-%C4%90o%C3%A0n-Gi%C3%A1o-d%E1%BB%A5c-M%E1%BA%A7m-non-Tr%C6%B0%E1%BB%9Dng-%C4%90%E1%BA%A1i-h%E1%BB%8Dc-S%C6%B0-ph%E1%BA%A1m-%C4%90H%C4%90N-168400530464070/">LCĐ khoa GDMN</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="trand-right-single d-flex">
                             <a href="http://ued.udn.vn/" target="_blank"><img src="user/img/sub-banner/1.png" ></a>
                         </div>
                         <div class="trand-right-single d-flex">
                             <a href="http://qlht.ued.udn.vn/" target="_blank"><img src="user/img/sub-banner/3.png"></a>
                         </div>
-
-                        <div class="trand-right-single d-flex">
-                            <div class="inner">
-                                <select name="weblink" class="w-100" id="cboWebLink" onchange="window.open(this.options[this.selectedIndex].value,'_blank');cboWebLink.option[0].selected=true">
-                                    <option  value="#">-- Liên kết website --</option>
-                                        <option value="http://chinhphu.vn/portal/page/portal/chinhphu/trangchu">Thư viện Đại học Sư Phạm Đà Nẵng</option>
-                                        <option value="http://www.moet.gov.vn/Pages/home.aspx">Hệ thống tích hợp thông tin</option>
-                                        <option value="https://www.most.gov.vn/vn/Pages/Trangchu.aspx">Phòng khoa học và hợp tác quốc tế</option>
-                                        <option value="http://giaoducthoidai.vn/">Phòng đào tạo</option>
-                                        <option value="http://thucnghiem.edu.vn/">Phòng khảo thí và đảm bảo chất lượng giáo dục</option>
-                                        <option value="http://thucnghiem.edu.vn/">LCĐ khoa GDMN</option>
-                                </select>
+                        <div class="trand-right-single d-flex ">
+                            <div class="trand-right-img mr-2">
+                                <a href="/loai-bai-viet/{{changeTitle($all_share_danh_muc_tuyen_dung[0]->ten)}}a{{$all_share_danh_muc_tuyen_dung[0]->id}}"><img src="user/img/td.png" alt="" width="170px"></a>
                             </div>
-                        </div>
-                        <div class="trand-right-single d-flex">
                             <div class="trand-right-img">
-                                <img src="user/img/td.png" alt="" width="350px">
+                                <a href="/lien-he"><img src="user/img/lh.png" alt="" width="170px"></a>
                             </div>
                         </div>
                     </div>
@@ -175,7 +186,12 @@
                                         <div class="col-lg-4 col-md-4">
                                             <div class="single-what-news mb-100">
                                                 <div class="what-img">
-                                                    <img src="https://media.giaoducthoidai.vn/Uploaded/thuyvt/2018_03_11/2NewFolder/truong-dai-hoc-su-pham-da-nang-tra-bang-tot-nghiep-1_jpg_KTVK.JPG" alt="">
+                                                    @if ($item->hinh_anh_mo_ta)
+
+                                                    <img src="{{$item->hinh_anh_mo_ta}}" alt="" width="370px" height="248px">
+                                                    @else
+                                                    <img src="user/img/tintuc.jpg" alt="">
+                                                    @endif
                                                 </div>
                                                 <div class="what-cap">
                                                     <span class="color1">{{$item->ten_loai}}</span>
@@ -259,7 +275,12 @@
                             @foreach ($dao_tao as $item)
                             <div class="single-recent mb-100">
                                 <div class="what-img">
-                                    <img src="http://ued.udn.vn/uploads/news/2019_12/4.jpg" alt="">
+                                    @if ($item->hinh_anh_mo_ta)
+
+                                    <img src="{{$item->hinh_anh_mo_ta}}" alt=""  width="370px" height="248px">
+                                    @else
+                                    <img src="user/img/tintuc.jpg" alt="">
+                                    @endif
                                 </div>
                                 <div class="what-cap">
                                     <span class="color1">{{$item->ten_loai}}</span>

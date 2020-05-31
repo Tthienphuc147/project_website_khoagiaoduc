@@ -38,53 +38,50 @@
         <div class="row">
           <div class="col-12">
             <div class="card">
-                <div class="card-header">
-                    <strong>Slide</strong>
-                </div>
                 <div class="card-body card-block">
-                    <form action="quantri/slides/them" method="post" enctype="multipart/form-data" class="form-horizontal">
-                    {{csrf_field()}}
-                        <div class="row form-group">
-                            <div class="col col-md-3">
-                                <label for="text-input" class=" form-control-label">Tên văn bản (*)</label>
-                                <small class="form-text text-muted">(*) là bắt buộc</small>
-                            </div>
-                            <div class="col-12 col-md-9">
-                                <input type="text" id="ten" name="ten" placeholder="Nhập vào đây" class="form-control" required/>
-                            </div>
-                        </div>
+                    <form action="quantri/vanban/them" method="post" enctype="multipart/form-data" class="form-horizontal">
+                        {{csrf_field()}}
+                            <div class="row form-group">
+                                <div class="col col-md-3">
+                                    <label for="text-input" class=" form-control-label">Tên</label>
+                                </div>
+                                <div class="col-12 col-md-9">
+                                    <input type="input" id="ten" name="ten"  class="form-control" placeholder="Tên"  required>
 
-                        <div class="row form-group">
-                            <div class="col col-md-3">
-                                <label for="text-input" class=" form-control-label">Link slide</label>
+                                </div>
                             </div>
-                            <div class="col-12 col-md-9">
-                                <input type="text" id="link" name="link" placeholder="Nhập vào đây" class="form-control"/>
-                                <small class="form-text text-muted">Link khi click chọn vào slide này</small>
-                            </div>
-                        </div>
+                            <div class="row form-group">
+                                <div class="col col-md-3">
+                                    <label for="file-input" class=" form-control-label">File</label>
+                                </div>
 
-                        <div class="row form-group">
-                            <div class="col col-md-3">
-                                <label for="text-input" class=" form-control-label">Upload ảnh (*)</label>
-                            </div>
-                            <div class="col-12 col-md-9">   
-                                <input type="file" id="image" name="image" class="form-control" required/>
-                                <small class="form-text text-muted">Click để upload file</small>
-                            </div>
-                        </div>
+                                <div class="col-12 col-md-9">
 
-                        <div class="card-footer">
-                            <button type="submit" class="btn btn-primary btn-sm">
-                                <i class="fa fa-dot-circle-o"></i> Submit
-                            </button>
-                            <button type="reset" class="btn btn-danger btn-sm">
-                                <i class="fa fa-ban"></i> Reset
-                            </button>
-                        </div>
-                    </form>
+                                    <input type="file" id="file-doc-input" name="doc_file" class="form-control-file" required>
+
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col col-md-3">
+                                    <label for="select" class=" form-control-label">Loại văn bản</label>
+                                </div>
+                                <div class="col-12 col-md-9">
+                                    <select name="loai_van_ban" id="select" class="form-control">
+                                        @foreach($data as $item)
+                                        <option value="{{$item->id}}">{{$item->ten}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-primary btn-sm">
+                                    <i class="fa fa-dot-circle-o"></i> Submit
+                                </button>
+                            </div>
+
+                        </form>
                 </div>
-                
+
             </div>
           </div>
           </div>

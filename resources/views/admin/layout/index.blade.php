@@ -30,11 +30,10 @@
      <link rel="stylesheet" href="{{ asset('css/notifications/Lobibox.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/notifications/notifications.css') }}">
     <script src="{{asset('../ckeditor/ckeditor.js')}}"></script>
-
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
      <!-- Main CSS-->
      <link href="{{ asset('admin/css/theme.css') }}" rel="stylesheet" media="all">
      @yield('admin_css')
-    {{-- <link rel="shortcut icon" type="image/x-icon" href="user/assets/images/logo.png"> --}}
 </head>
 
 <body class="animsition">

@@ -21,9 +21,7 @@
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="sparkline13-list">
-                    <div class="pt-5" style="min-height: 65vh;">
-                        <div class="loading-spinner"></div>
-                    </div>
+
                 </div>
             </div>
         </div>
@@ -32,7 +30,7 @@
 <!-- Loading End -->
 
 <!-- Static Table Start -->
-<div class="data-table-area mg-b-15" id="hidden-loading" style="display: none;">
+<div class="data-table-area mg-b-15" >
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -41,53 +39,43 @@
                         <div class="main-sparkline13-hd">
                             <div class="row">
                                 <div class="col-md-9">
-                                     <h1>Danh sách danh mục bài viết</h1>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="dropdown keep-open btn-group" id="mr-sort-asc">
-                                        <button class="btn btn-default dropdown-toggle" title="Sắp xếp tăng" type="button" data-toggle="dropdown"><i class="fa fa-arrow-up" aria-hidden="true"></i>
-                                        <span class="caret"></span></button>
-                                        <ul class="dropdown-menu animated zoomIn">
-                                          <li><a href="javascript:void(0)" onclick="orderByData('id', 'ASC')">ID</a></li>
-                                          <li><a href="javascript:void(0)" onclick="orderByData('ten', 'ASC')">Tên</a></li>
-                                        </ul>
-                                    </div>
-
-                                    <button class="btn btn-default dropdown-toggle" id="mr-sort-desc" title="Sắp xếp giảm" data-toggle="dropdown" type="button"><i class="fa fa-arrow-down" aria-hidden="true"></i> <span class="caret"></span></button>
-                                    <ul class="dropdown-menu animated zoomIn" role="menu">
-                                        <li role="menuitem"><a href="javascript:void(0)" onclick="orderByData('id', 'DESC')">ID </a></li>
-                                        <li role="menuitem"><a href="javascript:void(0)" onclick="orderByData('ten', 'DESC')">Tên </a></li>
-                                    </ul>
-                                    <button class="btn btn-success pull-right" onclick="showModalAdd()">Thêm mới</button>
+                                     <h3>Danh sách mục bài viết</h3>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    @if (isset($message))
+						<div class="alert alert-danger">
+							{{$message}}
+						</div>
+					@endif
+                </div>
                     <div class="sparkline13-graph">
                         <div class="datatable-dashv1-list custom-datatable-overright">
 
-                            <table id="table" data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="true" data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true" data-show-export="true" data-click-to-select="true" data-toolbar="#toolbar" data-unique-id="id">
+                            <table id="table" class="table-style" data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="true" data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true" data-show-export="true" data-click-to-select="true" data-toolbar="#toolbar" data-unique-id="id">
                                 <thead>
                                     <tr>
-                                        <th data-field="state" data-checkbox="true"></th>
                                         <th data-field="id">ID</th>
                                         <th data-field="ten">Tên</th>
                                         <th data-field="option">Tùy chọn</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach($danh_muc_bai_viet as $danh_muc_bai_viet)
+                                    @foreach($data as $item)
                                     <tr>
-                                        <td></td>
-                                        <td>{{ $danh_muc_bai_viet->id }}</td>
-                                        <td>{{ $danh_muc_bai_viet->ten }}</td>
+                                        <td>{{ $item->id }}</td>
+                                        <td>{{ $item->ten }}</td>
                                         <td>
-                                            <button title="Chỉnh sửa" class="pd-setting-ed" onclick="editID({{$danh_muc_bai_viet->id}}, this)">
-                                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                            <a href="quantri/danhmucbaiviet/chinhsua/{{$item->id}}"><button title="Chỉnh sửa" class="pd-setting-ed" >
+                                                <i class="fa fa-pencil-square-o mr-3" aria-hidden="true"></i>
                                             </button>
-                                            <button title="Xóa" class="pd-setting-ed" onclick="deleteID({{$danh_muc_bai_viet->id }});">
-                                                <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                            </a>
+                                            <a href="quantri/danhmucbaiviet/xoa/{{$item->id}}">
+                                            <button title="Xóa" class="pd-setting-ed">
+                                                <i class="fa fa-trash mr-3" aria-hidden="true"></i>
                                             </button>
+                                            </a>
                                         </td>
                                     </tr>
                                     @endforeach
@@ -121,6 +109,4 @@
     <script src="admin/js/data-table/bootstrap-table-resizable.js"></script>
     <script src="admin/js/data-table/colResizable-1.5.source.js"></script>
     <script src="admin/js/data-table/bootstrap-table-export.js"></script>
-
-    <script src="admin/js/danhmucbaiviet/danhsach.js"></script>
 @endsection

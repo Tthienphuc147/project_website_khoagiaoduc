@@ -17,13 +17,21 @@ class BaiVietController extends Controller
      */
     public function index($id)
     {
+        if(request()->session()->get('quyen_loai_bai_viet'))
+        {
         $bai_viet= BaiViet::where('id_loai_bai_viet',$id)->orderby('id','desc')->get();
         return view("admin.pages.baiviet.danhsach")->with('data',$bai_viet)->with('id',$id);
+        }
+        return view('admin.pages.error403');
     }
     public function indexThemView()
     {
+        if(request()->session()->get('quyen_loai_bai_viet'))
+        {
         $loai_bai_viet= LoaiBaiViet::all();
         return view("admin.pages.baiviet.them")->with('data',$loai_bai_viet);
+    }
+    return view('admin.pages.error403');
     }
 
     /**
@@ -34,9 +42,11 @@ class BaiVietController extends Controller
      */
     public function store(Request $request)
     {
+        if(request()->session()->get('quyen_loai_bai_viet'))
+        {
         $bai_viet=new BaiViet();
         try{
-            
+
             if($request->input('tieu_de')!=""){
                 $bai_viet->tieu_de=$request->input('tieu_de');
             }
@@ -69,7 +79,6 @@ class BaiVietController extends Controller
                 }
                 $loai_bai_viet=LoaiBaiViet::find($request->input('loai_bai_viet'));
                 if(!empty($loai_bai_viet)){
-                    $bai_viet->is_moi=1;
                     $bai_viet->luot_xem=0;
                     $bai_viet->id_loai_bai_viet=$request->input('loai_bai_viet');
                     $bai_viet->id_user=1;// phuc tu thay doi cho nay
@@ -79,14 +88,16 @@ class BaiVietController extends Controller
                     $loai_bai_viet= LoaiBaiViet::all();
                     return view("admin.pages.baiviet.them")->with('data',$loai_bai_viet)->with('message','Thêm thành công');
                 }
-               
-                 
+
+
             }
         catch(Exception $e){
             DB::rollback();
         }
         $loai_bai_viet= LoaiBaiViet::all();
         return view("admin.pages.baiviet.them")->with('data',$loai_bai_viet)->with('message','Thêm thất bại');
+    }
+    return view('admin.pages.error403');
     }
 
     /**
@@ -97,11 +108,15 @@ class BaiVietController extends Controller
      */
     public function show($id)
     {
+        if(request()->session()->get('quyen_loai_bai_viet'))
+        {
         $bai_viet= BaiViet::find($id);
         if(!empty($bai_viet)){
-            return view("admin.pages.baiviet.sua")->with('data',$bai_viet)->with('id',$id); 
+            return view("admin.pages.baiviet.sua")->with('data',$bai_viet)->with('id',$id);
         }
         return redirect('/quantri');
+    }
+    return view('admin.pages.error403');
     }
 
     /**
@@ -122,6 +137,9 @@ class BaiVietController extends Controller
     }
     public function update(Request $request, $id)
     {
+
+        if(request()->session()->get('quyen_loai_bai_viet'))
+        {
         $bai_viet= BaiViet::find($id);
         if(!empty($bai_viet)){
             try{
@@ -154,14 +172,16 @@ class BaiVietController extends Controller
                     }
                     $bai_viet->save();
                     DB::commit();
-                    return view("admin.pages.baiviet.sua")->with('data',$bai_viet)->with('id',$id)->with('message','Sửa thành công'); 
+                    return view("admin.pages.baiviet.sua")->with('data',$bai_viet)->with('id',$id)->with('message','Sửa thành công');
                 }
             catch(Exception $e){
                 DB::rollback();
             }
-            
+
         }
         return redirect('/quantri');
+    }
+    return view('admin.pages.error403');
     }
 
     /**
@@ -172,6 +192,8 @@ class BaiVietController extends Controller
      */
     public function destroy($id,$id1)
     {
+        if(request()->session()->get('quyen_loai_bai_viet'))
+        {
         $bai_viet= BaiViet::find($id1);
         if(!empty($bai_viet)){
             try{
@@ -180,7 +202,7 @@ class BaiVietController extends Controller
                 DB::commit();
                 $bai_viet= BaiViet::where('id_loai_bai_viet',$id)->orderby('id','desc')->get();
                 return view("admin.pages.baiviet.danhsach")->with('data',$bai_viet)->with('id',$id)->with('message','Xóa thành công');
-                
+
             }
             catch(Exception $e){
                 DB::rollback();
@@ -188,5 +210,7 @@ class BaiVietController extends Controller
         }
         $bai_viet= BaiViet::where('id_loai_bai_viet',$id)->orderby('id','desc')->get();
         return view("admin.pages.baiviet.danhsach")->with('data',$bai_viet)->with('id',$id)->with('message','Xóa thất bại');
+    }
+    return view('admin.pages.error403');
     }
 }

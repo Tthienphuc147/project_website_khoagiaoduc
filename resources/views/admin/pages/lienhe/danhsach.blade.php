@@ -39,23 +39,7 @@
                         <div class="main-sparkline13-hd">
                             <div class="row">
                                 <div class="col-md-9">
-                                     <h1>Danh sách các liên hệ</h1>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="dropdown keep-open btn-group" id="mr-sort-asc">
-                                        <button class="btn btn-default dropdown-toggle" title="Sắp xếp tăng" type="button" data-toggle="dropdown"><i class="fa fa-arrow-up" aria-hidden="true"></i>
-                                        <span class="caret"></span></button>
-                                        <ul class="dropdown-menu animated zoomIn">
-                                          <li><a href="javascript:void(0)" onclick="orderByData('id', 'ASC')">ID</a></li>
-                                          <li><a href="javascript:void(0)" onclick="orderByData('ten', 'ASC')">Tên</a></li>
-                                        </ul>
-                                    </div>
-
-                                    <button class="btn btn-default dropdown-toggle" id="mr-sort-desc" title="Sắp xếp giảm" data-toggle="dropdown" type="button"><i class="fa fa-arrow-down" aria-hidden="true"></i> <span class="caret"></span></button>
-                                    {{-- <ul class="dropdown-menu animated zoomIn" role="menu">
-                                        <li role="menuitem"><a href="javascript:void(0)" onclick="orderByData('id', 'DESC')">ID </a></li>
-                                        <li role="menuitem"><a href="javascript:void(0)" onclick="orderByData('ten', 'DESC')">Tên </a></li>
-                                    </ul> --}}
+                                     <h3>Danh sách các liên hệ</h3>
                                 </div>
                             </div>
                         </div>
@@ -63,7 +47,7 @@
                     <div class="sparkline13-graph">
                         <div class="datatable-dashv1-list custom-datatable-overright">
 
-                            <table id="table" data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="true" data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true" data-show-export="true" data-click-to-select="true" data-toolbar="#toolbar" data-unique-id="id">
+                            <table id="table" class="table-style" data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="true" data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true" data-show-export="true" data-click-to-select="true" data-toolbar="#toolbar" data-unique-id="id">
                                 <thead>
                                     <tr>
                                         <th data-field="state" data-checkbox="true"></th>
@@ -90,12 +74,12 @@
                                         <td>{{ $item->lop }}</td>
                                         <td>{{ $item->email }}</td>
                                         <td>
-                                            <button title="Xóa" class="pd-setting-ed" onclick="deleteID({{$item->id }});">
+                                            {{-- <button title="Xóa" class="pd-setting-ed" onclick="deleteID({{$item->id }});">
                                                 <i class="fa fa-trash mr-3" aria-hidden="true"></i>
-                                            </button>
-                                            <button title="Trả lời liên hệ" class="pd-setting-ed" onclick="sendContact({{$item->id }});">
+                                            </button> --}}
+                                            {{-- <button title="Trả lời liên hệ" class="pd-setting-ed" onclick="sendContact({{$item->id }});">
                                                 <i class="fa fa-send mr-3" aria-hidden="true"></i>
-                                            </button>
+                                            </button> --}}
                                         </td>
                                     </tr>
                                     @else

@@ -28,9 +28,6 @@
                 <div class="col-lg-8">
                     <!-- Trending Tittle -->
                     <div class="about-right mb-90 box-shadow">
-                        <div class="about-img">
-                            <img src="assets/img/trending/trending_top.jpg" alt="">
-                        </div>
                         <div class="section-tittle mb-30 pt-30">
                             <h3>{{$bai_viet->tieu_de}}</h3>
                             <div class="d-flex justify-content-end align-items-center">

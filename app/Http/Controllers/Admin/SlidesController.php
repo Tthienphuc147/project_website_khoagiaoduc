@@ -15,11 +15,20 @@ class SlidesController extends Controller
      */
     public function index()
     {
+        if(request()->session()->get('quyen_slide'))
+        {
         $slides = Slides::all();
         return view('admin.pages.slides.danhsach')->with('data',$slides);
     }
+    return view('admin.pages.error403');
+    }
     public function indexThemView(){
+
+        if(request()->session()->get('quyen_slide'))
+        {
         return view('admin.pages.slides.them');
+    }
+    return view('admin.pages.error403');
     }
     /**
      * Store a newly created resource in storage.
@@ -29,17 +38,20 @@ class SlidesController extends Controller
      */
     public function store(Request $request)
     {
+
+        if(request()->session()->get('quyen_slide'))
+        {
         $allRequest = $request->all();
         if ($allRequest['link'])  $link=$allRequest['link'];
         else $link="#";
         $get_random_name = '';
 	    if($request->hasFile('image')){
             //Hàm kiểm tra dữ liệu
-            $this->validate($request, 
+            $this->validate($request,
                 [
                     //Kiểm tra đúng file đuôi .jpg,.jpeg,.png.gif và dung lượng không quá 2M
                     'image' => 'mimes:jpg,jpeg,png,gif|max:2048',
-                ],			
+                ],
                 [
                     //Tùy chỉnh hiển thị thông báo không thõa điều kiện
                     'image.mimes' => 'Chỉ chấp nhận hình thẻ với đuôi .jpg .jpeg .png .gif',
@@ -56,9 +68,11 @@ class SlidesController extends Controller
             $slide -> url_image = $get_random_name;
             $slide -> save();
             Session::flash('success', 'Thêm thành công!');
-            
-        }  
+
+        }
         return view('admin.pages.slides.them');
+    }
+    return view('admin.pages.error403');
     }
 
     /**
@@ -69,10 +83,14 @@ class SlidesController extends Controller
      */
     public function show($id)
     {
+        if(request()->session()->get('quyen_slide'))
+        {
         $slide = Slides::find($id);
         if ($slide)
             return view('admin.pages.slides.sua')->with('data',$slide)->with('id',$id);
         return view('admin.pages.error404');
+    }
+    return view('admin.pages.error403');
     }
 
     /**
@@ -84,6 +102,8 @@ class SlidesController extends Controller
      */
     public function update(Request $request, $id)
     {
+        if(request()->session()->get('quyen_slide'))
+        {
         $allRequest = $request->all();
         if ($allRequest['link'])  $link=$allRequest['link'];
         else $link="#";
@@ -91,11 +111,11 @@ class SlidesController extends Controller
         $slide = Slides::find($id);
         if($request->hasFile('image')){
             //Hàm kiểm tra dữ liệu
-            $this->validate($request, 
+            $this->validate($request,
                 [
                     //Kiểm tra đúng file đuôi .jpg,.jpeg,.png.gif và dung lượng không quá 2M
                     'image' => 'mimes:jpg,jpeg,png,gif|max:2048',
-                ],			
+                ],
                 [
                     //Tùy chỉnh hiển thị thông báo không thõa điều kiện
                     'image.mimes' => 'Chỉ chấp nhận hình thẻ với đuôi .jpg .jpeg .png .gif',
@@ -111,8 +131,10 @@ class SlidesController extends Controller
             $slide -> url_image = $get_random_name;
             $slide -> save();
             Session::flash('success', 'Update thành công!');
-        }  
+        }
         return view("admin.pages.slides.sua")->with('data',$slide)->with('id',$id);
+    }
+    return view('admin.pages.error403');
     }
 
     /**
@@ -123,6 +145,8 @@ class SlidesController extends Controller
      */
     public function destroy($id)
     {
+        if(request()->session()->get('quyen_slide'))
+        {
         $slide = Slides::find($id);
         if ($slide) {
             $slide->delete();
@@ -130,5 +154,7 @@ class SlidesController extends Controller
         }
         else return view("admin.pages.error404");
         return redirect("quantri/slides/danhsach");
+    }
+    return view('admin.pages.error403');
     }
 }

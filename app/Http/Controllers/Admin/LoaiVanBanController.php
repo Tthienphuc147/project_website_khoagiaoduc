@@ -16,16 +16,25 @@ class LoaiVanBanController extends Controller
      */
     public function index()
     {
+        if(request()->session()->get('quyen_loai_van_ban'))
+        {
+
         $loai_van_ban = LoaiVanBan::all();
         return view("admin.pages.loaivanban.danhsach")->with('data',$loai_van_ban);
     }
+    return view('admin.pages.error403');
+    }
     /**
-     * view Them loai van ban 
-     *      
+     * view Them loai van ban
+     *
      * */
     public function indexThemView()
     {
+        if(request()->session()->get('quyen_loai_van_ban'))
+        {
         return view("admin.pages.loaivanban.them");
+    }
+    return view('admin.pages.error403');
     }
 
     /**
@@ -36,7 +45,8 @@ class LoaiVanBanController extends Controller
      */
     public function store(Request $request)
     {
-        
+        if(request()->session()->get('quyen_loai_van_ban'))
+        {
         date_default_timezone_set("Asia/Ho_Chi_Minh");
         try{
             $loai_van_ban = new LoaiVanBan();
@@ -52,6 +62,8 @@ class LoaiVanBanController extends Controller
             return view("admin.pages.loaivanban.them");
         }
     }
+    return view('admin.pages.error403');
+    }
 
     /**
      * Display the specified resource.
@@ -61,9 +73,13 @@ class LoaiVanBanController extends Controller
      */
     public function show($id)
     {
+        if(request()->session()->get('quyen_loai_van_ban'))
+        {
         $loai_van_ban = LoaiVanBan::find($id);
         if ($loai_van_ban) return view("admin.pages.loaivanban.sua") -> with('ten', $loai_van_ban->ten) -> with('id', $id);
         return view("admin.pages.error404");
+    }
+    return view('admin.pages.error403');
     }
 
     /**
@@ -75,7 +91,9 @@ class LoaiVanBanController extends Controller
      */
     public function update(Request $request, $id)
     {
-        date_default_timezone_set("Asia/Ho_Chi_Minh");	
+        if(request()->session()->get('quyen_loai_van_ban'))
+        {
+        date_default_timezone_set("Asia/Ho_Chi_Minh");
         try{
             $loai_van_ban = LoaiVanBan::find($id);
             $loai_van_ban->ten = $request->input('ten');
@@ -88,6 +106,8 @@ class LoaiVanBanController extends Controller
             return view("admin.pages.loaivanban.sua")->with('ten',$request->input('ten'))->with('id',$id);
         }
     }
+    return view('admin.pages.error403');
+    }
 
     /**
      * Remove the specified resource from storage.
@@ -97,12 +117,16 @@ class LoaiVanBanController extends Controller
      */
     public function destroy($id)
     {
+        if(request()->session()->get('quyen_loai_van_ban'))
+        {
         $deleteData = LoaiVanBan::find($id);
         if (!empty($deleteData)){
             $deleteData->delete();
             Session::flash('success', 'Xóa thành công!');
         } else return view("admin.pages.error404");
         return Redirect("quantri/loaivanban/danhsach");
+    }
+    return view('admin.pages.error403');
     }
 
 }

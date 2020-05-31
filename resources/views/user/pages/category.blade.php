@@ -43,7 +43,13 @@
                                             <div class="col-lg-4 col-md-4">
                                                 <div class="single-what-news mb-100">
                                                     <div class="what-img">
-                                                        <img src="user/img/tintuc.jpg" alt="">
+                                                        @if ($item->hinh_anh_mo_ta)
+
+                                                        <img src="{{$item->hinh_anh_mo_ta}}" alt="" width="370px" height="248px">
+                                                        @else
+                                                        <img src="user/img/tintuc.jpg" alt=""  >
+                                                        @endif
+
                                                     </div>
                                                     <div class="what-cap">
                                                         <span class="color1">{{$item->ten_loai}}</span>

@@ -17,13 +17,23 @@ class LichCongTacController extends Controller
      */
     public function index()
     {
+        if(request()->session()->get('quyen_lich_cong_tac'))
+        {
+
         $lich_cong_tac=LichCongTac::orderby('thoi_gian_bat_dau','desc')->get();
-        
+
         return view("admin.pages.lichcongtac.danhsach")->with('data',$lich_cong_tac);
+
+}
+return view('admin.pages.error403');
     }
     public function indexThemView()
     {
+        if(request()->session()->get('quyen_lich_cong_tac'))
+        {
         return view("admin.pages.lichcongtac.them");
+    }
+    return view('admin.pages.error403');
     }
 
     /**
@@ -34,6 +44,8 @@ class LichCongTacController extends Controller
      */
     public function store(Request $request)
     {
+        if(request()->session()->get('quyen_lich_cong_tac'))
+        {
         if($request->input('tuan')!=""&&$request->input('noi_dung')!=""){
             try{
                 DB::beginTransaction();
@@ -57,6 +69,8 @@ class LichCongTacController extends Controller
         }
         return view("admin.pages.lichcongtac.them")->with('message','Thêm thất bại');
     }
+    return view('admin.pages.error403');
+    }
 
     /**
      * Display the specified resource.
@@ -66,12 +80,16 @@ class LichCongTacController extends Controller
      */
     public function show($id)
     {
+        if(request()->session()->get('quyen_lich_cong_tac'))
+        {
         $lich_cong_tac=LichCongTac::find($id);
         if(!empty($lich_cong_tac)){
-            return view("admin.pages.lichcongtac.sua")->with('data',$lich_cong_tac)->with('id',$id); 
+            return view("admin.pages.lichcongtac.sua")->with('data',$lich_cong_tac)->with('id',$id);
         }
         $lich_cong_tac=LichCongTac::orderby('thoi_gian_bat_dau','desc')->get();
         return view("admin.pages.lichcongtac.danhsach")->with('data',$lich_cong_tac);
+    }
+    return view('admin.pages.error403');
     }
 
     /**
@@ -83,6 +101,8 @@ class LichCongTacController extends Controller
      */
     public function update(Request $request, $id)
     {
+        if(request()->session()->get('quyen_lich_cong_tac'))
+        {
         $lich_cong_tac=LichCongTac::find($id);
         if(!empty($lich_cong_tac)){
             try{
@@ -100,14 +120,16 @@ class LichCongTacController extends Controller
                 }
                 $lich_cong_tac->save();
                 DB::commit();
-                return view("admin.pages.lichcongtac.sua")->with('data',$lich_cong_tac)->with('id',$id)->with('message','Sửa thành công'); 
+                return view("admin.pages.lichcongtac.sua")->with('data',$lich_cong_tac)->with('id',$id)->with('message','Sửa thành công');
             }
             catch(Exception $e){
                 DB::rollback();
             }
         }
         $lich_cong_tac=LichCongTac::orderby('thoi_gian_bat_dau','desc')->get();
-        return view("admin.pages.lichcongtac.sua")->with('data',$lich_cong_tac)->with('id',$id)->with('message','Sửa thất bại'); 
+        return view("admin.pages.lichcongtac.sua")->with('data',$lich_cong_tac)->with('id',$id)->with('message','Sửa thất bại');
+    }
+    return view('admin.pages.error403');
     }
 
     /**
@@ -118,6 +140,8 @@ class LichCongTacController extends Controller
      */
     public function destroy($id)
     {
+        if(request()->session()->get('quyen_lich_cong_tac'))
+        {
         $lich_cong_tac=LichCongTac::find($id);
         if(!empty($lich_cong_tac)){
             try{
@@ -125,7 +149,7 @@ class LichCongTacController extends Controller
                 $lich_cong_tac->delete();
                 DB::commit();
                 $lich_cong_tac=LichCongTac::orderby('thoi_gian_bat_dau','desc')->get();
-                return view("admin.pages.lichcongtac.danhsach")->with('data',$lich_cong_tac)->with('message','Xóa thành công'); 
+                return view("admin.pages.lichcongtac.danhsach")->with('data',$lich_cong_tac)->with('message','Xóa thành công');
             }
             catch(Exception $e){
                 DB::rollback();
@@ -133,5 +157,7 @@ class LichCongTacController extends Controller
         }
         $lich_cong_tac=LichCongTac::orderby('thoi_gian_bat_dau','desc')->get();
         return view("admin.pages.lichcongtac.danhsach")->with('data',$lich_cong_tac)->with('message','Xóa thất bại');
+    }
+    return view('admin.pages.error403');
     }
 }

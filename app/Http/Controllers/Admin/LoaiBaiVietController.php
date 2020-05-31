@@ -16,14 +16,23 @@ class LoaiBaiVietController extends Controller
      */
     public function index()
     {
+        if(request()->session()->get('quyen_loai_bai_viet'))
+        {
         $loai_bai_viets=LoaiBaiViet::all();
 
         return view("admin.pages.loaibaiviet.danhsach")->with('data',$loai_bai_viets);
+
+}
+return view('admin.pages.error403');
     }
     public function indexThemView()
     {
+        if(request()->session()->get('quyen_loai_bai_viet'))
+        {
         $danh_muc_bai_viets=DanhMucBaiViet::all();
         return view("admin.pages.loaibaiviet.them")->with('data',$danh_muc_bai_viets);
+    }
+    return view('admin.pages.error403');
     }
 
     /**
@@ -34,9 +43,11 @@ class LoaiBaiVietController extends Controller
      */
     public function store(Request $request)
     {
+        if(request()->session()->get('quyen_loai_bai_viet'))
+        {
         $danh_muc_bai_viets= DanhMucBaiViet::find($request->input("id_danh_muc_bai_viet"));
         if(!empty($danh_muc_bai_viets)){
-            
+
             if($request->input('ten')!=""){
                 try{
                     DB::beginTransaction();
@@ -54,6 +65,8 @@ class LoaiBaiVietController extends Controller
         $danh_muc_bai_viets=DanhMucBaiViet::all();
         return view("admin.pages.loaibaiviet.them")->with('data',$danh_muc_bai_viets)->with('message','Thêm thất bại vui lòng thử lại');
     }
+    return view('admin.pages.error403');
+    }
 
     /**
      * Display the specified resource.
@@ -63,6 +76,8 @@ class LoaiBaiVietController extends Controller
      */
     public function show($id)
     {
+        if(request()->session()->get('quyen_loai_bai_viet'))
+        {
         $loai_bai_viet=LoaiBaiViet::find($id);
         if(!empty($loai_bai_viet)){
 
@@ -70,6 +85,8 @@ class LoaiBaiVietController extends Controller
             return view("admin.pages.loaibaiviet.sua")->with('data',$danh_muc_bai_viets)->with('data_loai_bai_viet',$loai_bai_viet)->with('id',$id);
         }
         return redirect("quantri/loaibaiviet/danhsach");
+    }
+    return view('admin.pages.error403');
     }
 
     /**
@@ -81,6 +98,8 @@ class LoaiBaiVietController extends Controller
      */
     public function update(Request $request, $id)
     {
+        if(request()->session()->get('quyen_loai_bai_viet'))
+        {
         $loai_bai_viet=LoaiBaiViet::find($id);
         if(!empty($loai_bai_viet)){
             try{
@@ -99,6 +118,8 @@ class LoaiBaiVietController extends Controller
         $danh_muc_bai_viets=DanhMucBaiViet::all();
         return view("admin.pages.loaibaiviet.sua")->with('data',$danh_muc_bai_viets)->with('data_loai_bai_viet',$loai_bai_viet)->with('message',"Sửa thất bại bạn vui lòng thử lại")->with('id',$id);
     }
+    return view('admin.pages.error403');
+    }
 
     /**
      * Remove the specified resource from storage.
@@ -108,6 +129,8 @@ class LoaiBaiVietController extends Controller
      */
     public function destroy($id)
     {
+        if(request()->session()->get('quyen_loai_bai_viet'))
+        {
         $loai_bai_viet=LoaiBaiViet::find($id);
         $loai_bai_viets=LoaiBaiViet::all();
         if(!empty($loai_bai_viet)){
@@ -123,5 +146,7 @@ class LoaiBaiVietController extends Controller
 
         }
         return view("admin.pages.loaibaiviet.danhsach")->with('data',$loai_bai_viets)->with('message','Xóa thất bại');
+    }
+    return view('admin.pages.error403');
     }
 }

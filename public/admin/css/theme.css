@@ -99,7 +99,7 @@ p {
 
 /* ----- Typography ----- */
 body {
-    font-family: "Poppins", sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-weight: 400;
     font-size: 16px;
     line-height: 1.625;
@@ -4450,6 +4450,10 @@ section {
 
 .role.user {
     background: #00b5e9;
+}
+.role.permission {
+    margin-right: 5px;
+    margin-bottom: 5px;
 }
 
 .role.member {
@@ -14665,4 +14669,19 @@ section {
 .datatable-dashv1-list .btn-default:hover, .datatable-dashv1-list .btn-default:focus, .datatable-dashv1-list .btn-default:active, .datatable-dashv1-list .editable-submit:hover, .datatable-dashv1-list .editable-submit:focus, .datatable-dashv1-list .editable-submit:active{
 	background:#006DF0;
 	color:#fff;
+}
+
+.table-style{
+    background-color: #fff;
+}
+.table-style tr td{
+    padding-left: 1rem !important;
+}
+.table-style thead{
+    background-color: #28A745;
+    color: #fff;
+}
+.td--permissisons{
+    width: 26rem;
+    flex-wrap: wrap;
 }

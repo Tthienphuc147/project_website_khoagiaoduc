@@ -41,6 +41,9 @@ class MediaController extends Controller
      */
     public function store(Request $request)
     {
+        if(request()->session()->get('quyen_media'))
+        {
+
         $media=new Media();
         try{
             DB::beginTransaction();
@@ -66,6 +69,9 @@ class MediaController extends Controller
             DB::rollback();
         }
         return view("admin.pages.media.them")->with('message','thêm thất bại');
+
+}
+return view('admin.pages.error403');
     }
 
     /**
@@ -76,11 +82,15 @@ class MediaController extends Controller
      */
     public function show($id)
     {
+        if(request()->session()->get('quyen_media'))
+        {
         $media= Media::find($id);
         if(!empty($media)){
             return view("admin.pages.media.sua")->with('data',$media);
         }
         return redirect('/quantri/media/danhsach');
+    }
+    return view('admin.pages.error403');
     }
 
     /**
@@ -90,9 +100,11 @@ class MediaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    
+
     public function update(Request $request, $id)
     {
+        if(request()->session()->get('quyen_media'))
+        {
         $media= Media::find($id);
         if(!empty($media)){
             try{
@@ -121,6 +133,8 @@ class MediaController extends Controller
         }
         return redirect('/quantri/media/danhsach');
     }
+    return view('admin.pages.error403');
+    }
 
     /**
      * Remove the specified resource from storage.
@@ -130,6 +144,8 @@ class MediaController extends Controller
      */
     public function destroy($id)
     {
+        if(request()->session()->get('quyen_media'))
+        {
         $media= Media::find($id);
         if(!empty($media)){
             try{
@@ -145,5 +161,7 @@ class MediaController extends Controller
         }
         $media= Media::all();
         return view("admin.pages.media.danhsach")->with('data',$media)->with('message','Xóa thất bại');
+    }
+    return view('admin.pages.error403');
     }
 }

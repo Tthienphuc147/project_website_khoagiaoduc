@@ -8,7 +8,7 @@
                         <!-- Logo -->
                         <div class="col-xl-3 col-lg-3 col-md-3">
                             <div class="logo">
-                                <a href="index.html"><img src="user/img/2.png" alt=""></a>
+                                <a href="/"><img src="user/img/2.png" alt=""></a>
                             </div>
                         </div>
                     </div>
@@ -23,9 +23,9 @@
                                     <ul id="navigation">
                                         <li><a href="">Giới thiệu</a>
                                             <ul class="submenu">
-                                                <li><a href="">Thông điệp của khoa</a></li>
-                                                <li><a href="">Lịch sử hình thành & phát triển</a></li>
-                                                <li><a href="">Cơ cấu tổ chức</a></li>
+                                                <li><a href="/thong-diep">Thông điệp của khoa</a></li>
+                                                <li><a href="/lich-su">Lịch sử hình thành & phát triển</a></li>
+                                                <li><a href="/co-cau">Cơ cấu tổ chức</a></li>
                                             </ul>
                                         </li>
                                         <li><a href="">Tin tức</a>

@@ -18,7 +18,7 @@ class CauHinhWebsiteController extends Controller
     {
         //
     }
-    
+
 
     /**
      * Store a newly created resource in storage.
@@ -39,12 +39,16 @@ class CauHinhWebsiteController extends Controller
      */
     public function show()
     {
+        if(request()->session()->get('quyen_cau_hinh_website'))
+        {
         $cau_hinh=CauHinh::first();
         if(!empty($cau_hinh)){
 
             return view("admin.pages.cauhinh.sua")->with('data',$cau_hinh);
         }
         return redirect("quantri");
+    }
+    return view('admin.pages.error403');
     }
 
     /**
@@ -56,6 +60,8 @@ class CauHinhWebsiteController extends Controller
      */
     public function update(Request $request)
     {
+        if(request()->session()->get('quyen_cau_hinh_website'))
+        {
         $cau_hinh=CauHinh::first();
         if(!empty($cau_hinh)){
             try{
@@ -64,6 +70,7 @@ class CauHinhWebsiteController extends Controller
                 if($request->input('so_dien_thoai')!="")$cau_hinh->email=$request->input('so_dien_thoai');
                 if($request->input('so_dien_thoai_khoa')!="")$cau_hinh->email=$request->input('so_dien_thoai_khoa');
                 if($request->input('mo_ta')!="")$cau_hinh->email=$request->input('mo_ta');
+                if($request->input('link_video')!="")$cau_hinh->link_video=$request->input('link_video');
                 $cau_hinh->save();
                 DB::commit();
                 return view("admin.pages.cauhinh.sua")->with('data',$cau_hinh)->with('message',"Sửa thành công");
@@ -73,6 +80,8 @@ class CauHinhWebsiteController extends Controller
             }
         }
         return redirect("quantri");
+    }
+    return view('admin.pages.error403');
     }
 
     /**

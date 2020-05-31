@@ -33,47 +33,55 @@
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d245368.26105001228!2d107.93803908361146!3d16.07176349225733!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x314219c792252a13%3A0x1df0cb4b86727e06!2zxJDDoCBO4bq1bmcsIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1587573479975!5m2!1svi!2s" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
                 </div>
                 <div class="col-lg-8">
-                    @if(Session::get('thong_bao_ho_tro') == '1')
-                    <div class="alert alert-success">
-                        <strong>Thành công!</strong> Yêu cầu của bạn đã được gửi, chúng tôi sẽ liên hệ lại sớm nhất.
+                    @if ( Session::has('success') )
+                    <div class="alert alert-success alert-dismissible" role="alert">
+                        <strong>{{ Session::get('success') }}</strong>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            <span class="sr-only">Close</span>
+                        </button>
                     </div>
-                    @endif
-                    @if(Session::get('thong_bao_ho_tro') == '0')
-                    <div class="alert alert-danger">
-                        <strong>Thất bại!</strong> Yêu cầu của bạn đã được gửi, vui lòng kiểm tra lại.
-                    </div>
-                    @endif
-                    <form class="form-contact contact_form" method="post" id="contactForm" novalidate="novalidate" action="lien-he" method="post">
+                @endif
+                @if ( Session::has('error') )
+                <div class="alert alert-danger alert-dismissible" role="alert">
+                    <strong>{{ Session::get('error') }}</strong>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                </div>
+                @endif
+                    <form class="form-contact contact_form" method="post" action="lien-he" method="post">
                         @csrf
                         <div class="row">
                             <div class="col-12">
                                 <div class="form-group">
-                                    <textarea class="form-control w-100" name="noi_dung_lien_he"  cols="30" rows="9"  placeholder="Nội dung liên hệ"></textarea>
+                                    <textarea class="form-control w-100" name="noi_dung_lien_he"  cols="30" rows="9"  placeholder="Nội dung liên hệ" required></textarea>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <input class="form-control valid" name="ten" type="text"  placeholder="Họ và tên">
+                                    <input class="form-control valid" name="ten" type="text"  placeholder="Họ và tên" required>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <input class="form-control valid" name="email"  type="email"  placeholder="Email">
+                                    <input class="form-control valid" name="email"  type="email"  placeholder="Email" required>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <input class="form-control valid" name="lop_lien_he" type="text"  placeholder="Lớp">
+                                    <input class="form-control valid" name="lop_lien_he" type="text"  placeholder="Lớp" required>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <input class="form-control valid" name="so_dien_thoai"  type="text"  placeholder="Số điện thoại">
+                                    <input class="form-control valid" name="so_dien_thoai"  type="text"  placeholder="Số điện thoại" required>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-group">
-                                    <input class="form-control" name="tieu_de_lien_he"  type="text"  placeholder="Tiêu đề liên hệ">
+                                    <input class="form-control" name="tieu_de_lien_he"  type="text"  placeholder="Tiêu đề liên hệ" required>
                                 </div>
                             </div>
                         </div>

@@ -16,7 +16,8 @@ class HoTroController extends Controller
      */
     public function indexDanhSachHoTro()
     {
-
+        if(request()->session()->get('quyen_goc_hoi_dap'))
+        {
         $status = false;
         try {
             $ho_tro = DB::table('lien_he')
@@ -30,6 +31,8 @@ class HoTroController extends Controller
         return $status
             ? view("admin.pages.lienhe.danhsach", compact("ho_tro"))
             : redirect('quantri/loi404');
+        }
+        return view('admin.pages.error403');
     }
 
     /**
@@ -40,6 +43,8 @@ class HoTroController extends Controller
      */
     public function destroyHoTro($id)
     {
+        if(request()->session()->get('quyen_goc_hoi_dap'))
+        {
         $status = false;
         DB::beginTransaction();
         try {
@@ -56,10 +61,16 @@ class HoTroController extends Controller
             'status' => $status
         ]);
     }
+    return view('admin.pages.error403');
+    }
 
 
     public function changeIsRead(Request $request)
     {
+
+        if(request()->session()->get('quyen_goc_hoi_dap'))
+        {
+
 
         $status = false;
         DB::beginTransaction();
@@ -77,6 +88,8 @@ class HoTroController extends Controller
         return response()->json([
             'status' => $status
         ]);
+    }
+    return view('admin.pages.error403');
     }
 
 }

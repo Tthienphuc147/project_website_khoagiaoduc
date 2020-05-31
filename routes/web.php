@@ -10,6 +10,9 @@ Route::group(['prefix'=>''] , function(){
     });
     Route::get('trang-chu','User\HomeController@show')->name('trangchinh');
     Route::get('bai-viet/{tenkhongdau}a{id}','User\BaiVietController@getBaiViet');
+    Route::get('thong-diep','User\BaiVietController@getThongDiep');
+    Route::get('lich-su','User\BaiVietController@getLichSu');
+    Route::get('co-cau','User\CoCauController@showCoCau');
     Route::get('loai-bai-viet/{tenkhongdau}a{id}','User\LoaiBaiVietController@getLoaiBaiViet');
     Route::get('lien-he','User\ThongTinLienHeController@getLienHe');
     Route::post('lien-he','User\ThongTinLienHeController@postLienHe');
@@ -41,8 +44,9 @@ Route::group(['prefix'=>'quantri','middleware'=>'check.login.admin'] , function(
     //danh_muc_bai_viet
     Route::group(['prefix'=>'danhmucbaiviet'] , function(){
         Route::get('danhsach','Admin\DanhMucBaiVietController@index');
+        Route::get('themview','Admin\DanhMucBaiVietController@indexThemView');
         Route::post('them','Admin\DanhMucBaiVietController@store');
-        Route::get('chinhsua/{id}','Admin\DanhMucBaiVietController@edit');
+        Route::get('chinhsua/{id}','Admin\DanhMucBaiVietController@show');
         Route::post('chinhsua/{id}','Admin\DanhMucBaiVietController@update');
         Route::get('xoa/{id}','Admin\DanhMucBaiVietController@destroy');
     });
@@ -116,6 +120,18 @@ Route::group(['prefix'=>'quantri','middleware'=>'check.login.admin'] , function(
         Route::get('hotro','Admin\HoTroController@indexDanhSachHoTro');
         Route::get('hotro/xoa/{id}','Admin\HoTroController@destroyHoTro');
         Route::post('hotro/changeisread','Admin\HoTroController@changeIsRead');
+    });
+
+    //quan_ly_tai_khoan
+    Route::group(['prefix'=>'quantrivien'] , function(){
+        Route::get('danhsach','Admin\QuanTriVienController@index');
+        Route::get('them','Admin\QuanTriVienController@create');
+        Route::post('them','Admin\QuanTriVienController@store');
+        Route::get('xoa/{id}','Admin\QuanTriVienController@destroy');
+        Route::get('chinhsua/{id}','Admin\QuanTriVienController@edit');
+        Route::post('chinhsua/{id}','Admin\QuanTriVienController@update');
+        Route::get('phanquyen/{id}','Admin\QuanTriVienController@getPermission');
+        Route::post('phanquyen/{id}','Admin\QuanTriVienController@updatePermission');
     });
 
 //loi404

@@ -5,24 +5,23 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use DB;
+use App\DanhMucBaiViet;
 class DanhMucBaiVietController extends Controller
 {
+     /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
-        $status = false;
-        try {
-            $danh_muc_bai_viet = DB::table('danh_muc_bai_viets')
-                ->orderBy('id', 'ASC')
-                ->get();
-            $status = true;
-        } catch (Exception $e) {
-            $status = false;
-        }
+        $danh_muc_bai_viet=DanhMucBaiViet::all();
 
-        return $status
-            ? view("admin.pages.danhmucbaiviet.danhsach", compact("danh_muc_bai_viet"))
-            : redirect('quantri/loi404');
-
+        return view("admin.pages.danhmucbaiviet.danhsach")->with('data',$danh_muc_bai_viet);
+    }
+    public function indexThemView()
+    {
+        return view("admin.pages.danhmucbaiviet.them");
     }
 
     /**
@@ -33,56 +32,35 @@ class DanhMucBaiVietController extends Controller
      */
     public function store(Request $request)
     {
-        $status = false;
-        DB::beginTransaction();
-        try {
-            $id = DB::table('danh_muc_bai_viets')
-                ->insertGetId([
-                    'ten' => $request->ten,
-                    'created_at' => date("Y-m-d H:i:s")
-                ]);
-            DB::commit();
-            $danh_muc_bai_viet = DB::table('danh_muc_bai_viets')
-                ->where('id', $id)
-                ->first();
-            if($danh_muc_bai_viet) $status = true;
-        } catch (Exception $e) {
-            DB::rollback();
-            $status = false;
-        }
-
-        return response()->json([
-            'status' => $status,
-            'danh_muc_bai_viet' => $danh_muc_bai_viet
-        ]);
-
+            if($request->input('ten')!=""){
+                try{
+                    DB::beginTransaction();
+                    $danh_muc_bai_viet=new DanhMucBaiViet();
+                    $danh_muc_bai_viet->ten=$request->input('ten');
+                    $danh_muc_bai_viet->save();
+                    DB::commit();
+                    return view("admin.pages.danhmucbaiviet.them")->with('message','Thêm thành công');
+                }
+                catch(Exception $e){
+                    DB::rollback();
+                }
+            }
+        return view("admin.pages.danhmucbaiviet.them")->with('message','Thêm thất bại vui lòng thử lại');
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Display the specified resource.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function show($id)
     {
-        $status = false;
-        try {
-            $danh_muc_bai_viet = DB::table('danh_muc_bai_viets')
-                ->where('id', $id)
-                ->first();
-            if($danh_muc_bai_viet) $status = true;
-        } catch (Exception $e) {
-            $status = false;
+        $danh_muc_bai_viet=danhmucbaiviet::find($id);
+        if(!empty($danh_muc_bai_viet)){
+            return view("admin.pages.danhmucbaiviet.sua")->with('data_danh_muc_bai_viet',$danh_muc_bai_viet)->with('id',$id);
         }
-        return $status
-            ? response()->json([
-                    'status' => $status,
-                    'danh_muc_bai_viet' => $danh_muc_bai_viet
-                ])
-            : response()->json([
-                    'status' => $status
-                ]);
+        return redirect("quantri/danhmucbaiviet/danhsach");
     }
 
     /**
@@ -94,30 +72,20 @@ class DanhMucBaiVietController extends Controller
      */
     public function update(Request $request, $id)
     {
-        DB::beginTransaction();
-        $status = false;
-        try {
-            DB::table('danh_muc_bai_viets')
-                ->where('id', $id)
-                ->update([
-                    'ten' => $request->ten,
-                    'updated_at' => date("Y-m-d H:i:s")
-                ]);
-            DB::commit();
-            $status = true;
-        } catch (Exception $e) {
-            DB::rollback();
-            $status = false;
+        $danh_muc_bai_viet=danhmucbaiviet::find($id);
+        if(!empty($danh_muc_bai_viet)){
+            try{
+                DB::beginTransaction();
+                if($request->input('ten')!="")$danh_muc_bai_viet->ten=$request->input('ten');
+                $danh_muc_bai_viet->save();
+                DB::commit();
+                return view("admin.pages.danhmucbaiviet.sua")->with('data_danh_muc_bai_viet',$danh_muc_bai_viet)->with('message',"Sửa thành công")->with('id',$id);
+            }
+            catch(Exception $e){
+                DB::rollback();
+            }
         }
-
-        return $status
-            ? response()->json([
-                    'status' => $status,
-                    'ten' => $request->ten
-                ])
-            : response()->json([
-                    'status' => $status
-                ]);
+        return view("admin.pages.danhmucbaiviet.sua")->with('data_danh_muc_bai_viet',$danh_muc_bai_viet)->with('message',"Sửa thất bại bạn vui lòng thử lại")->with('id',$id);
     }
 
     /**
@@ -128,20 +96,25 @@ class DanhMucBaiVietController extends Controller
      */
     public function destroy($id)
     {
-        $status = false;
-        DB::beginTransaction();
-        try {
-            DB::table('danh_muc_bai_viets')
-                ->where('id', $id)
-                ->delete();
-            DB::commit();
-            $status = true;
-        } catch (Exception $e) {
+        if(request()->session()->get('quyen_danh_muc_bai_viet'))
+        {
+        $danh_muc_bai_viet=danhmucbaiviet::find($id);
+        $danh_muc_bai_viets=danhmucbaiviet::all();
+        if(!empty($danh_muc_bai_viet)){
+            try{
+                DB::beginTransaction();
+                $danh_muc_bai_viet->delete();
+                DB::commit();
+                return redirect('quantri/danhmucbaiviet/danhsach')->with('message','Xóa thành công');
+            }
+            catch(Exception $e){
             DB::rollback();
-            $status = false;
+            }
+
         }
-        return response()->json([
-            'status' => $status
-        ]);
+        return view("admin.pages.danhmucbaiviet.danhsach")->with('data',$danh_muc_bai_viets)->with('message','Xóa thất bại');
+    }
+    return view('admin.pages.error403');
+
     }
 }
