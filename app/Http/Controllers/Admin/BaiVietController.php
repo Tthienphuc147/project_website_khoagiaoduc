@@ -75,7 +75,7 @@ class BaiVietController extends Controller
                     }
 
                     $img_file->move('public/upload/image/',$random_file_name);
-                    $bai_viet->hinh_anh_mo_ta='public/upload/image/'.$random_file_name;
+                    $bai_viet->hinh_anh_mo_ta='/public/public/upload/image/'.$random_file_name;
                 }
                 $loai_bai_viet=LoaiBaiViet::find($request->input('loai_bai_viet'));
                 if(!empty($loai_bai_viet)){
@@ -168,7 +168,7 @@ class BaiVietController extends Controller
                         }
 
                         $img_file->move('public/upload/image/',$random_file_name);
-                        $bai_viet->hinh_anh_mo_ta='public/upload/image/'.$random_file_name;
+                        $bai_viet->hinh_anh_mo_ta='/public/public/upload/image/'.$random_file_name;
                     }
                     $bai_viet->save();
                     DB::commit();

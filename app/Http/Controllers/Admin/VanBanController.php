@@ -70,7 +70,7 @@ class VanBanController extends Controller
                         $doc_file_name = $this->changeKey(4).'_'.$doc_file_name;
                     }
                     $doc_file->move('public/upload/documents/',$random_file_name);
-                    $van_ban->file='public/upload/documents/'.$random_file_name;
+                    $van_ban->file='/public/public/upload/documents/'.$random_file_name;
                 }
                 $loai_van_ban=LoaiVanBan::find($request->input('loai_van_ban'));
                 if(!empty($loai_van_ban)){
@@ -143,7 +143,7 @@ class VanBanController extends Controller
                         }
 
                         $doc_file->move('public/upload/documents/',$random_file_name);
-                        $van_ban->anh_mo_ta='public/upload/documents/'.$random_file_name;
+                        $van_ban->file='/public/public/upload/documents/'.$random_file_name;
                     }
                     $van_ban->save();
                     DB::commit();
