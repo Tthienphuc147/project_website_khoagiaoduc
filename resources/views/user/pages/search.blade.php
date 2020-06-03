@@ -30,6 +30,9 @@
     <section class="whats-news-area pt-50 pb-30">
         <div class="container">
             <div class="row">
+            <p>Tìm thấy {{$bai_viet->count()}}</p>
+            </div>
+            <div class="row">
                 <div class="col-lg-12">
                     <div class="row">
                         <div class="col-12">
