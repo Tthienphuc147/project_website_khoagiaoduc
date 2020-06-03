@@ -38,6 +38,9 @@
                                     <span><i class="fa fa-eye"></i> {{$bai_viet->luot_xem}}</span>
                                 </div>
                             </div>
+                            <div class="d-flex align-center justify-content-lg-end mt-2">
+                                <div class="fb-like" data-href="https://testingdn.com/bai-viet/a{{$bai_viet->id}}" data-width="" data-layout="button" data-action="like" data-size="small" data-share="true"></div>
+                            </div>
                         </div>
                         <div class="content_area">
                             {!!$bai_viet->noi_dung!!}
@@ -77,3 +80,5 @@
     </div>
 </div>
 @endsection
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v7.0&appId=1942841682494119&autoLogAppEvents=1"></script>
