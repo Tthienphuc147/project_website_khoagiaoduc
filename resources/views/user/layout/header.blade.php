@@ -8,7 +8,7 @@
                         <!-- Logo -->
                         <div class="col-xl-3 col-lg-3 col-md-3">
                             <div class="logo">
-                                <a href="/"><img src="user/img/2.png" alt=""></a>
+                                <a href="/"><img src="/public/user/img/2.png" alt=""></a>
                             </div>
                         </div>
                     </div>
@@ -31,49 +31,49 @@
                                         <li><a href="">Tin tức</a>
                                             <ul class="submenu">
                                                 @foreach ($all_share_danh_muc_tin_tuc as $item)
-                                                <li><a href="/loai-bai-viet/{{changeTitle($item->ten)}}a{{$item->id}}">{{$item->ten}}</a></li>
+                                                <li><a href="/loai-bai-viet/{{$item->id}}">{{$item->ten}}</a></li>
                                                 @endforeach
                                             </ul>
                                         </li>
                                         <li><a href="">Đào tạo</a>
                                             <ul class="submenu">
                                                 @foreach ($all_share_danh_muc_dao_tao as $item)
-                                                <li><a href="/loai-bai-viet/{{changeTitle($item->ten)}}a{{$item->id}}">{{$item->ten}}</a></li>
+                                                <li><a href="/loai-bai-viet/{{$item->id}}">{{$item->ten}}</a></li>
                                                 @endforeach
                                             </ul>
                                         </li>
                                         <li><a href="">Nghiên cứu khoa học</a>
                                             <ul class="submenu">
                                                 @foreach ($all_share_danh_muc_ngkh as $item)
-                                                <li><a href="/loai-bai-viet/{{changeTitle($item->ten)}}a{{$item->id}}">{{$item->ten}}</a></li>
+                                                <li><a href="/loai-bai-viet/{{$item->id}}">{{$item->ten}}</a></li>
                                                 @endforeach
                                             </ul>
                                         </li>
                                         <li><a href="">Học liệu</a>
                                             <ul class="submenu">
                                                 @foreach ($all_share_danh_muc_hoc_lieu as $item)
-                                                <li><a href="/loai-bai-viet/{{changeTitle($item->ten)}}a{{$item->id}}">{{$item->ten}}</a></li>
+                                                <li><a href="/loai-bai-viet/{{$item->id}}">{{$item->ten}}</a></li>
                                                 @endforeach
                                             </ul>
                                         </li>
                                         <li><a href="">Sinh viên</a>
                                             <ul class="submenu">
                                                 @foreach ($all_share_danh_muc_sinh_vien as $item)
-                                                <li><a href="/loai-bai-viet/{{changeTitle($item->ten)}}a{{$item->id}}">{{$item->ten}}</a></li>
+                                                <li><a href="/loai-bai-viet/{{$item->id}}">{{$item->ten}}</a></li>
                                                 @endforeach
                                             </ul>
                                         </li>
                                         <li><a href="">Hợp tác</a>
                                             <ul class="submenu">
                                                 @foreach ($all_share_danh_muc_hop_tac as $item)
-                                                <li><a href="/loai-bai-viet/{{changeTitle($item->ten)}}a{{$item->id}}">{{$item->ten}}</a></li>
+                                                <li><a href="/loai-bai-viet/{{$item->id}}">{{$item->ten}}</a></li>
                                                 @endforeach
                                             </ul>
                                         </li>
                                         <li><a href="">Tuyển sinh</a>
                                             <ul class="submenu">
                                                 @foreach ($all_share_danh_muc_tuyen_sinh as $item)
-                                                <li><a href="/loai-bai-viet/{{changeTitle($item->ten)}}a{{$item->id}}">{{$item->ten}}</a></li>
+                                                <li><a href="/loai-bai-viet/{{$item->id}}">{{$item->ten}}</a></li>
                                                 @endforeach
                                             </ul>
                                         </li>
@@ -81,17 +81,17 @@
                                 </nav>
                             </div>
                         </div>
-                        <div class="col-xl-2 col-lg-2 col-md-4">
-                            <div class="header-right-btn f-right d-none d-lg-block">
-                                <i class="fas fa-search special-tag"></i>
-                                <div class="search-box">
-                                    <form action="#">
-                                        <input type="text" placeholder="Tìm kiếm">
+                        <!--<div class="col-xl-2 col-lg-2 col-md-4">-->
+                        <!--    <div class="header-right-btn f-right d-none d-lg-block">-->
+                        <!--        <i class="fas fa-search special-tag"></i>-->
+                        <!--        <div class="search-box">-->
+                        <!--            <form action="#">-->
+                        <!--                <input type="text" placeholder="Tìm kiếm">-->
 
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
+                        <!--            </form>-->
+                        <!--        </div>-->
+                        <!--    </div>-->
+                        <!--</div>-->
                         <!-- Mobile Menu -->
                         <div class="col-12">
                             <div class="mobile_menu d-block d-md-none"></div>

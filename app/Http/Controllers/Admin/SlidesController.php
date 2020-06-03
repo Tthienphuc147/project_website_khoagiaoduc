@@ -60,7 +60,7 @@ class SlidesController extends Controller
             );
             $hinh_anh = $request->file('image');
             $get_random_name = time().'_'.$hinh_anh->getClientOriginalName();
-            $path = public_path('admin/images/slides');
+            $path = public_path('upload/slide');
             $hinh_anh->move($path, $get_random_name);
             $slide = new Slides();
             $slide -> ten = $allRequest['ten'];
@@ -124,7 +124,7 @@ class SlidesController extends Controller
             );
             $hinh_anh = $request->file('image');
             $get_random_name = time().'_'.$hinh_anh->getClientOriginalName();
-            $path = public_path('admin/images/slides');
+            $path = public_path('upload/slide');
             $hinh_anh->move($path, $get_random_name);
             $slide -> ten = $allRequest['ten'];
             $slide -> link = $link;

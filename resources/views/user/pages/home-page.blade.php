@@ -13,7 +13,7 @@
                             <div class="trending-animated">
                                 <ul id="js-news" class="js-hidden">
                                     @foreach ($thong_bao_noi_bat as $item)
-                                    <li class="news-item"><a href="/bai-viet/{{changeTitle($item->tieu_de)}}a{{$item->id}}" title="{{$item->tieu_de}}">{{$item->tieu_de}}</a></li>
+                                    <li class="news-item"><a href="/bai-viet/a{{$item->id}}" title="{{$item->tieu_de}}">{{$item->tieu_de}}</a></li>
                                     @endforeach
                                 </ul>
                             </div>
@@ -57,13 +57,13 @@
                             <div class="trend-top-img">
                                 @if ($tin_tuc_noi_bat->hinh_anh_mo_ta)
 
-                                <img src="{{$tin_tuc_noi_bat->hinh_anh_mo_ta}}" alt="">
+                                <img src="/public/upload/image/{{$tin_tuc_noi_bat->hinh_anh_mo_ta}}" alt="">
                                 @else
-                                <img src="user/img/tintuc.jpg" alt="">
+                                <img src="/public/user/img/tintuc.jpg" alt="">
                                 @endif
                                 <div class="trend-top-cap">
                                     <span>{{$tin_tuc_noi_bat->ten_loai}}</span>
-                                    <h2 class="pr-2"><a href="/bai-viet/{{changeTitle($tin_tuc_noi_bat->tieu_de)}}a{{$tin_tuc_noi_bat->id}}" title="{{$tin_tuc_noi_bat->tieu_de}}">{{limitStrlen($tin_tuc_noi_bat->tieu_de, 300)}}</h2>
+                                    <h2 class="pr-2"><a href="/bai-viet/a{{$tin_tuc_noi_bat->id}}" title="{{$tin_tuc_noi_bat->tieu_de}}">{{$tin_tuc_noi_bat->tieu_de, 300}}</h2>
                                 </div>
                             </div>
                         </div>
@@ -75,15 +75,15 @@
                                     <div class="single-bottom mb-35">
                                         <div class="trend-bottom-img mb-30">
                                             @if ($item->hinh_anh_mo_ta)
-                                            <img src="{{$item->hinh_anh_mo_ta}}" alt="">
+                                            <img src="/public/upload/image/{{$item->hinh_anh_mo_ta}}" alt="">
                                             @else
-                                            <img src="user/img/tintuc.jpg" alt="">
+                                            <img src="/public/user/img/tintuc.jpg" alt="">
                                             @endif
 
                                         </div>
                                         <div class="trend-bottom-cap">
                                             <span class="color1">{{$item->ten_loai}}</span>
-                                            <h4><a href="/bai-viet/{{changeTitle($item->tieu_de)}}a{{$item->id}}" title="{{$item->tieu_de}}">{{limitStrlen($item->tieu_de, 130)}}</a></h4>
+                                            <h4><a href="/bai-viet/a{{$item->id}}" title="{{$item->tieu_de}}">{{$item->tieu_de}}</a></h4>
                                         </div>
                                     </div>
                                 </div>
@@ -107,17 +107,17 @@
                             </div>
                         </div>
                         <div class="trand-right-single d-flex">
-                            <a href="http://ued.udn.vn/" target="_blank"><img src="user/img/sub-banner/1.png" ></a>
+                            <a href="http://ued.udn.vn/" target="_blank"><img src="/public/user/img/sub-banner/1.png" ></a>
                         </div>
                         <div class="trand-right-single d-flex">
-                            <a href="http://qlht.ued.udn.vn/" target="_blank"><img src="user/img/sub-banner/3.png"></a>
+                            <a href="http://qlht.ued.udn.vn/" target="_blank"><img src="/public/user/img/sub-banner/3.png"></a>
                         </div>
                         <div class="trand-right-single d-flex ">
                             <div class="trand-right-img mr-2">
-                                <a href="/loai-bai-viet/{{changeTitle($all_share_danh_muc_tuyen_dung[0]->ten)}}a{{$all_share_danh_muc_tuyen_dung[0]->id}}"><img src="user/img/td.png" alt="" width="170px"></a>
+                                <a href="/loai-bai-viet/a{{$all_share_danh_muc_tuyen_dung[0]->id}}"><img src="/public/user/img/td.png" alt="" width="170px"></a>
                             </div>
                             <div class="trand-right-img">
-                                <a href="/lien-he"><img src="user/img/lh.png" alt="" width="170px"></a>
+                                <a href="/lien-he"><img src="/public/user/img/lh.png" alt="" width="170px"></a>
                             </div>
                         </div>
                     </div>
@@ -151,7 +151,7 @@
                                 <div class="weekly2-caption">
                                     <span class="color1">{{$item->ten_loai}}</span>
                                     <p>{{date('d-m-Y', strtotime($item->created_at))}}</p>
-                                    <h4><a href="/bai-viet/{{changeTitle($item->tieu_de)}}a{{$item->id}}" title="{{$item->tieu_de}}">{{limitStrlen($item->tieu_de, 100)}}</a></h4>
+                                    <h4><a href="/bai-viet/a{{$item->id}}" title="{{$item->tieu_de}}">{{$item->tieu_de}}</a></h4>
                                 </div>
                             </div>
                             @endforeach
@@ -188,14 +188,14 @@
                                                 <div class="what-img">
                                                     @if ($item->hinh_anh_mo_ta)
 
-                                                    <img src="{{$item->hinh_anh_mo_ta}}" alt="" width="370px" height="248px">
+                                                    <img src="/public/upload/image/{{$item->hinh_anh_mo_ta}}" alt="" width="370px" height="248px">
                                                     @else
-                                                    <img src="user/img/tintuc.jpg" alt="">
+                                                    <img src="/public/user/img/tintuc.jpg" alt="">
                                                     @endif
                                                 </div>
                                                 <div class="what-cap">
                                                     <span class="color1">{{$item->ten_loai}}</span>
-                                                    <h4><a href="/bai-viet/{{changeTitle($item->tieu_de)}}a{{$item->id}}" title="{{$item->tieu_de}}">{{limitStrlen($item->tieu_de, 100)}}</a></h4>
+                                                    <h4><a href="/bai-viet/a{{$item->id}}" title="{{$item->tieu_de}}">{{$item->tieu_de}}</a></h4>
                                                 </div>
                                             </div>
                                         </div>
@@ -277,14 +277,14 @@
                                 <div class="what-img">
                                     @if ($item->hinh_anh_mo_ta)
 
-                                    <img src="{{$item->hinh_anh_mo_ta}}" alt=""  width="370px" height="248px">
+                                    <img src="/public/upload/image/{{$item->hinh_anh_mo_ta}}" alt=""  width="370px" height="248px">
                                     @else
-                                    <img src="user/img/tintuc.jpg" alt="">
+                                    <img src="/public/user/img/tintuc.jpg" alt="">
                                     @endif
                                 </div>
                                 <div class="what-cap">
                                     <span class="color1">{{$item->ten_loai}}</span>
-                                    <h4><a href="/bai-viet/{{changeTitle($item->tieu_de)}}a{{$item->id}}" title="{{$item->tieu_de}}">{{limitStrlen($item->tieu_de, 100)}}</a></h4>
+                                    <h4><a href="/bai-viet/a{{$item->id}}" title="{{$item->tieu_de}}">{{$item->tieu_de}}</a></h4>
                                 </div>
                             </div>
                             @endforeach

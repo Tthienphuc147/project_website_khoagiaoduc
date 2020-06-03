@@ -53,13 +53,13 @@ class MediaController extends Controller
                 $img_file_extension = $img_file->getClientOriginalExtension();
                 $img_file_name = $img_file->getClientOriginalName();
                 $random_file_name = $this->changeKey(4).'_'.$img_file_name;
-                while(file_exists('upload/image/'.$random_file_name))
+                while(file_exists('public/upload/image/'.$random_file_name))
                 {
                     $random_file_name = $this->changeKey(4).'_'.$img_file_name;
                 }
 
-                $img_file->move('upload/image/',$random_file_name);
-                $media->url='upload/image/'.$random_file_name;
+                $img_file->move('public/upload/image/',$random_file_name);
+                $media->url=$random_file_name;
             }
             $media->save();
             DB::commit();
@@ -115,13 +115,13 @@ return view('admin.pages.error403');
                     $img_file_extension = $img_file->getClientOriginalExtension();
                     $img_file_name = $img_file->getClientOriginalName();
                     $random_file_name = $this->changeKey(4).'_'.$img_file_name;
-                    while(file_exists('upload/image/'.$random_file_name))
+                    while(file_exists('public/upload/image/'.$random_file_name))
                     {
                         $random_file_name = $this->changeKey(4).'_'.$img_file_name;
                     }
 
-                    $img_file->move('upload/image/',$random_file_name);
-                    $media->url='upload/image/'.$random_file_name;
+                    $img_file->move('public/upload/image/',$random_file_name);
+                    $media->url=$random_file_name;
                 }
                 $media->save();
                 DB::commit();

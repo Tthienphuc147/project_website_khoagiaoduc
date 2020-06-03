@@ -63,12 +63,12 @@
                                 <small class="form-text text-muted">Link khi click chọn vào slide này</small>
                             </div>
                         </div>
-                        <td><img src="admin/images/slides/{{$data->url_image}}" width="300"/>
+                        <td><img src="/public/upload/slide/{{$data->url_image}}" width="300"/>
                         <div class="row form-group">
                             <div class="col col-md-3">
                                 <label for="text-input" class=" form-control-label">Upload ảnh (*)</label>
                             </div>
-                            <div class="col-12 col-md-9">   
+                            <div class="col-12 col-md-9">
                                 <input type="file" id="image" name="image" class="form-control" required/>
                                 <small class="form-text text-muted">Click để upload file</small>
                             </div>
@@ -84,7 +84,7 @@
                         </div>
                     </form>
                 </div>
-                
+
             </div>
           </div>
           </div>

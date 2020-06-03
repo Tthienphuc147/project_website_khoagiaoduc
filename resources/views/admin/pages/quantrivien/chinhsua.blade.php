@@ -70,7 +70,7 @@
                                 <label for="text-input" class=" form-control-label">Số điện thoại</label>
                             </div>
                             <div class="col-12 col-md-9">
-                                <input type="text" id="so_dien_thoai" name="so_dien_thoai" value="{{$admins->so_dien_thoai}}"  class="form-control" required/>
+                                <input type="text" id="so_dien_thoai" name="so_dien_thoai" value="{{$admins->so_dien_thoai}}"  class="form-control" />
                             </div>
                         </div>
                         <div class="row form-group">
@@ -80,7 +80,7 @@
 
                             <div class="col-12 col-md-9">
                             <div class="col col-md-3">
-                                <img src="{{$admins->avatar}}">
+                                <img src="/public/upload/image/{{$admins->avatar}}">
                             </div>
                                 <input type="file" id="file-input" name="img_file" class="form-control-file">
 
@@ -100,7 +100,7 @@
                             </div>
                             <div class="col-12 col-md-9">
                                 <select name="id_cap_bac" id="id_cap_bac" class="form-control-lg form-control">
-                                    <option value="{{$admins->id}}">{{$admins->ten_cap_bac}}</option>
+                                    <option value="{{$admins->cap_bac}}">{{$admins->ten_cap_bac}}</option>
                                     @foreach($data as $item)
                                     <option value="{{$item->id}}">{{$item->ten}}</option>
                                     @endforeach;

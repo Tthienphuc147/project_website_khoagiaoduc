@@ -8,7 +8,7 @@ use DB;
 class BaiVietController extends Controller
 {
 
-    public function getBaiViet($ten_khong_dau, $id_bai_viet){
+    public function getBaiViet($id_bai_viet){
         $thong_bao_noi_bat = DB::table('bai_viets')
         ->join('loai_bai_viets','bai_viets.id_loai_bai_viet','=','loai_bai_viets.id')
         ->join('danh_muc_bai_viets','danh_muc_bai_viets.id','=','loai_bai_viets.id_danh_muc_bai_viet')

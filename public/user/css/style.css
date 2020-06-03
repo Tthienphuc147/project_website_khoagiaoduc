@@ -5672,3 +5672,6 @@ del {
 .card-link{
     color: #1967bb;
 }
+.content_area img{
+    width: 100%;
+}

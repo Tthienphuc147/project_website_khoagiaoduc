@@ -8,7 +8,7 @@
                          <div class="single-footer-caption">
                              <!-- logo -->
                              <div class="footer-logo mb-0">
-                                 <a href="index.html"><img src="user/img/2.png" alt="" width="350px"></a>
+                                 <a href="index.html"><img src="public/user/img/2.png" alt="" width="350px"></a>
                              </div>
                              <div class="footer-tittle ml-3">
                                  <div class="footer-pera">

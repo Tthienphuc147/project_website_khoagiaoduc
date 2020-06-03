@@ -11,7 +11,7 @@
                         <div class="trending-animated">
                             <ul id="js-news" class="js-hidden">
                                 @foreach ($thong_bao_noi_bat as $item)
-                                <li class="news-item"><a href="/bai-viet/{{changeTitle($item->tieu_de)}}a{{$item->id}}">{{$item->tieu_de}}</a></li>
+                                <li class="news-item"><a href="/bai-viet/a{{$item->id}}">{{$item->tieu_de}}</a></li>
                                 @endforeach
                             </ul>
                         </div>
@@ -47,9 +47,13 @@
                             <h3 class="widget_title">Tin tức liên quan</h3>
                             @foreach ($bai_viet_lien_quan as $item)
                             <div class="media post_item">
-                                <img src="user/img/tintuc.jpg" alt="post" width="100px">
+                                @if ($item->hinh_anh_mo_ta)
+                                <img src="/public/upload/image/{{$item->hinh_anh_mo_ta}}" alt="post" width="100px">
+                                @else
+                                <img src="/public/user/img/tintuc.jpg" alt="post" width="100px">
+                                @endif
                                 <div class="media-body">
-                                    <a href="/bai-viet/{{changeTitle($item->tieu_de)}}a{{$item->id}}">
+                                    <a href="/bai-viet/a{{$item->id}}">
                                         <h3>{{$item->tieu_de}}</h3>
                                     </a>
                                     <p>{{date('d-m-Y', strtotime($item->created_at))}}</p>

@@ -11,7 +11,7 @@
                         <div class="trending-animated">
                             <ul id="js-news" class="js-hidden">
                                 @foreach ($thong_bao_noi_bat as $item)
-                                <li class="news-item"><a href="/bai-viet/{{changeTitle($item->tieu_de)}}a{{$item->id}}">{{$item->tieu_de}}</a></li>
+                                <li class="news-item"><a href="/bai-viet/a{{$item->id}}">{{$item->tieu_de}}</a></li>
                                 @endforeach
                             </ul>
                         </div>

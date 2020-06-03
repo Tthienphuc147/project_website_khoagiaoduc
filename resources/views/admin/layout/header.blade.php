@@ -2,7 +2,7 @@
     <div class="section__content section__content--p30">
         <div class="container-fluid">
             <div class="header-wrap">
-                <form class="form-header" action="" method="POST">
+                <form class="form-header" action="" method="POST" style="visibility:hidden">
                     <input class="au-input au-input--xl" type="text" name="search" placeholder="Tìm kiếm" />
                     <button class="au-btn--submit" type="submit">
                         <i class="zmdi zmdi-search"></i>
@@ -35,7 +35,7 @@
                     <div class="account-wrap">
                         <div class="account-item clearfix js-item-menu">
                             <div class="image">
-                                <img src="admin/images/icon/avatar-01.jpg" />
+                                <img src="/public/admin/images/icon/avatar-01.jpg" />
                             </div>
                             <div class="content">
                                 <a class="js-acc-btn" href="#">{{Auth::guard('web')->user()->ten_dang_nhap}}</a>
@@ -44,16 +44,16 @@
                                 <div class="info clearfix">
                                     <div class="image">
                                         <a href="#">
-                                            <img src="admin/images/icon/avatar-01.jpg"  />
+                                            <img src="/public/admin/images/icon/avatar-01.jpg"  />
                                         </a>
                                     </div>
 
                                 </div>
                                 <div class="account-dropdown__body">
-                                    <div class="account-dropdown__item">
-                                        <a href="#">
-                                            <i class="zmdi zmdi-account"></i>Thông tin tài khoản</a>
-                                    </div>
+                                    <!--<div class="account-dropdown__item">-->
+                                    <!--    <a href="#">-->
+                                    <!--        <i class="zmdi zmdi-account"></i>Thông tin tài khoản</a>-->
+                                    <!--</div>-->
                                 </div>
                                 <div class="account-dropdown__footer">
                                     <a href="quantri/dangxuat">

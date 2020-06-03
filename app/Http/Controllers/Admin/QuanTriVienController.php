@@ -69,8 +69,8 @@ class QuanTriVienController extends Controller
         ]);
 
         if ($request->hasFile('img_file')) {
-            $imageName = '/public/public/upload/image/'.time().$request->img_file->getClientOriginalName();
-            $request->img_file->move(public_path('public/upload/image/'), $imageName);
+            $imageName = time().$request->img_file->getClientOriginalName();
+            $request->img_file->move(public_path('upload/image/'), $imageName);
             $user = DB::table('users')->insert(
                 [
                     'ten_dang_nhap' => $request->ten_dang_nhap,
@@ -156,15 +156,15 @@ class QuanTriVienController extends Controller
             try{
                 $data= CapBac::all();
                 if($request->hasFile('img_file')) {
-                    $imageName = '/public/public/upload/image/'.time().$request->img_file->getClientOriginalName();
-                    $request->img_file->move(public_path('public/upload/image/'), $imageName);
+                    $imageName =time().$request->img_file->getClientOriginalName();
+                    $request->img_file->move(public_path('upload/image/'), $imageName);
                     DB::beginTransaction();
                     if($request->input('ten_dang_nhap')!="")$quan_tri_vien->ten_dang_nhap=$request->input('ten_dang_nhap');
                     if($request->input('ho_van_ten')!="")$quan_tri_vien->ho_va_ten=$request->input('ho_va_ten');
                     if($request->input('email')!="")$quan_tri_vien->email=$request->input('email');
                     if($request->input('id_cap_bac')!="")$quan_tri_vien->cap_bac=$request->input('id_cap_bac');
                     if($request->input('so_dien_thoai')!="")$quan_tri_vien->so_dien_thoai=$request->input('so_dien_thoai');
-                    if($request->input('link')!="")$quan_tri_vien->link=$request->input('link');
+                    if($request->input('link')!="")$quan_tri_vien->so_dien_thoai=$request->input('link');
                     $quan_tri_vien->avatar=$imageName;
                     $quan_tri_vien->save();
                     DB::commit();
@@ -175,7 +175,7 @@ class QuanTriVienController extends Controller
                         if($request->input('id_cap_bac')!="")$quan_tri_vien->cap_bac=$request->input('id_cap_bac');
                         if($request->input('email')!="")$quan_tri_vien->email=$request->input('email');
                         if($request->input('so_dien_thoai')!="")$quan_tri_vien->so_dien_thoai=$request->input('so_dien_thoai');
-                        if($request->input('link')!="")$quan_tri_vien->link=$request->input('link');
+                        if($request->input('link')!="")$quan_tri_vien->so_dien_thoai=$request->input('link');
                         $quan_tri_vien->save();
                         DB::commit();
                         Session::flash('success', 'Sửa tài khoản thành công!');

@@ -6,9 +6,8 @@
         <title>Khoa Giáo Dục - Mầm Non</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="shortcut icon" type="image/x-icon" href="/user/img/logo/logo.png">
+        <link rel="shortcut icon" type="image/x-icon" href="/public/user/img/logo/logo.png">
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        <base href="{{asset('')}}">
         @include('user.layout.css')
    </head>
 

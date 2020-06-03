@@ -67,8 +67,9 @@
                             </div>
                             <div class="col-12 col-md-9">
                                 <select name="noi_bat" id="select" class="form-control">
-                                    <option value="0">Không</option>
                                     <option value="1">Có</option>
+                                    <option value="0">Không</option>
+
                                 </select>
                             </div>
                         </div>

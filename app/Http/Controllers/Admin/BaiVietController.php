@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\BaiViet;
 use App\LoaiBaiViet;
-use DB;
+use DB, Auth,Session;
 
 class BaiVietController extends Controller
 {
@@ -75,13 +75,13 @@ class BaiVietController extends Controller
                     }
 
                     $img_file->move('public/upload/image/',$random_file_name);
-                    $bai_viet->hinh_anh_mo_ta='/public/public/upload/image/'.$random_file_name;
+                    $bai_viet->hinh_anh_mo_ta=$random_file_name;
                 }
                 $loai_bai_viet=LoaiBaiViet::find($request->input('loai_bai_viet'));
                 if(!empty($loai_bai_viet)){
                     $bai_viet->luot_xem=0;
                     $bai_viet->id_loai_bai_viet=$request->input('loai_bai_viet');
-                    $bai_viet->id_user=1;// phuc tu thay doi cho nay
+                    $bai_viet->id_user=Auth::guard('web')->user()->id;// phuc tu thay doi cho nay
                     DB::beginTransaction();
                     $bai_viet->save();
                     DB::commit();
@@ -168,7 +168,7 @@ class BaiVietController extends Controller
                         }
 
                         $img_file->move('public/upload/image/',$random_file_name);
-                        $bai_viet->hinh_anh_mo_ta='/public/public/upload/image/'.$random_file_name;
+                        $bai_viet->hinh_anh_mo_ta=$random_file_name;
                     }
                     $bai_viet->save();
                     DB::commit();

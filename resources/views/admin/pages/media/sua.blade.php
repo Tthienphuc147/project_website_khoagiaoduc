@@ -40,7 +40,7 @@
                             
                             <div class="col-12 col-md-9">
                             <div class="col col-md-3">
-                                <img src="{{$data->url}}">
+                                <img src="/public/upload/image/{{$data->url}}">
                             </div>
                                 <input type="file" id="file-input" name="img_file" class="form-control-file">
                                 

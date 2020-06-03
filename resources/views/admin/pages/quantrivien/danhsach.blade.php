@@ -1,10 +1,10 @@
 @extends('admin/layout/index')
 
 @section('admin_css')
-    <link rel="stylesheet" href="admin/css/data-table/bootstrap-table.css">
+    <link rel="stylesheet" href="/public/admin/css/data-table/bootstrap-table.css">
     <!-- modals CSS
 		============================================ -->
-    <link rel="stylesheet" href="admin/css/modals.css">
+    <link rel="stylesheet" href="/public/admin/css/modals.css">
     <style>
     	.modal-edu-general .modal-body.modal-add {
 		    text-align: left;
@@ -85,7 +85,7 @@
                                         <td>{{ $item->ho_va_ten }}</td>
                                         <td>{{ $item->email }}</td>
                                         <td>
-                                        @if ($item->id_role === 1)
+                                        @if ($item->id_role == 1)
                                             <span class="role user">Người dùng</span>
                                         @else
                                         <span class="role admin">Admin</span>
@@ -223,10 +223,10 @@
 @section('admin_script')
     <!-- data table JS
         ============================================ -->
-    <script src="admin/js/data-table/bootstrap-table.js"></script>
-    <script src="admin/js/data-table/tableExport.js"></script>
-    <script src="admin/js/data-table/data-table-active.js"></script>
-    <script src="admin/js/data-table/bootstrap-table-resizable.js"></script>
-    <script src="admin/js/data-table/colResizable-1.5.source.js"></script>
-    <script src="admin/js/data-table/bootstrap-table-export.js"></script>
+    <script src="/public/admin/js/data-table/bootstrap-table.js"></script>
+    <script src="/public/admin/js/data-table/tableExport.js"></script>
+    <script src="/public/admin/js/data-table/data-table-active.js"></script>
+    <script src="/public/admin/js/data-table/bootstrap-table-resizable.js"></script>
+    <script src="/public/admin/js/data-table/colResizable-1.5.source.js"></script>
+    <script src="/public/admin/js/data-table/bootstrap-table-export.js"></script>
 @endsection

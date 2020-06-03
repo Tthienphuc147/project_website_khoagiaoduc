@@ -11,7 +11,7 @@
                         <div class="trending-animated">
                             <ul id="js-news" class="js-hidden">
                                 @foreach ($thong_bao_noi_bat as $item)
-                                <li class="news-item"><a href="/bai-viet/{{changeTitle($item->tieu_de)}}a{{$item->id}}">{{$item->tieu_de}}</a></li>
+                                <li class="news-item"><a href="/bai-viet/a{{$item->id}}">{{$item->tieu_de}}</a></li>
                                 @endforeach
                             </ul>
                         </div>
@@ -45,15 +45,15 @@
                                                     <div class="what-img">
                                                         @if ($item->hinh_anh_mo_ta)
 
-                                                        <img src="{{$item->hinh_anh_mo_ta}}" alt="" width="370px" height="248px">
+                                                        <img src="/public/upload/image/{{$item->hinh_anh_mo_ta}}" alt="" width="370px" height="248px">
                                                         @else
-                                                        <img src="user/img/tintuc.jpg" alt=""  >
+                                                        <img src="/public/user/img/tintuc.jpg" alt=""  >
                                                         @endif
 
                                                     </div>
                                                     <div class="what-cap">
                                                         <span class="color1">{{$item->ten_loai}}</span>
-                                                        <h4><a href="/bai-viet/{{changeTitle($item->tieu_de)}}a{{$item->id}}">{{limitStrlen($item->tieu_de, 100)}}</a></h4>
+                                                        <h4><a href="/bai-viet/a{{$item->id}}">{{$item->tieu_de, 100}}</a></h4>
                                                     </div>
                                                 </div>
                                             </div>

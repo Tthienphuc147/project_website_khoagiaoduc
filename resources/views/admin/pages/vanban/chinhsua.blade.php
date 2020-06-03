@@ -56,7 +56,7 @@
                                 </div>
 
                                 <div class="col-12 col-md-9">
-                                    <a href="{{$data->file}}" target="_blank">File đính kèm</a>
+                                    <a href="/public/upload/documents/{{$data->file}}" target="_blank">File đính kèm</a>
                                     <input type="file" id="file-doc-input" name="doc_file" class="form-control-file" >
 
                                 </div>

@@ -9,11 +9,11 @@ Route::group(['prefix'=>''] , function(){
         return redirect()->route('trangchinh');
     });
     Route::get('trang-chu','User\HomeController@show')->name('trangchinh');
-    Route::get('bai-viet/{tenkhongdau}a{id}','User\BaiVietController@getBaiViet');
+    Route::get('bai-viet/a{id}','User\BaiVietController@getBaiViet');
     Route::get('thong-diep','User\BaiVietController@getThongDiep');
     Route::get('lich-su','User\BaiVietController@getLichSu');
     Route::get('co-cau','User\CoCauController@showCoCau');
-    Route::get('loai-bai-viet/{tenkhongdau}a{id}','User\LoaiBaiVietController@getLoaiBaiViet');
+    Route::get('loai-bai-viet/{id}','User\LoaiBaiVietController@getLoaiBaiViet');
     Route::get('lien-he','User\ThongTinLienHeController@getLienHe');
     Route::post('lien-he','User\ThongTinLienHeController@postLienHe');
 });

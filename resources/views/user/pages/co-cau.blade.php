@@ -11,7 +11,7 @@
                         <div class="trending-animated">
                             <ul id="js-news" class="js-hidden">
                                 @foreach ($thong_bao_noi_bat as $item)
-                                <li class="news-item"><a href="/bai-viet/{{changeTitle($item->tieu_de)}}a{{$item->id}}">{{$item->tieu_de}}</a></li>
+                                <li class="news-item"><a href="/bai-viet/a{{$item->id}}">{{$item->tieu_de}}</a></li>
                                 @endforeach
                             </ul>
                         </div>
@@ -35,7 +35,7 @@
                             @foreach ($truong_khoa as $item)
                             <div class="col-lg-4 mb-2">
                                 <div class="card" style="width: 18rem;">
-                                <img class="card-img-top" src="{{$item->avatar}}" alt="Card image cap" height="250px">
+                                <img class="card-img-top" src="/public/upload/image/{{$item->avatar}}" alt="Card image cap" height="250px">
                                     <div class="card-body">
                                       <h5 class="card-title">{{$item->ho_va_ten}}</h5>
                                     </div>
@@ -53,7 +53,7 @@
                             @foreach ($pho_truong_khoa as $item)
                             <div class="col-lg-4 mb-2">
                                 <div class="card" style="width: 18rem;">
-                                <img class="card-img-top" src="{{$item->avatar}}" alt="Card image cap" height="250px">
+                                <img class="card-img-top" src="/public/upload/image/{{$item->avatar}}" alt="Card image cap" height="250px">
                                     <div class="card-body">
                                       <h5 class="card-title">{{$item->ho_va_ten}}</h5>
                                     </div>
@@ -71,7 +71,7 @@
                             @foreach ($pho_bo_mon_cs as $item)
                             <div class="col-lg-4 mb-2">
                                 <div class="card" style="width: 18rem;">
-                                <img class="card-img-top" src="{{$item->avatar}}" alt="Card image cap" height="250px">
+                                <img class="card-img-top" src="/public/upload/image/{{$item->avatar}}" alt="Card image cap" height="250px">
                                     <div class="card-body">
                                       <h5 class="card-title">{{$item->ho_va_ten}}</h5>
                                     </div>
@@ -89,7 +89,7 @@
                             @foreach ($pho_bo_mon_cn as $item)
                             <div class="col-lg-4 mb-2">
                                 <div class="card" style="width: 18rem;">
-                                <img class="card-img-top" src="{{$item->avatar}}" alt="Card image cap" height="250px">
+                                <img class="card-img-top" src="/public/upload/image/{{$item->avatar}}" alt="Card image cap" height="250px">
                                     <div class="card-body">
                                       <h5 class="card-title">{{$item->ho_va_ten}}</h5>
                                     </div>
@@ -107,7 +107,7 @@
                             @foreach ($gvcs as $item)
                             <div class="col-lg-4 mb-2">
                                 <div class="card" style="width: 18rem;">
-                                <img class="card-img-top" src="{{$item->avatar}}" alt="Card image cap" height="250px">
+                                <img class="card-img-top" src="/public/upload/image/{{$item->avatar}}" alt="Card image cap" height="250px">
                                     <div class="card-body">
                                       <h5 class="card-title">{{$item->ho_va_ten}}</h5>
                                     </div>
@@ -125,7 +125,7 @@
                             @foreach ($gvcn as $item)
                             <div class="col-lg-4 mb-2">
                                 <div class="card" style="width: 18rem;">
-                                <img class="card-img-top" src="{{$item->avatar}}" alt="Card image cap" height="250px">
+                                <img class="card-img-top" src="/public/upload/image/{{$item->avatar}}" alt="Card image cap" height="250px">
                                     <div class="card-body">
                                       <h5 class="card-title">{{$item->ho_va_ten}}</h5>
                                     </div>

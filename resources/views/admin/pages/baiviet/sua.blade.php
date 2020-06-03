@@ -38,7 +38,7 @@
                             </div>
                             <div class="col-12 col-md-9">
                                 <input type="input" id="tuan" name="tieu_de"  class="form-control" placeholder="{{$data->tieu_de}}">
-                                
+
                             </div>
                         </div>
                         <div class="row form-group">
@@ -47,20 +47,20 @@
                             </div>
                             <div class="col-12 col-md-9">
                                 <input type="input" id="tuan" name="tom_tat"  class="form-control" placeholder="{{$data->tom_tat}}">
-                                
+
                             </div>
                         </div>
                         <div class="row form-group">
                             <div class="col col-md-3">
                                 <label for="file-input" class=" form-control-label">Ảnh mô tả</label>
                             </div>
-                            
+
                             <div class="col-12 col-md-9">
                             <div class="col col-md-3">
-                                <img src="{{$data->hinh_anh_mo_ta}}">
+                                <img src="/public/upload/image/{{$data->hinh_anh_mo_ta}}">
                             </div>
                                 <input type="file" id="file-input" name="img_file" class="form-control-file">
-                                
+
                             </div>
                         </div>
                         <div class="row form-group">
@@ -69,8 +69,9 @@
                             </div>
                             <div class="col-12 col-md-9">
                                 <select name="noi_bat" id="select" class="form-control">
-                                    <option value="0">Không</option>
                                     <option value="1">Có</option>
+                                    <option value="0">Không</option>
+
                                 </select>
                             </div>
                         </div>
@@ -80,7 +81,7 @@
                             </div>
                             <div class="col-12 col-md-9">
                             <textarea type="input"  name="noi_dung" id="demo"  class="form-control" >{{$data->noi_dung}}</textarea>
-                                
+
                             </div>
                         </div>
                         <script>
@@ -94,17 +95,17 @@
                     filebrowserFlashUploadUrl: '../../public/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash'
                 });
                 </script>
-                        
-                        
+
+
                         <div class="card-footer">
                             <button type="submit" class="btn btn-primary btn-sm">
                                 <i class="fa fa-dot-circle-o"></i> Submit
                             </button>
                         </div>
-                        
+
                     </form>
-                </div> 
-                
+                </div>
+
             </div>
           </div>
     </div>
