@@ -30,9 +30,13 @@
                     <div class="about-right mb-90 box-shadow">
                         <div class="section-tittle mb-30 pt-30">
                             <h3>{{$bai_viet->tieu_de}}</h3>
-                            <div class="d-flex justify-content-end align-items-center">
-                                <span class="mr-4"><i class="fa fa-user "></i> {{$user->ho_va_ten}}</span>
-                                <span><i class="fa fa-eye"></i> {{$bai_viet->luot_xem}}</span>
+                            <hr class="mt-0">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <p class="mb-0"><i class="far fa-calendar-alt"></i> {{date('d-m-Y', strtotime($bai_viet->created_at))}}</p>
+                                <div>
+                                    <span class="mr-4"><i class="fa fa-user "></i> {{$user->ho_va_ten}}</span>
+                                    <span><i class="fa fa-eye"></i> {{$bai_viet->luot_xem}}</span>
+                                </div>
                             </div>
                         </div>
                         <div class="content_area">

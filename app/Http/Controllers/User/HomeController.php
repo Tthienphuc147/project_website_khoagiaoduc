@@ -58,6 +58,16 @@ class HomeController extends Controller
         ->inRandomOrder()
         ->orderBy('created_at', 'DESC')
         ->get();
-        return view('user.pages.home-page')->with(compact('thong_bao_noi_bat','tin_tuc_noi_bat','tin_tuc_top','thong_bao','tin_tuc','dao_tao'));
+        $sinh_vien= DB::table('bai_viets')
+        ->join('loai_bai_viets','bai_viets.id_loai_bai_viet','=','loai_bai_viets.id')
+        ->join('danh_muc_bai_viets','danh_muc_bai_viets.id','=','loai_bai_viets.id_danh_muc_bai_viet')
+        ->select('bai_viets.*','loai_bai_viets.ten as ten_loai')
+        ->where('loai_bai_viets.id_danh_muc_bai_viet','=','5')
+        ->inRandomOrder()
+        ->orderBy('created_at', 'DESC')
+        ->get();
+        $slide = DB::table('slides')
+        ->get();
+        return view('user.pages.home-page')->with(compact('thong_bao_noi_bat','tin_tuc_noi_bat','tin_tuc_top','thong_bao','tin_tuc','dao_tao','sinh_vien','slide'));
     }
 }

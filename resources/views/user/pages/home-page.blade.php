@@ -5,7 +5,7 @@
         <div class="container">
             <div class="trending-main">
                 <!-- Trending Tittle -->
-               
+
                 <div class="carousel slide pt-3 pb-2" id="main-carousel" data-ride="carousel">
                     <ol class="carousel-indicators">
                         <li data-target="#main-carousel" data-slide-to="0" class="active"></li>
@@ -15,15 +15,15 @@
                     </ol><!-- /.carousel-indicators -->
 
                     <div class="carousel-inner">
+                        @foreach ($slide as $key=>$item)
+                        @if ($key == 0)
                         <div class="carousel-item active">
-                            <img class="d-block img-fluid" src="https://scontent.fsgn2-3.fna.fbcdn.net/v/t1.0-9/75412152_473268519977268_8075841622442508288_o.jpg?_nc_cat=106&_nc_sid=8024bb&_nc_ohc=FJs9R5P14BQAX_RfmCG&_nc_ht=scontent.fsgn2-3.fna&oh=c7d5af1da49e5133089a0b97085bdaac&oe=5EE517E9" alt="">
-                        </div>
+                        @else
                         <div class="carousel-item">
-                            <img class="d-block img-fluid" src="https://scontent.fsgn2-2.fna.fbcdn.net/v/t1.0-9/81387568_512066679430785_7295363017271672832_o.jpg?_nc_cat=103&_nc_sid=e007fa&_nc_ohc=IAdGRQEu7L0AX8aAbuw&_nc_ht=scontent.fsgn2-2.fna&oh=0e085970a959320c5538b32d11f2358b&oe=5EE3D2BF" alt="">
+                        @endif
+                            <a href="{{$item->link}}"><img class="d-block img-fluid" src="/public/upload/slide/{{$item->url_image}}" alt="" width="100%" height="100%"></a>
                         </div>
-                        <div class="carousel-item">
-                            <img class="d-block img-fluid" src="https://scontent.fsgn2-1.fna.fbcdn.net/v/t1.0-9/76619239_478306139473506_812584082708889600_o.jpg?_nc_cat=105&_nc_sid=8024bb&_nc_ohc=wbYt0g9xg6cAX-5BcOB&_nc_ht=scontent.fsgn2-1.fna&oh=6988a6febb5cc343cbc5cf05f8782b7a&oe=5EE6A0A0" alt="">
-                        </div>
+                        @endforeach
                     </div><!-- /.carousel-inner -->
 
                     <a href="#main-carousel" class="carousel-control-prev" data-slide="prev">
@@ -58,7 +58,7 @@
                                 <div class="trending-top mb-30">
                                     <div class="trend-top-img">
                                         @if ($tin_tuc_noi_bat->hinh_anh_mo_ta)
-        
+
                                         <img src="/public/upload/image/{{$tin_tuc_noi_bat->hinh_anh_mo_ta}}" alt="">
                                         @else
                                         <img src="/public/user/img/tintuc.jpg" alt="">
@@ -78,7 +78,7 @@
                                                     @else
                                                     <img src="/public/user/img/tintuc.jpg" alt="">
                                                     @endif
-        
+
                                                 </div>
                                                 <div class="trend-bottom-cap col-lg-7">
                                                     <h6><a href="/bai-viet/a{{$item->id}}" title="{{$item->tieu_de}}">{{Str::limit($item->tieu_de, 100)}}</a></h6>
@@ -141,7 +141,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
         </div>
@@ -168,7 +168,7 @@
                                         @foreach ($tin_tuc as $item)
                                         <div class="col-lg-6 col-md-6">
                                             <div class="single-what-news mb-20 row">
-                                               
+
                                                 <div class="what-img col-lg-3">
                                                     @if ($item->hinh_anh_mo_ta)
                                                     <img src="/public/upload/image/{{$item->hinh_anh_mo_ta}}" alt="" height="120px">
@@ -263,7 +263,7 @@
                                         @foreach ($dao_tao as $item)
                                         <div class="col-lg-6 col-md-6">
                                             <div class="single-what-news mb-20 row">
-                                               
+
                                                 <div class="what-img col-lg-3">
                                                     @if ($item->hinh_anh_mo_ta)
                                                     <img src="/public/upload/image/{{$item->hinh_anh_mo_ta}}" alt="" height="120px">
@@ -312,10 +312,10 @@
                             <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                                 <div class="whats-news-caption">
                                     <div class="row">
-                                        @foreach ($dao_tao as $item)
+                                        @foreach ($sinh_vien as $item)
                                         <div class="col-lg-12 col-md-12">
                                             <div class="single-what-news mb-20 row">
-                                               
+
                                                 <div class="what-img col-lg-3">
                                                     @if ($item->hinh_anh_mo_ta)
                                                     <img src="/public/upload/image/{{$item->hinh_anh_mo_ta}}" alt="" height="120px">
@@ -351,7 +351,7 @@
                                         <li data-target="#main-carousel1" data-slide-to="2"></li>
                                         <li data-target="#main-carousel1" data-slide-to="3"></li>
                                     </ol><!-- /.carousel-indicators -->
-                
+
                                     <div class="carousel-inner">
                                         <div class="carousel-item active">
                                             <img class="d-block img-fluid" src="https://scontent.fsgn2-3.fna.fbcdn.net/v/t1.0-9/75412152_473268519977268_8075841622442508288_o.jpg?_nc_cat=106&_nc_sid=8024bb&_nc_ohc=FJs9R5P14BQAX_RfmCG&_nc_ht=scontent.fsgn2-3.fna&oh=c7d5af1da49e5133089a0b97085bdaac&oe=5EE517E9" alt="">
@@ -363,7 +363,7 @@
                                             <img class="d-block img-fluid" src="https://scontent.fsgn2-1.fna.fbcdn.net/v/t1.0-9/76619239_478306139473506_812584082708889600_o.jpg?_nc_cat=105&_nc_sid=8024bb&_nc_ohc=wbYt0g9xg6cAX-5BcOB&_nc_ht=scontent.fsgn2-1.fna&oh=6988a6febb5cc343cbc5cf05f8782b7a&oe=5EE6A0A0" alt="">
                                         </div>
                                     </div><!-- /.carousel-inner -->
-                
+
                                     <a href="#main-carousel1" class="carousel-control-prev" data-slide="prev">
                                         <span class="carousel-control-prev-icon"></span>
                                         <span class="sr-only" aria-hidden="true">Prev</span>
