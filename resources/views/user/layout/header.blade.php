@@ -95,7 +95,7 @@
                                                 @endforeach
                                             </ul>
                                         </li>
-                                        <li><a href="#">Thư viên hình ảnh</a>
+                                        <li><a href="#">Thư viện hình ảnh</a>
                                         </li>
                                     </ul>
                                 </nav>
