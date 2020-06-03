@@ -21,56 +21,57 @@
                             <div class="main-menu d-none d-md-block">
                                 <nav>
                                     <ul id="navigation">
-                                        <li><a href="">Giới thiệu</a>
+                                        <li><a href="/"><i class="fas fa-home"></i></a></li>
+                                        <li><a href="#">Giới thiệu</a>
                                             <ul class="submenu">
                                                 <li><a href="/thong-diep">Thông điệp của khoa</a></li>
                                                 <li><a href="/lich-su">Lịch sử hình thành & phát triển</a></li>
                                                 <li><a href="/co-cau">Cơ cấu tổ chức</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="">Tin tức</a>
+                                        <li><a href="#">Tin tức</a>
                                             <ul class="submenu">
                                                 @foreach ($all_share_danh_muc_tin_tuc as $item)
                                                 <li><a href="/loai-bai-viet/{{$item->id}}">{{$item->ten}}</a></li>
                                                 @endforeach
                                             </ul>
                                         </li>
-                                        <li><a href="">Đào tạo</a>
+                                        <li><a href="#">Đào tạo</a>
                                             <ul class="submenu">
                                                 @foreach ($all_share_danh_muc_dao_tao as $item)
                                                 <li><a href="/loai-bai-viet/{{$item->id}}">{{$item->ten}}</a></li>
                                                 @endforeach
                                             </ul>
                                         </li>
-                                        <li><a href="">Nghiên cứu khoa học</a>
+                                        <li><a href="#">Nghiên cứu khoa học</a>
                                             <ul class="submenu">
                                                 @foreach ($all_share_danh_muc_ngkh as $item)
                                                 <li><a href="/loai-bai-viet/{{$item->id}}">{{$item->ten}}</a></li>
                                                 @endforeach
                                             </ul>
                                         </li>
-                                        <li><a href="">Học liệu</a>
+                                        <li><a href="#">Học liệu</a>
                                             <ul class="submenu">
                                                 @foreach ($all_share_danh_muc_hoc_lieu as $item)
                                                 <li><a href="/loai-bai-viet/{{$item->id}}">{{$item->ten}}</a></li>
                                                 @endforeach
                                             </ul>
                                         </li>
-                                        <li><a href="">Sinh viên</a>
+                                        <li><a href="#">Sinh viên</a>
                                             <ul class="submenu">
                                                 @foreach ($all_share_danh_muc_sinh_vien as $item)
                                                 <li><a href="/loai-bai-viet/{{$item->id}}">{{$item->ten}}</a></li>
                                                 @endforeach
                                             </ul>
                                         </li>
-                                        <li><a href="">Hợp tác</a>
+                                        <li><a href="#">Hợp tác</a>
                                             <ul class="submenu">
                                                 @foreach ($all_share_danh_muc_hop_tac as $item)
                                                 <li><a href="/loai-bai-viet/{{$item->id}}">{{$item->ten}}</a></li>
                                                 @endforeach
                                             </ul>
                                         </li>
-                                        <li><a href="">Tuyển sinh</a>
+                                        <li><a href="#">Tuyển sinh</a>
                                             <ul class="submenu">
                                                 @foreach ($all_share_danh_muc_tuyen_sinh as $item)
                                                 <li><a href="/loai-bai-viet/{{$item->id}}">{{$item->ten}}</a></li>

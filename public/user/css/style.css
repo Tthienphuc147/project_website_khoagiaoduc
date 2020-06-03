@@ -2299,6 +2299,7 @@ hr {
 .trending-area .trending-main .trending-top .trend-top-img img {
   width: 100%;
   border-radius: 7px;
+  height: 20rem;
 }
 .trending-area .trending-main .trending-top .trend-top-img .trend-top-cap {
   position: absolute;
@@ -2405,6 +2406,31 @@ hr {
   h4
   a:hover {
   color: #fc3f00;
+}
+.trending-area
+  .trending-main
+  .trending-bottom
+  .single-bottom
+  .trend-bottom-cap
+  h6{
+    font-size: 13px !important;
+  }
+.trending-area
+  .trending-main
+  .trending-bottom
+  .single-bottom
+  .trend-bottom-cap
+  h6
+  a:hover {
+  color: #fc3f00;
+}
+.trending-title{
+  min-height: 2rem;
+  padding: 0.5rem;
+  color:#fff;
+  background-color: #ADDD7A;
+  border-left: 5px solid #5FB322;
+
 }
 .trending-area .trending-main .trand-right-single {
   margin-bottom: 20px;
@@ -2668,6 +2694,11 @@ hr {
 .contact-section .whats-news-caption .single-what-news .what-cap h4 a:hover {
   color: #fc3f00;
 }
+.whats-news-area .whats-news-caption .single-what-news h6 a:hover,
+.about-area .whats-news-caption .single-what-news h6 a:hover,
+.contact-section .whats-news-caption .single-what-news h6 a:hover {
+  color: #fc3f00;
+}
 .whats-news-area .whats-news-caption .single-what-news:hover .what-cap,
 .about-area .whats-news-caption .single-what-news:hover .what-cap,
 .contact-section .whats-news-caption .single-what-news:hover .what-cap {
@@ -2818,6 +2849,17 @@ hr {
   .weekly2-single
   .weekly2-caption
   h4
+  a:hover {
+  color: #fc3f00;
+}
+.weekly2-single
+.weekly2-caption
+h6{
+  font-size: 13px !important;
+}
+  .weekly2-single
+  .weekly2-caption
+  h6
   a:hover {
   color: #fc3f00;
 }
@@ -4675,7 +4717,7 @@ hr {
     #4b4949 100%
   );
 }
-.trending-area .trending-main .trending-top .trend-top-img::before {
+/* .trending-area .trending-main .trending-top .trend-top-img::before {
   background: -moz-linear-gradient(
     top,
     rgba(2, 26, 71, 0) 0%,
@@ -4692,7 +4734,7 @@ hr {
     rgba(2, 26, 71, 0.6) 100%
   );
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00021a47', endColorstr='#99021a47',GradientType=0 );
-}
+} */
 .sample-text-area {
   background: #fff;
   padding: 100px 0 70px 0;
@@ -5674,4 +5716,11 @@ del {
 }
 .content_area img{
     width: 100%;
+}
+
+#main-carousel .carousel-inner{
+  height: 30rem;
+}
+#main-carousel1 .carousel-inner,#main-carousel1 .carousel-inner img{
+  min-height: 15rem;
 }
