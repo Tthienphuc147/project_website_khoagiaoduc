@@ -97,7 +97,7 @@
                                         <div class="weekly2-img">
                                             <img src="https://www.sonoivu.haugiang.gov.vn/uploads/news/2019_05/thong-bao.jpg" alt="" width="100%">
                                         </div>
-                                        <div class="weekly2-caption">
+                                        <div class="weekly2-caption weekly2-caption1">
                                             <p>{{date('d-m-Y', strtotime($item->created_at))}}</p>
                                             <h6><a href="/bai-viet/a{{$item->id}}" title="{{$item->tieu_de}}">{{Str::limit($item->tieu_de, 100)}}</a></h6>
                                         </div>
@@ -112,7 +112,7 @@
                     <!-- Riht content -->
                     <div class="col-lg-4">
                         <div class="trand-right-single d-flex">
-                            <div class="inner">
+                            <div class="inner search-inner">
                                 <select name="weblink" class="w-100" id="cboWebLink" onchange="window.open(this.options[this.selectedIndex].value,'_blank');cboWebLink.option[0].selected=true">
                                     <option  value="#">-- Liên kết website --</option>
                                         <option value="http://thuvien.ued.udn.vn:8080/dspace/">Thư viện Đại học Sư Phạm Đà Nẵng</option>
@@ -125,6 +125,9 @@
                         </div>
                         <div class="trand-right-single d-flex">
                             <a href="http://ued.udn.vn/" target="_blank"><img src="/public/user/img/sub-banner/1.png" ></a>
+                        </div>
+                        <div class="trand-right-single d-flex">
+                            <a href="http://thuvien.ued.udn.vn:8080/dspace/" target="_blank"><img src="/public/user/img/sub-banner/2.png"></a>
                         </div>
                         <div class="trand-right-single d-flex">
                             <a href="http://qlht.ued.udn.vn/" target="_blank"><img src="/public/user/img/sub-banner/3.png"></a>
@@ -207,14 +210,14 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-12">
-                        <div class="weekly-news-active dot-style d-flex dot-style">
-                            <div class="weekly-single">
+                    <div class="col-lg-8 col-md-12">
+                        <div class="weekly-news-active dot-style d-flex">
+                            <div class="weekly-single active">
                                 <div class="weekly-img">
                                     <img src="http://ued.udn.vn/uploads/news/2020_03/img_8092.jpg" alt="" height="250px">
                                 </div>
                             </div>
-                            <div class="weekly-single active">
+                            <div class="weekly-single ">
                                 <div class="weekly-img">
                                         <img src="http://ued.udn.vn/uploads/news/2019_12/1.jpg" alt="" height="250px">
                                 </div>
@@ -230,6 +233,9 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 w-100 mt-2">
+                                    <iframe src="https://www.youtube.com/embed/pMsZZ1wIWpY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen height="100%" width="100%"></iframe>
                     </div>
                 </div>
            </div>
@@ -299,7 +305,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-8">
+                    <div class="col-lg-8 col-md-12">
                         <!-- Nav Card -->
                         <div class="tab-content" id="nav-tabContent">
                             <!-- card one -->
@@ -334,7 +340,7 @@
                         </div>
                     <!-- End Nav Card -->
                     </div>
-                    <div class="col-4">
+                    <div class="col-lg-4 col-md-12">
                         <div class="trending-title text-uppercase mb-10">
                             Hình ảnh hoạt động
                         </div>
@@ -367,8 +373,8 @@
                                         <span class="sr-only" aria-hidden="true">Next</span>
                                     </a>
                         </div>
-                        <div class="mt-2 w-100">
-                            <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FLi%25C3%25AAn-chi-%25C4%2590o%25C3%25A0n-Gi%25C3%25A1o-d%25E1%25BB%25A5c-M%25E1%25BA%25A7m-non-Tr%25C6%25B0%25E1%25BB%259Dng-%25C4%2590%25E1%25BA%25A1i-h%25E1%25BB%258Dc-S%25C6%25B0-ph%25E1%25BA%25A1m-%25C4%2590H%25C4%2590N-168400530464070%2F&tabs&width=340&height=214&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=1942841682494119" width="100%" height="214" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+                        <div class="mt-2" style="min-width: 100%;">
+                            <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FLi%25C3%25AAn-chi-%25C4%2590o%25C3%25A0n-Gi%25C3%25A1o-d%25E1%25BB%25A5c-M%25E1%25BA%25A7m-non-Tr%25C6%25B0%25E1%25BB%259Dng-%25C4%2590%25E1%25BA%25A1i-h%25E1%25BB%258Dc-S%25C6%25B0-ph%25E1%25BA%25A1m-%25C4%2590H%25C4%2590N-168400530464070%2F&tabs&width=340&height=214&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=1942841682494119" width="100%" height="214" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media" style="width: 100%"></iframe>
                         </div>
                     </div>
                 </div>
@@ -376,18 +382,6 @@
             </div>
         </div>
     </section>
-    {{-- <div class="youtube-area video-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="video-items-active">
-                        <div class="video-items text-center">
-                            <iframe src="https://www.youtube.com/embed/pMsZZ1wIWpY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> --}}
+
 
 @endsection

@@ -2,6 +2,14 @@
     <!-- Header Start -->
    <div class="header-area">
         <div class="main-header ">
+            <div class="header-top d-none d-md-block">
+                <div class="container">
+                     <div class="row d-flex align-items-center justify-content-end">
+                         <img src="/public/user/img/icons/1.png" alt="" class="icons-top">
+                         <img src="/public/user/img/icons/2.png" alt="" class="icons-top1">
+                     </div>
+                </div>
+             </div>
             <div class="header-mid d-none d-md-block">
                <div class="container">
                     <div class="row d-flex align-items-center">

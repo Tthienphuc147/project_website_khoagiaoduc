@@ -2013,6 +2013,20 @@ hr {
 .header-area .header-top {
   padding: 8px 0px;
 }
+.header-area .header-top {
+  padding: 8px 0px;
+  background-color: #b1c997;
+}
+.header-area .header-top .icons-top{
+  width: 25x;
+  height: 25px;
+  margin-right: 4px;
+}
+.header-area .header-top .icons-top1{
+  width: 35x;
+  height: 35px;
+  margin-right: 4px;
+}
 .header-area .header-top .header-info-left ul li {
   color: #fff;
   display: inline-block;
@@ -2471,6 +2485,9 @@ hr {
 .trending-area .trending-main .trand-right-single .trand-right-cap h4 a:hover {
   color: #fc3f00;
 }
+.trending-area .trending-main .trand-right-single .search-inner{
+  width: 22rem;
+}
 .single-bottom:hover .trend-bottom-img img {
   transform: scale(1.1);
 }
@@ -2542,6 +2559,7 @@ hr {
 .weekly-news-area .weekly-wrapper .weekly-single .weekly-img img {
   width: 100%;
   border-radius: 6px;
+  object-fit: cover;
 }
 .weekly-news-area .weekly-wrapper .weekly-single .weekly-caption {
   position: absolute;
@@ -2838,6 +2856,10 @@ hr {
   line-height: 1;
   margin-bottom: 15px;
   display: inline-block;
+}
+.weekly2-caption1 p{
+  font-size: 13px;
+  margin-bottom: 0;
 }
 .weekly2-news-area .weekly2-wrapper .weekly2-single .weekly2-caption h4 a {
   font-size: 18px;
