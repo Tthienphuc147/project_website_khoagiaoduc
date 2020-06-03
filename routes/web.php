@@ -105,8 +105,18 @@ Route::group(['prefix'=>'quantri','middleware'=>'check.login.admin'] , function(
         Route::post('chinhsua/{id1}','Admin\BaiVietController@update');
         Route::get('xoa/{id}/{id1}','Admin\BaiVietController@destroy');
     });
+    //loai media
+    Route::group(['prefix'=>'loaimedia'], function(){
+        Route::get('danhsach','Admin\LoaiMediaController@index');
+        Route::get('themview','Admin\LoaiMediaController@indexThemView');
+        Route::post('them','Admin\LoaiMediaController@store');
+        Route::get('chinhsua/{id1}','Admin\LoaiMediaController@show');
+        Route::post('chinhsua/{id1}','Admin\LoaiMediaController@update');
+        Route::get('xoa/{id}','Admin\LoaiMediaController@destroy');
+    });
     Route::group(['prefix'=>'media'] , function(){
         Route::get('danhsach','Admin\MediaController@index');
+        Route::get('danhsach/{id}','Admin\MediaController@indexById');
         Route::get('themview','Admin\MediaController@indexThemView');
         Route::post('them','Admin\MediaController@store');
         Route::get('chinhsua/{id1}','Admin\MediaController@show');
