@@ -117,13 +117,3 @@
 
 @endsection
 
-@section('admin_script')
-    <!-- data table JS
-        ============================================ -->
-    <script src="/public/admin/js/data-table/bootstrap-table.js"></script>
-    <script src="/public/admin/js/data-table/tableExport.js"></script>
-    <script src="/public/admin/js/data-table/data-table-active.js"></script>
-    <script src="/public/admin/js/data-table/bootstrap-table-resizable.js"></script>
-    <script src="/public/admin/js/data-table/colResizable-1.5.source.js"></script>
-    <script src="/public/admin/js/data-table/bootstrap-table-export.js"></script>
-@endsection

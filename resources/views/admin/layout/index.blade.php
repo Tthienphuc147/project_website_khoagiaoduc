@@ -33,10 +33,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
      <!-- Main CSS-->
      <link href="{{ asset('/public/admin/css/theme.css') }}" rel="stylesheet" media="all">
+     <link rel="stylesheet" href="/public/admin/css/data-table/bootstrap-table.css">
+     <!-- modals CSS
+         ============================================ -->
+     <link rel="stylesheet" href="/public/admin/css/modals.css">
+     <style>
+         .modal-edu-general .modal-body.modal-add {
+             text-align: left;
+             padding: 30px 50px;
+         }
+     </style>
      @yield('admin_css')
 </head>
 
-<body class="animsition">
+<body>
     <div class="page-wrapper">
         @include('admin.layout.header-mobile')
         @include('admin.layout.leftmenu')
@@ -64,11 +74,13 @@
     <script src="{{ asset('/public/admin/vendor/chartjs/Chart.bundle.min.js') }}"></script>
     <script src="{{ asset('/public/admin/vendor/select2/select2.min.js') }}">
     </script>
-
-    <!-- Main JS-->
+    <script src="/public/admin/js/data-table/bootstrap-table.js"></script>
+    <script src="/public/admin/js/data-table/tableExport.js"></script>
+    <script src="/public/admin/js/data-table/data-table-active.js"></script>
+    <script src="/public/admin/js/data-table/bootstrap-table-resizable.js"></script>
+    <script src="/public/admin/js/data-table/colResizable-1.5.source.js"></script>
+    <script src="/public/admin/js/data-table/bootstrap-table-export.js"></script>
     <script src="{{ asset('/public/admin/js/main.js') }}"></script>
-    <script src="{{ asset('js/notifications/Lobibox.js') }}"></script>
-    @yield('admin_script')
 </body>
 
 </html>
