@@ -37,7 +37,7 @@
                                 <label for="text-input" class=" form-control-label">Chọn tuần</label>
                             </div>
                             <div class="col-12 col-md-9">
-                            <input type="week" id="tuan" name="tuan"  placeholder="{{$data->thoi_gian_bat_dau}}" class="form-control" required>
+                            <input type="week" id="tuan" name="tuan"  placeholder="{{$data->thoi_gian_bat_dau}}" class="form-control" >
 
                             </div>
                         </div>

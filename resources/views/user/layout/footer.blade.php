@@ -12,12 +12,13 @@
                              </div>
                              <div class="footer-tittle ml-3">
                                  <div class="footer-pera">
-                                     <p class="mb-1">Khoa Giáo dục Mầm non thuộc Trường Đại học Sư phạm - Đại học Đà Nẵng với uy tín từ bề dày công tác đào tạo và bồi dưỡng giáo viên mầm non.
+                                     <p class="mb-1">
+                                         {{$all_cau_hinh->mo_ta}}
                                      </p>
                                      <div class="d-flex flex-column text-white">
                                         <span>Khoa Giáo dục Mầm non: P.302 - Nhà B1 - Trường Đại học Sư phạm - Đại học Đà Nẵng</span>
-                                        <span>Số điện thoại liên hệ: 0898.204 204 (#112) (hotline tuyển sinh)</span>
-                                        <span>Số điện thoại liên hệ: 0236.6567226 (văn phòng khoa)</span>
+                                        <span>Số điện thoại liên hệ: {{$all_cau_hinh->so_dien_thoai}}</span>
+                                        <span>Số điện thoại liên hệ: {{$all_cau_hinh->so_dien_thoai_khoa}}</span>
                                      </div>
                                  </div>
                              </div>

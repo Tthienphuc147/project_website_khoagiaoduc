@@ -72,6 +72,8 @@ class AppServiceProvider extends ServiceProvider
             ->where('danh_muc_bai_viets.id','=','9')
             ->select('loai_bai_viets.*')
             ->get();
+            $all_cau_hinh = DB::table('cau_hinh_web')
+            ->first();
             $view->with([
                 'all_share_danh_muc_tin_tuc' => $all_share_danh_muc_tin_tuc,
                 'all_share_danh_muc_dao_tao' => $all_share_danh_muc_dao_tao,
@@ -81,7 +83,8 @@ class AppServiceProvider extends ServiceProvider
                 'all_share_danh_muc_tuyen_sinh' => $all_share_danh_muc_tuyen_sinh,
                 'all_share_danh_muc_hop_tac' => $all_share_danh_muc_hop_tac,
                 'all_share_danh_muc_tuyen_dung' => $all_share_danh_muc_tuyen_dung,
-                'all_share_danh_muc_gioi_thieu' => $all_share_danh_muc_gioi_thieu
+                'all_share_danh_muc_gioi_thieu' => $all_share_danh_muc_gioi_thieu,
+                'all_cau_hinh' => $all_cau_hinh
             ]);
         });
 

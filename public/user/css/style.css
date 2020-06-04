@@ -5760,3 +5760,15 @@ del {
 #main-carousel1 .carousel-inner,#main-carousel1 .carousel-inner img{
   min-height: 15rem;
 }
+#image-gallery .modal-footer{
+  display: block;
+}
+
+.thumb{
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.tab-content img{
+  width: 100%;
+}

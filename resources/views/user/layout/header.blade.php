@@ -80,6 +80,7 @@
                                                 @foreach ($all_share_danh_muc_sinh_vien as $item)
                                                 <li><a href="/loai-bai-viet/{{$item->id}}">{{$item->ten}}</a></li>
                                                 @endforeach
+                                                <li><a href="/vanban/b1">Văn bản cho sinh viên</a></li>
                                             </ul>
                                         </li>
                                         <li><a href="#">Hợp tác</a>
@@ -96,8 +97,9 @@
                                                 @endforeach
                                             </ul>
                                         </li>
-                                        <li><a href="#">Thư viện hình ảnh</a>
+                                        <li><a href="/thuvien">Thư viện hình ảnh</a>
                                         </li>
+                                        
                                     </ul>
                                 </nav>
                             </div>

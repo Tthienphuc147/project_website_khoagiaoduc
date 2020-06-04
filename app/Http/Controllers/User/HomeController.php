@@ -68,6 +68,14 @@ class HomeController extends Controller
         ->get();
         $slide = DB::table('slides')
         ->get();
-        return view('user.pages.home-page')->with(compact('thong_bao_noi_bat','tin_tuc_noi_bat','tin_tuc_top','thong_bao','tin_tuc','dao_tao','sinh_vien','slide'));
+        $album = DB::table('media')
+        ->where('media.id_loai_media','=','1')
+        ->inRandomOrder()
+        ->get();
+        $album1 = DB::table('media')
+        ->where('media.id_loai_media','!=','1')
+        ->inRandomOrder()
+        ->get();
+        return view('user.pages.home-page')->with(compact('thong_bao_noi_bat','tin_tuc_noi_bat','tin_tuc_top','thong_bao','tin_tuc','dao_tao','sinh_vien','slide','album','album1'));
     }
 }

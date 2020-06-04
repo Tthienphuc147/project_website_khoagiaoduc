@@ -215,30 +215,22 @@
                 <div class="row">
                     <div class="col-lg-8 col-md-12">
                         <div class="weekly-news-active dot-style d-flex">
+                            @foreach ($album as $key=>$item)
+                            @if ($key==0)
                             <div class="weekly-single active">
-                                <div class="weekly-img">
-                                    <img src="http://ued.udn.vn/uploads/news/2020_03/img_8092.jpg" alt="" height="250px">
-                                </div>
-                            </div>
-                            <div class="weekly-single ">
-                                <div class="weekly-img">
-                                        <img src="http://ued.udn.vn/uploads/news/2019_12/1.jpg" alt="" height="250px">
-                                </div>
-                            </div>
+                            @else
                             <div class="weekly-single">
+                            @endif
                                 <div class="weekly-img">
-                                        <img src="http://ued.udn.vn/uploads/news/2019_12/2.jpg" alt="" height="250px">
+                                    <img src="/public/upload/image/{{$item->url}}" alt="" height="250px">
                                 </div>
                             </div>
-                            <div class="weekly-single">
-                                <div class="weekly-img">
-                                    <img src="http://ued.udn.vn/uploads/news/2019_12/2.jpg" alt="" height="250px">
-                                </div>
-                            </div>
+                            @endforeach
+                           
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-12 w-100 mt-2">
-                                    <iframe src="https://www.youtube.com/embed/pMsZZ1wIWpY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen height="100%" width="100%"></iframe>
+                                    <iframe src="{{$all_cau_hinh->link_video}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen height="100%" width="100%"></iframe>
                     </div>
                 </div>
            </div>
@@ -356,15 +348,15 @@
                                     </ol><!-- /.carousel-indicators -->
 
                                     <div class="carousel-inner">
+                                        @foreach ($album1 as $key=>$item)
+                                        @if ($key == 0)
                                         <div class="carousel-item active">
-                                            <img class="d-block img-fluid" src="https://scontent.fsgn2-3.fna.fbcdn.net/v/t1.0-9/75412152_473268519977268_8075841622442508288_o.jpg?_nc_cat=106&_nc_sid=8024bb&_nc_ohc=FJs9R5P14BQAX_RfmCG&_nc_ht=scontent.fsgn2-3.fna&oh=c7d5af1da49e5133089a0b97085bdaac&oe=5EE517E9" alt="">
-                                        </div>
+                                        @else
                                         <div class="carousel-item">
-                                            <img class="d-block img-fluid" src="https://scontent.fsgn2-2.fna.fbcdn.net/v/t1.0-9/81387568_512066679430785_7295363017271672832_o.jpg?_nc_cat=103&_nc_sid=e007fa&_nc_ohc=IAdGRQEu7L0AX8aAbuw&_nc_ht=scontent.fsgn2-2.fna&oh=0e085970a959320c5538b32d11f2358b&oe=5EE3D2BF" alt="">
+                                        @endif
+                                            <img class="d-block img-fluid" src="/public/upload/image/{{$item->url}}" alt="">
                                         </div>
-                                        <div class="carousel-item">
-                                            <img class="d-block img-fluid" src="https://scontent.fsgn2-1.fna.fbcdn.net/v/t1.0-9/76619239_478306139473506_812584082708889600_o.jpg?_nc_cat=105&_nc_sid=8024bb&_nc_ohc=wbYt0g9xg6cAX-5BcOB&_nc_ht=scontent.fsgn2-1.fna&oh=6988a6febb5cc343cbc5cf05f8782b7a&oe=5EE6A0A0" alt="">
-                                        </div>
+                                        @endforeach
                                     </div><!-- /.carousel-inner -->
 
                                     <a href="#main-carousel1" class="carousel-control-prev" data-slide="prev">

@@ -49,14 +49,14 @@
                     </ul>
                 </li>
                 @endif
-                @if (request()->session()->get('quyen_media') == 1)
+                @if (request()->session()->get('quyen_danh_muc_media') != 1)
                 <li class="has-sub">
                     <a class="js-arrow" href="#">
                         <i class="fas fa-copy"></i>Danh Mục Media</a>
                     <ul class="list-unstyled navbar__sub-list js-sub-list">
                         <li>
                             <a href="/quantri/loaimedia/danhsach">Danh sách</a>
-                            <a href="/quantri/loaimedia/them">Thêm</a>
+                            <a href="/quantri/loaimedia/themview">Thêm</a>
                         </li>
                     </ul>
                 </li>

@@ -17,6 +17,11 @@ Route::group(['prefix'=>''] , function(){
     Route::get('lien-he','User\ThongTinLienHeController@getLienHe');
     Route::post('lien-he','User\ThongTinLienHeController@postLienHe');
     Route::post('tim-kiem','User\LiveSearchController@getSearch');
+    Route::get('thuvien','User\ThuVienController@show');
+    Route::get('lich-cong-tac','User\LichCongTacController@show');
+    Route::get('lich/c{id}','User\LichCongTacController@getLich');
+    Route::get('album/b{id}','User\ThuVienController@getAlbum');
+    Route::get('vanban/b{id}','User\VanbanController@getVanBan');
 });
 // ----------------------------------------- //
 
@@ -78,6 +83,7 @@ Route::group(['prefix'=>'quantri','middleware'=>'check.login.admin'] , function(
         Route::post('chinhsua/{id}','Admin\SlidesController@update');
         Route::get('xoa/{id}','Admin\SlidesController@destroy');
     });
+    //loai_bai_viet
     Route::group(['prefix'=>'loaibaiviet'] , function(){
         Route::get('danhsach','Admin\LoaiBaiVietController@index');
         Route::get('themview','Admin\LoaiBaiVietController@indexThemView');
@@ -86,10 +92,12 @@ Route::group(['prefix'=>'quantri','middleware'=>'check.login.admin'] , function(
         Route::post('chinhsua/{id}','Admin\LoaiBaiVietController@update');
         Route::get('xoa/{id}','Admin\LoaiBaiVietController@destroy');
     });
+    //cau_hinh_website
     Route::group(['prefix'=>'cauhinh'] , function(){
         Route::get('chinhsua','Admin\CauHinhWebsiteController@show');
         Route::post('chinhsua','Admin\CauHinhWebsiteController@update');
     });
+    //lich_cong_tac
     Route::group(['prefix'=>'lichcongtac'] , function(){
         Route::get('danhsach','Admin\LichCongTacController@index');
         Route::get('themview','Admin\LichCongTacController@indexThemView');
@@ -98,6 +106,7 @@ Route::group(['prefix'=>'quantri','middleware'=>'check.login.admin'] , function(
         Route::post('chinhsua/{id}','Admin\LichCongTacController@update');
         Route::get('xoa/{id}','Admin\LichCongTacController@destroy');
     });
+    //bai_viet
     Route::group(['prefix'=>'baiviet'] , function(){
         Route::get('danhsach/{id}','Admin\BaiVietController@index');
         Route::get('themview','Admin\BaiVietController@indexThemView');
@@ -115,6 +124,7 @@ Route::group(['prefix'=>'quantri','middleware'=>'check.login.admin'] , function(
         Route::post('chinhsua/{id1}','Admin\LoaiMediaController@update');
         Route::get('xoa/{id}','Admin\LoaiMediaController@destroy');
     });
+    //media
     Route::group(['prefix'=>'media'] , function(){
         Route::get('danhsach','Admin\MediaController@index');
         Route::get('danhsach/{id}','Admin\MediaController@indexById');
