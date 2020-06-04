@@ -44,7 +44,18 @@
 
                             </div>
                         </div>
-
+                        <div class="row form-group">
+                            <div class="col col-md-3">
+                                <label for="selectLg" class=" form-control-label">Chọn danh mục</label>
+                            </div>
+                            <div class="col-12 col-md-9">
+                                <select name="id_loai_media" id="id_loai_media" class="form-control-lg form-control">
+                                    @foreach($data as $item)
+                                    <option value="{{$item->id}}">{{$item->ten}}</option>
+                                    @endforeach;
+                                </select>
+                            </div>
+                        </div>
 
 
                         <div class="card-footer">

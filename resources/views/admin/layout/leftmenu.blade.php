@@ -52,10 +52,23 @@
                 @if (request()->session()->get('quyen_media') == 1)
                 <li class="has-sub">
                     <a class="js-arrow" href="#">
+                        <i class="fas fa-copy"></i>Danh Mục Media</a>
+                    <ul class="list-unstyled navbar__sub-list js-sub-list">
+                        <li>
+                            <a href="/quantri/loaimedia/danhsach">Danh sách</a>
+                            <a href="/quantri/loaimedia/them">Thêm</a>
+                        </li>
+                    </ul>
+                </li>
+                @endif
+                @if (request()->session()->get('quyen_media') == 1)
+                <li class="has-sub">
+                    <a class="js-arrow" href="#">
                         <i class="fas fa-copy"></i>Media</a>
                     <ul class="list-unstyled navbar__sub-list js-sub-list">
                         <li>
                             <a href="/quantri/media/danhsach">Danh sách</a>
+                            <a href="/quantri/media/them">Thêm</a>
                         </li>
                     </ul>
                 </li>

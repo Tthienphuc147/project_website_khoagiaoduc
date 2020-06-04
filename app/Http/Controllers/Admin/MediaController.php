@@ -19,9 +19,16 @@ class MediaController extends Controller
         $media= Media::all();
         return view("admin.pages.media.danhsach")->with('data',$media);
     }
+    public function indexById($id){
+        $media= Media::where('id_loai_media','=',$id)->get();
+        if ($media)
+        return view("admin.pages.media.danhsach")->with('data',$media);
+        return view('admin.pages.error403');
+    }
     public function indexThemView()
     {
-        return view("admin.pages.media.them");
+        $loai_media = LoaiMedia::all();
+        return view("admin.pages.media.them") -> with('data', $loai_media);
     }
     public function changeKey($len)
     {
@@ -61,14 +68,16 @@ class MediaController extends Controller
                 $img_file->move('public/upload/image/',$random_file_name);
                 $media->url=$random_file_name;
             }
+            $media->id_loai_media = $request -> input('id_loai_media');
             $media->save();
             DB::commit();
-            return view("admin.pages.media.them")->with('message','Thêm thành công');
+            $loai_media = LoaiMedia::all();
+                return view("admin.pages.media.them")->with('message','Thêm thành công')->with('data',$loai_media);
         }
         catch(Exception $e){
             DB::rollback();
         }
-        return view("admin.pages.media.them")->with('message','thêm thất bại');
+        return view("admin.pages.media.them")->with('message','thêm thất bại')->with('data',$loai_media);
 
 }
 return view('admin.pages.error403');
@@ -84,9 +93,10 @@ return view('admin.pages.error403');
     {
         if(request()->session()->get('quyen_media'))
         {
-        $media= Media::find($id);
-        if(!empty($media)){
-            return view("admin.pages.media.sua")->with('data',$media);
+            $loai_media = LoaiMedia::all();
+            $media= Media::find($id);
+            if(!empty($media)){
+                return view("admin.pages.media.sua")->with('data',$media)->with('loai_media',$loai_media);
         }
         return redirect('/quantri/media/danhsach');
     }
@@ -123,9 +133,11 @@ return view('admin.pages.error403');
                     $img_file->move('public/upload/image/',$random_file_name);
                     $media->url=$random_file_name;
                 }
+                $media->id_loai_media = $request -> input('id_loai_media');
                 $media->save();
                 DB::commit();
-                return view("admin.pages.media.sua")->with('data',$media)->with('message','Sửa thành công');
+                $loai_media = LoaiMedia::all();
+                return view("admin.pages.media.sua")->with('data',$media)->with('message','Sửa thành công')->with('loai_media',$loai_media);
             }
             catch(Exception $e){
                 DB::rollback();

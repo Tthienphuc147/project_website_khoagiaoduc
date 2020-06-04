@@ -342,6 +342,22 @@ INSERT INTO `loai_van_bans` (`id`, `ten`, `created_at`, `updated_at`) VALUES
 (2, 'Loại 2', '2020-05-31 07:25:54', NULL);
 
 -- --------------------------------------------------------
+--
+-- Table structure for table `loai_media`
+--
+CREATE TABLE `loai_media` (
+  `id` bigint(20) NOT NULL,
+  `ten` text NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+--
+-- Dumping dât for table `loai_media`
+--
+INSERT INTO `loai_media` (`id`, `ten`, `created_at`, `updated_at`) VALUES
+(1, 'Mặc định', '2020-05-31 22:56:30', '2020-05-31 22:57:52');
+-- ----------------------------------------------------------------
+
 
 --
 -- Table structure for table `media`
@@ -350,6 +366,7 @@ INSERT INTO `loai_van_bans` (`id`, `ten`, `created_at`, `updated_at`) VALUES
 CREATE TABLE `media` (
   `id` bigint(20) NOT NULL,
   `url` text NOT NULL,
+  `id_loai_media` bigint(20) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -358,8 +375,8 @@ CREATE TABLE `media` (
 -- Dumping data for table `media`
 --
 
-INSERT INTO `media` (`id`, `url`, `created_at`, `updated_at`) VALUES
-(10, 'BPT4_suphamdanang.jpg', '2020-05-31 22:56:30', '2020-05-31 22:57:52');
+INSERT INTO `media` (`id`, `url`, `id_loai_media`, `created_at`, `updated_at`) VALUES
+(10, 'BPT4_suphamdanang.jpg', 1 ,'2020-05-31 22:56:30', '2020-05-31 22:57:52');
 
 -- --------------------------------------------------------
 
@@ -607,11 +624,15 @@ ALTER TABLE `loai_van_bans`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `loai_media`
+--
+ALTER TABLE `loai_media`
+  ADD PRIMARY KEY (`id`);
+--
 -- Indexes for table `media`
 --
 ALTER TABLE `media`
   ADD PRIMARY KEY (`id`);
-
 --
 -- Indexes for table `phan_quyens`
 --
@@ -721,6 +742,11 @@ ALTER TABLE `loai_van_bans`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT for table `loai_media`
+--
+ALTER TABLE `loai_media`
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+--
 -- AUTO_INCREMENT for table `media`
 --
 ALTER TABLE `media`
@@ -784,6 +810,13 @@ ALTER TABLE `users`
 --
 ALTER TABLE `van_ban_bieu_maus`
   ADD CONSTRAINT `van_ban_bieu_maus_ibfk_1` FOREIGN KEY (`id_loai_van_ban`) REFERENCES `loai_van_bans` (`id`);
+
+  --
+-- Constraints for table `media`
+--
+ALTER TABLE `media`
+  ADD CONSTRAINT `media_ibfk_1` FOREIGN KEY (`id_loai_media`) REFERENCES `loai_media` (`id`);
+
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
