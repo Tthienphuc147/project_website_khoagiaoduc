@@ -8,14 +8,15 @@
                             <div class="header-right-btn f-right d-none d-lg-block">
                         <i class="fas fa-search special-tag"></i>
                         <div class="search-box">
-                        <form action="#">
-                        <input type="text" placeholder="Tìm kiếm">
+                        <form action="/tim-kiem" method="POST">
+                        @csrf
+                        <input name="keyword" type="text" placeholder="Tìm kiếm">
 
                        </form>
                         </div>
                        </div>
-                         <img src="/public/user/img/icons/1.png" alt="" class="icons-top ml-2">
-                         <img src="/public/user/img/icons/2.png" alt="" class="icons-top1">
+                       <a href="https://www.facebook.com/Li%C3%AAn-chi-%C4%90o%C3%A0n-Gi%C3%A1o-d%E1%BB%A5c-M%E1%BA%A7m-non-Tr%C6%B0%E1%BB%9Dng-%C4%90%E1%BA%A1i-h%E1%BB%8Dc-S%C6%B0-ph%E1%BA%A1m-%C4%90H%C4%90N-168400530464070/" target="_blank"><img src="/public/user/img/icons/1.png" alt="" class="icons-top ml-2"></a>
+                         <a href="https://www.youtube.com/channel/UC5UQqeVCSAeVcOPAX-a0oYg " target="_blank"><img src="/public/user/img/icons/2.png" alt="" class="icons-top1"></a>
                      </div>
                 </div>
              </div>

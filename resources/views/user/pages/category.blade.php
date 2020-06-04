@@ -28,7 +28,7 @@
 
     </div>
     <section class="whats-news-area pt-50 pb-30">
-        <div class="container">
+        <div class="container pb-100">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="row">
@@ -53,7 +53,7 @@
                                                     </div>
                                                     <div class="what-cap">
                                                         <span class="color1">{{$item->ten_loai}}</span>
-                                                        <h4><a href="/bai-viet/a{{$item->id}}">{{$item->tieu_de, 100}}</a></h4>
+                                                        <h4><a href="/bai-viet/a{{$item->id}}">{{$item->tieu_de}}</a></h4>
                                                     </div>
                                                 </div>
                                             </div>
@@ -67,6 +67,9 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="row mt-5 d-flex justify-content-end">
+                {{$loai_bai_viet->links()}}
             </div>
         </div>
     </section>

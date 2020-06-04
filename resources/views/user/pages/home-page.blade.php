@@ -95,7 +95,7 @@
                                     @foreach ($thong_bao as $item)
                                     <div class="weekly2-single p-2">
                                         <div class="weekly2-img">
-                                            <img src="https://www.sonoivu.haugiang.gov.vn/uploads/news/2019_05/thong-bao.jpg" alt="" width="100%">
+                                            <img src="/public/user/img/thong-bao.jpg" alt="" width="100%">
                                         </div>
                                         <div class="weekly2-caption weekly2-caption1">
                                             <p>{{date('d-m-Y', strtotime($item->created_at))}}</p>
@@ -125,6 +125,9 @@
                         </div>
                         <div class="trand-right-single d-flex">
                             <a href="http://ued.udn.vn/" target="_blank"><img src="/public/user/img/sub-banner/1.png" ></a>
+                        </div>
+                        <div class="trand-right-single d-flex">
+                            <a href="http://tuyensinh.ued.udn.vn/" target="_blank"><img src="/public/user/img/sub-banner/4.png" ></a>
                         </div>
                         <div class="trand-right-single d-flex">
                             <a href="http://thuvien.ued.udn.vn:8080/dspace/" target="_blank"><img src="/public/user/img/sub-banner/2.png"></a>

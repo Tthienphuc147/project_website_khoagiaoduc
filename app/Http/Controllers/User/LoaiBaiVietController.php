@@ -15,14 +15,14 @@ class LoaiBaiVietController extends Controller
         ->select('bai_viets.*','loai_bai_viets.ten as ten_loai')
         ->where('bai_viets.id_loai_bai_viet','=','2')
         ->orderBy('created_at', 'DESC')
-        ->take(3)
+        ->take(4)
         ->get();
         $loai_bai_viet = DB::table('bai_viets') ->join('loai_bai_viets','bai_viets.id_loai_bai_viet','=','loai_bai_viets.id')
         ->where('bai_viets.id_loai_bai_viet','=',$id_loai_bai_viet)
         ->select('bai_viets.*','loai_bai_viets.ten as ten_loai')
         ->inRandomOrder()
         ->orderBy('created_at', 'DESC')
-        ->get();
+        ->paginate(6);
 
 		if($loai_bai_viet != null){
             $ten_danh_muc ='';

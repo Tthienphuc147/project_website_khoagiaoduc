@@ -16,6 +16,7 @@ Route::group(['prefix'=>''] , function(){
     Route::get('loai-bai-viet/{id}','User\LoaiBaiVietController@getLoaiBaiViet');
     Route::get('lien-he','User\ThongTinLienHeController@getLienHe');
     Route::post('lien-he','User\ThongTinLienHeController@postLienHe');
+    Route::post('tim-kiem','User\LiveSearchController@getSearch');
 });
 // ----------------------------------------- //
 
