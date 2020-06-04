@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 04, 2020 at 12:57 PM
+-- Generation Time: Jun 04, 2020 at 03:36 PM
 -- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.2
+-- PHP Version: 7.4.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -232,10 +232,10 @@ CREATE TABLE `lien_he` (
 
 INSERT INTO `lien_he` (`id`, `ten`, `so_dien_thoai`, `email`, `tieu_de_lien_he`, `noi_dung_lien_he`, `lop`, `is_read`, `created_at`, `updated_at`) VALUES
 (1, 'ádasda', '0766699027', 'nghiadh2016@gmail.com', 'ádasđâsdsad', 'ádasdsad', '16CNTT01', 0, '2020-05-31 02:57:29', '2020-05-31 02:57:29'),
-(2, 'ádasda', '0766699027', 'nghiadh2016@gmail.com', 'ádasđâsdsad', 'adssadsa', '16CNTT01', 0, '2020-05-31 02:58:27', '2020-05-31 02:58:27'),
-(3, '123123', '0766699027', 'a@gmail.com', 'ádasdaasd', 'ádasdsa', '16CNTT01', 0, '2020-05-31 03:01:16', '2020-05-31 03:01:16'),
-(4, '123123', '123123123123', 'nghiadh2016@gmail.com', 'sadasdasd', 'ádasd', '16CNTT01', 0, '2020-05-31 03:03:58', '2020-05-31 03:03:58'),
-(5, '1231', '123123123123', 'nghiadh2016@gmail.com', '21312213', 'ádasdasd', '16CNTT01', 0, '2020-05-31 03:09:09', '2020-05-31 03:09:09'),
+(2, 'ádasda', '0766699027', 'dthienphuc147@gmail.com', 'ádasđâsdsad', 'adssadsa', '16CNTT01', 0, '2020-05-31 02:58:27', '2020-06-04 13:13:16'),
+(3, '123123', '0766699027', 'dthienphuc147@gmail.com', 'ádasdaasd', 'ádasdsa', '16CNTT01', 1, '2020-05-31 03:01:16', '2020-06-04 13:18:33'),
+(4, '123123', '123123123123', 'nghiadh2016@gmail.com', 'sadasdasd', 'ádasd', '16CNTT01', 1, '2020-05-31 03:03:58', '2020-06-04 13:21:15'),
+(5, '1231', '123123123123', 'nghiadh2016@gmail.com', '21312213', 'ádasdasd', '16CNTT01', 1, '2020-05-31 03:09:09', '2020-06-04 13:23:40'),
 (6, '1231', '123123123123', 'nghiadh2016@gmail.com', '21312213', 'ádasdasd', '16CNTT01', 0, '2020-05-31 03:09:13', '2020-05-31 03:09:13'),
 (7, '1231', '123123123123', 'nghiadh2016@gmail.com', '21312213', 'ádasdasd', '16CNTT01', 0, '2020-05-31 03:09:15', '2020-05-31 03:09:15'),
 (8, '1231', '123123123123', 'nghiadh2016@gmail.com', '21312213', 'ádasdasd', '16CNTT01', 0, '2020-05-31 03:09:16', '2020-05-31 03:09:16'),
@@ -408,6 +408,25 @@ INSERT INTO `media` (`id`, `url`, `created_at`, `updated_at`, `id_loai_media`) V
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `password_resets`
+--
+
+CREATE TABLE `password_resets` (
+  `email` varchar(191) NOT NULL,
+  `token` varchar(191) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `password_resets`
+--
+
+INSERT INTO `password_resets` (`email`, `token`, `created_at`) VALUES
+('dthienphuc147@gmail.com', 'DekIUQ', '2020-06-04 12:52:38');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `phan_quyens`
 --
 
@@ -426,31 +445,32 @@ CREATE TABLE `phan_quyens` (
   `cau_hinh_website` tinyint(4) NOT NULL DEFAULT 0,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp(),
-  `media` tinyint(4) NOT NULL DEFAULT 0
+  `media` tinyint(4) NOT NULL DEFAULT 0,
+  `loai_media` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `phan_quyens`
 --
 
-INSERT INTO `phan_quyens` (`id`, `id_admin`, `trang_gioi_thieu`, `danh_muc_bai_viet`, `loai_bai_viet`, `loai_van_ban`, `van_ban`, `slide`, `goc_hoi_dap`, `tai_khoan`, `lich_cong_tac`, `cau_hinh_website`, `created_at`, `updated_at`, `media`) VALUES
-(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, '2020-05-31 02:32:08', '2020-05-31 06:25:19', 1),
-(2, 2, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, '2020-05-31 04:14:12', '2020-05-30 21:58:45', 0),
-(3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, '2020-05-31 04:16:16', '2020-05-30 21:57:57', 0),
-(4, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2020-05-31 11:07:35', NULL, 0),
-(5, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2020-05-31 11:49:52', NULL, 0),
-(6, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2020-05-31 11:51:47', NULL, 0),
-(7, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2020-05-31 11:53:28', NULL, 0),
-(8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2020-05-31 11:54:50', NULL, 0),
-(9, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2020-05-31 11:56:03', NULL, 0),
-(10, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2020-05-31 11:56:46', NULL, 0),
-(11, 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2020-05-31 11:57:31', NULL, 0),
-(12, 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2020-05-31 11:58:19', NULL, 0),
-(13, 13, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, '2020-05-31 11:59:10', '2020-06-02 06:56:12', 1),
-(14, 14, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2020-05-31 11:59:58', NULL, 0),
-(15, 15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2020-05-31 12:01:02', NULL, 0),
-(16, 16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2020-05-31 12:02:57', NULL, 0),
-(17, 17, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2020-05-31 12:03:51', '2020-05-31 16:44:47', 0);
+INSERT INTO `phan_quyens` (`id`, `id_admin`, `trang_gioi_thieu`, `danh_muc_bai_viet`, `loai_bai_viet`, `loai_van_ban`, `van_ban`, `slide`, `goc_hoi_dap`, `tai_khoan`, `lich_cong_tac`, `cau_hinh_website`, `created_at`, `updated_at`, `media`, `loai_media`) VALUES
+(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, '2020-05-31 02:32:08', '2020-06-04 13:31:05', 1, 1),
+(2, 2, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, '2020-05-31 04:14:12', '2020-05-30 21:58:45', 0, 0),
+(3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, '2020-05-31 04:16:16', '2020-05-30 21:57:57', 0, 0),
+(4, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2020-05-31 11:07:35', NULL, 0, 0),
+(5, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2020-05-31 11:49:52', NULL, 0, 0),
+(6, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2020-05-31 11:51:47', NULL, 0, 0),
+(7, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2020-05-31 11:53:28', NULL, 0, 0),
+(8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2020-05-31 11:54:50', NULL, 0, 0),
+(9, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2020-05-31 11:56:03', NULL, 0, 0),
+(10, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2020-05-31 11:56:46', NULL, 0, 0),
+(11, 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2020-05-31 11:57:31', NULL, 0, 0),
+(12, 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2020-05-31 11:58:19', NULL, 0, 0),
+(13, 13, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, '2020-05-31 11:59:10', '2020-06-02 06:56:12', 1, 0),
+(14, 14, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2020-05-31 11:59:58', NULL, 0, 0),
+(15, 15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2020-05-31 12:01:02', NULL, 0, 0),
+(16, 16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2020-05-31 12:02:57', NULL, 0, 0),
+(17, 17, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2020-05-31 12:03:51', '2020-05-31 16:44:47', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -535,7 +555,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `ten_dang_nhap`, `ho_va_ten`, `password`, `email`, `so_dien_thoai`, `id_role`, `created_at`, `updated_at`, `cap_bac`, `avatar`, `link`) VALUES
-(1, 'admin', 'admin', '$2y$12$SmaPqX/jFd/sfGtYiYbfQ.0BlTTHwYoHE0OgbDjE8cSVK1q9w4qUK', 'admin@gmail.com', 'a', 2, '2020-05-23 10:59:24', '2020-05-31 15:01:23', 1, '/public/public/upload/image/15909372832.jpg', ''),
+(1, 'admin', 'admin', '$2y$10$cygJ26G0kduDYLBD7Qdkz.LM6wVPIpDoTORyEjCkij4tKw1PexwW6', 'dthienphuc147@gmail.com', 'a', 2, '2020-05-23 10:59:24', '2020-06-04 12:53:10', 1, '/public/public/upload/image/15909372832.jpg', ''),
 (5, 'vovanminh', 'PGS.TS VÕ VĂN MINH', '$2y$10$7NIzAdxOpf8zB7qvUuMdMO7wg2U20pyoO5HY4hJjCTrlRyTnK8Y8K', NULL, 'http://scv.udn.vn/vvminh', 1, '2020-05-31 04:49:52', '2020-05-31 16:38:26', 1, '1590942741133.007.00403.jpg', 'http://scv.udn.vn/vvminh'),
 (6, 'tonnudieuhang', 'ThS. Tôn Nữ Diệu Hằng', '$2y$10$AqfSHTZio1AlNO1LHTexLeHwwvxl61XZgBDY.XZG0DG96gl52/Wym', NULL, 'http://scv.ued.udn.vn/ly_lich/chi_tiet/240', 1, '2020-05-31 04:51:47', '2020-05-31 16:38:34', 2, '15909427671.jpg', 'http://scv.ued.udn.vn/ly_lich/chi_tiet/240'),
 (7, 'lethithanhnhan', 'ThS.GVC Lê Thị Thanh Nhàn', '$2y$10$Vp.eEiqgFYcJF93JaYTFvupT12JnHgK.BNuSXpW/Wh.ICXtpwlFbC', NULL, 'http://scv.udn.vn/lttnhan', 1, '2020-05-31 04:53:28', '2020-05-31 16:38:39', 3, '159094278432.jpg', 'http://scv.udn.vn/lttnhan'),
@@ -658,6 +678,12 @@ ALTER TABLE `loai_van_bans`
 --
 ALTER TABLE `media`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `password_resets`
+--
+ALTER TABLE `password_resets`
+  ADD KEY `email` (`email`);
 
 --
 -- Indexes for table `phan_quyens`
