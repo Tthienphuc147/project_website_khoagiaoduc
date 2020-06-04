@@ -126,14 +126,17 @@
                         <div class="trand-right-single d-flex">
                             <a href="http://ued.udn.vn/" target="_blank"><img src="/public/user/img/sub-banner/1.png" ></a>
                         </div>
-                        <div class="trand-right-single d-flex">
+                        {{-- <div class="trand-right-single d-flex">
                             <a href="http://tuyensinh.ued.udn.vn/" target="_blank"><img src="/public/user/img/sub-banner/4.png" ></a>
-                        </div>
+                        </div> --}}
                         <div class="trand-right-single d-flex">
                             <a href="http://thuvien.ued.udn.vn:8080/dspace/" target="_blank"><img src="/public/user/img/sub-banner/2.png"></a>
                         </div>
                         <div class="trand-right-single d-flex">
                             <a href="http://qlht.ued.udn.vn/" target="_blank"><img src="/public/user/img/sub-banner/3.png"></a>
+                        </div>
+                        <div class="trand-right-single d-flex">
+                            <a href="/lich-cong-tac" target="_blank"><img src="/public/user/img/3.png"></a>
                         </div>
                         <div class="trand-right-single d-flex ">
                             <div class="trand-right-img mr-2">
@@ -226,7 +229,7 @@
                                 </div>
                             </div>
                             @endforeach
-                           
+
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-12 w-100 mt-2">

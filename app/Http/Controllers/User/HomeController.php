@@ -31,7 +31,7 @@ class HomeController extends Controller
         ->select('bai_viets.*','loai_bai_viets.ten as ten_loai')
         ->where('bai_viets.id_loai_bai_viet','=','1')
         ->orderBy('created_at', 'DESC')
-        ->take(5)
+        ->take(6)
         ->get();
         $thong_bao = DB::table('bai_viets')
         ->join('loai_bai_viets','bai_viets.id_loai_bai_viet','=','loai_bai_viets.id')
