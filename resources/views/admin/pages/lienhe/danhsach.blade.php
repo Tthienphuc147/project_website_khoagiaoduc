@@ -74,16 +74,16 @@
                                         <td>{{ $item->lop }}</td>
                                         <td>{{ $item->email }}</td>
                                         <td>
-                                            {{-- <button title="Xóa" class="pd-setting-ed" onclick="deleteID({{$item->id }});">
+                                              {{-- <button title="Xóa" class="pd-setting-ed" onclick="deleteID({{$item->id }});">
                                                 <i class="fa fa-trash mr-3" aria-hidden="true"></i>
                                             </button> --}}
-                                            {{-- <button title="Trả lời liên hệ" class="pd-setting-ed" onclick="sendContact({{$item->id }});">
+                                            <a href="/quantri/gochoidap/hotro/chinhsua/{{ $item->id }}"> <button title="Trả lời liên hệ" class="pd-setting-ed">
                                                 <i class="fa fa-send mr-3" aria-hidden="true"></i>
-                                            </button> --}}
+                                            </button></a>
                                         </td>
                                     </tr>
                                     @else
-                                    <tr class="info bg-c1">
+                                    <tr class="info bg-c1" style="color:#fff !important">
                                         <td></td>
                                         <td>{{ $item->id }}</td>
                                         <td>{{ $item->tieu_de_lien_he }}</td>
@@ -93,12 +93,7 @@
                                         <td>{{ $item->lop }}</td>
                                         <td>{{ $item->email }}</td>
                                         <td>
-                                            <button title="Xóa" class="pd-setting-ed" onclick="deleteID({{$item->id }});">
-                                                <i class="fa fa-trash mr-3" aria-hidden="true"></i>
-                                            </button>
-                                            <button title="Xóa" class="pd-setting-ed" onclick="deleteID({{$item->id }});">
-                                                <i class="fa fa-send mr-3" aria-hidden="true"></i>
-                                            </button>
+                                            Đã gửi phản hồi
                                         </td>
                                     </tr>
                                     @endif

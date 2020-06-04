@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use DB;
 use Exception;
-
+use Mail;
 class HoTroController extends Controller
 {
     /**
@@ -65,31 +65,43 @@ class HoTroController extends Controller
     }
 
 
-    public function changeIsRead(Request $request)
+    public function viewContact($id)
     {
-
         if(request()->session()->get('quyen_goc_hoi_dap'))
         {
-
-
         $status = false;
-        DB::beginTransaction();
         try {
-            DB::table('lien_he')
-                ->update([
-                    'is_read' => true,
-                ]);
-            DB::commit();
+            $ho_tro = DB::table('lien_he')
+                ->where('id',$id)
+                ->first();
             $status = true;
         } catch (Exception $e) {
-            DB::rollback();
             $status = false;
         }
-        return response()->json([
-            'status' => $status
-        ]);
+
+        return $status
+            ? view("admin.pages.lienhe.chinhsua", compact("ho_tro"))
+            : redirect('quantri/loi404');
+        }
+        return view('admin.pages.error403');
     }
-    return view('admin.pages.error403');
+    public function sendContact(Request $req, $id)
+    {
+        if(request()->session()->get('quyen_goc_hoi_dap'))
+        {
+            $tim_lien_he = DB::table('lien_he')->where('id','=',$id)->first();
+            $ho_tro = [ 'phan_hoi' => $req->phan_hoi];
+            Mail::send('admin.pages.mail.phan_hoi',$ho_tro, function($msg) use ($tim_lien_he){
+                $msg->from('khoamamnon.hotro.ued.udn@gmail.com',"Khoa giáo dục - mầm non");
+                $msg->to($tim_lien_he->email, $tim_lien_he->ten)
+                ->subject('Gửi liên hệ phản hồi');
+            });
+            DB::table('lien_he')
+			->where('id', $id)
+			->update(['is_read' => 1]);
+            return redirect('/quantri/gochoidap/hotro');
+        }
+        return view('admin.pages.error403');
     }
 
 }

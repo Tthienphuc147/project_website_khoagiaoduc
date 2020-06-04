@@ -173,6 +173,28 @@
                         </div>
                         <div class="row">
                             <div class="form-group col-md-3">
+                                <h5>Quyền quản lý loại media</h5>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <select class="form-control custom-select-value" name="media" required="" oninvalid="this.setCustomValidity('Vui lòng chọn phân quyền')" oninput="setCustomValidity('')">
+                                    <option value="0"
+                                    @if ($permissions->loai_media == 0)
+                                        selected="selected"
+                                    @endif>
+                                    Không
+                                </option>
+                                <option value="1"
+                                    @if ($permissions->loai_media = 1)
+                                    selected="selected"
+                                    @endif>
+                                    Có
+                                </option>
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-3">
                                 <h5>Quyền quản lý media</h5>
                             </div>
                             <div class="form-group col-md-4">

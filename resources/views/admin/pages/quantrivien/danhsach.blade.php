@@ -148,6 +148,14 @@
                                                         QL_Media
                                                     @endif
                                                 </span>
+                                                <span @if ($item->loai_media == 1)
+                                                    class="role user permission"
+                                                    @endif
+                                                    >
+                                                    @if ($item->loai_media == 1)
+                                                        QL_Loại_Media
+                                                    @endif
+                                                </span>
                                                 <span @if ($item->goc_hoi_dap == 1)
                                                                         class="role user permission"
                                                                         @endif

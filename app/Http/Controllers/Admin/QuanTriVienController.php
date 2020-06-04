@@ -257,6 +257,7 @@ class QuanTriVienController extends Controller
                     'tai_khoan' => $request->tai_khoan,
                     'lich_cong_tac' => $request->lich_cong_tac,
                     'cau_hinh_website' => $request->cau_hinh_website,
+                    'loai_media'=> $request->loai_media,
                     'updated_at' => date("Y-m-d H:i:s")
                     ]);
             DB::commit();

@@ -38,6 +38,15 @@ Route::group(['prefix'=>'quantri'] , function(){
     Route::post('dangnhap','Admin\DangNhapController@postDangNhapQuanTri');
 
 });
+Route::group(['prefix'=>'quen-mat-khau'] , function(){
+    Route::get('', 'Admin\DangNhapController@getQuenMatKhau');
+    Route::post('', 'Admin\DangNhapController@postQuenMatKhau');
+    Route::get('/xac-thuc-ma', 'Admin\DangNhapController@getXacThucMatKhau');
+    Route::post('/nhap-ma', 'Admin\DangNhapController@postNhapMaXacThuc');
+    Route::get('/thay-doi-mat-khau.html', 'Admin\DangNhapController@getThayDoiMatKhau');
+    Route::post('/thay-doi-mat-khau.html', 'Admin\DangNhapController@postThayDoiMatKhau');
+});
+
 
 //check login admin
 Route::group(['prefix'=>'quantri','middleware'=>'check.login.admin'] , function(){
@@ -139,6 +148,8 @@ Route::group(['prefix'=>'quantri','middleware'=>'check.login.admin'] , function(
 
     Route::group(['prefix'=>'gochoidap'] , function(){
         Route::get('hotro','Admin\HoTroController@indexDanhSachHoTro');
+        Route::get('hotro/chinhsua/{id}','Admin\HoTroController@viewContact');
+        Route::post('hotro/chinhsua/{id}','Admin\HoTroController@sendContact');
         Route::get('hotro/xoa/{id}','Admin\HoTroController@destroyHoTro');
         Route::post('hotro/changeisread','Admin\HoTroController@changeIsRead');
     });

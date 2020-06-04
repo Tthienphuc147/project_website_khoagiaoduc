@@ -52,34 +52,36 @@
             <div class="container">
                 <div class="login-wrap">
                     <div class="login-content">
-                        <div class="login-logo">
-                            <a href="#">
-                                {{-- <img src="images/icon/logo.png" alt="CoolAdmin"> --}}
-                            </a>
-                            <h2>ĐĂNG NHẬP</h2>
-                            <div class="alert alert-danger" id="error_post_login">
-                                <center>
-                                    <strong>Tài khoản chưa tồn tại!</strong> Vui lòng kiểm tra lại.
-                                </center>
-                            </div>
-                        </div>
                         <div class="login-form">
-                            <form method="post" id="loginForm">
+                            <form method="post" id="form_doi_pass">
                                 @csrf
-                                <div class="form-group">
-                                    <label>Tên tài khoản</label>
-                                    <input class="au-input au-input--full" id="tai_khoan" name="tai_khoan" type="text" placeholder="Nhập tên tài khoản hoặc email" title="Please enter you username" required="" value="" name="username" id="username" >
-                                	<span class="help-block small error" id="error_name"></span>
+                                <div class="login-form">
+                                    <h4 class="login-title"><center>Thay đổi mật khẩu</center></h4>
+                                    <div class="alert alert-danger" id="error_post_login">
+                                        <center>
+                                            <strong>Thay đổi mật khẩu thất bại!</strong> Vui lòng kiểm tra lại.
+                                        </center>
+                                    </div>
+                                    <div class="alert alert-success" id="success_setpass" style="display: none;">
+                                        <center>
+                                            Đăng ký thành công! Vui lòng <strong><a style="color: #155724" href="quantri/dangnhap">đăng nhập </a></strong>để sử dụng.
+                                        </center>
+                                    </div>
+                                    <div class="form-group">
+                                            <label id="loi_mat_khau" class="error"></label>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Nhập mật khẩu mới *</label>
+                                            <input  class="au-input au-input--full" onfocus="onFocusPass()" class="mb-0" type="password" placeholder="Nhập mật khẩu mới" name="mat_khau_moi" id="new_password">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Nhập lại mật khẩu mới *</label>
+                                            <input class="au-input au-input--full"  onfocus="onFocusPass()" class="mb-0" type="password" placeholder="Xác nhận mật khẩu mới" id="set_new_password">
+                                        </div>
+                                        <input class="au-input au-input--full"  name="email" value="{{Session::get('email_doi_pass')}}" hidden>
+                                        <div class="form-group">
+                                            <button type="button" id="sub_form_doi_pass" class="au-btn au-btn--block au-btn--green m-b-20">Xác nhận</button>
                                 </div>
-                                <div class="form-group">
-                                    <label>Mật khẩu</label>
-                                    <input class="au-input au-input--full"id="mat_khau" name="mat_khau" type="password" placeholder="Nhập vào mật khẩu" required="" value="" name="password" id="password">
-                                    <span class="help-block small error" id="error_pass"></span>
-                                </div>
-                                <div class="form-group">
-                                    <a href="quen-mat-khau"> Quên mật khẩu</a>
-                                </div>
-                                <button class="au-btn au-btn--block au-btn--green m-b-20" type="button" id="loginbtn">Đăng nhập</button>
                             </form>
                         </div>
                     </div>
@@ -112,41 +114,25 @@
     <!-- Main JS-->
     <script src="{{ asset('/public/admin/js/main.js') }}"></script>
     <script>
-        function focus(){
-            $('#error_name').text("");
-            $('#error_pass').text("");
-            $("#success_singin").css("display", "none");
-        }
-        $( "#tai_khoan" ).focus(function() {
-            focus();
-        });
-
-        $( "#mat_khau" ).focus(function() {
-            focus();
-        });
-
-        $('#loginbtn').click(function() {
-            $('#error_name').text("");
-            $('#error_pass').text("");
-            $("#success_singin").css("display", "none");
-
-            var check_name = /^[A-Za-z0-9@.]{6,80}$/;
-            if(!$('#tai_khoan').val().match(check_name)){
-                $('#error_name').text("Tên đăng nhập không hợp lệ");
+        $('#sub_form_doi_pass').click(function(){
+            $('#loi_mat_khau').text("");
+            var check_pass = /^([a-zA-Z0-9@*#]{6,30})$/;
+            if(!$('#new_password').val().match(check_pass)){
+                $('#loi_mat_khau').text("Mật khẩu không hợp lệ");
                 return false;
             }
-            var check_pass = /^([a-zA-Z0-9@*#]{6,30})$/;
-            if(!$('#mat_khau').val().match(check_pass)){
-                $('#error_pass').text("Mật khẩu không hợp lệ");
+            if($('#new_password').val() != $('#set_new_password').val()){
+                $('#loi_mat_khau').text("Không khớp mật khẩu");
                 return false;
             }
             $.ajax({
                 type: "POST",
-                url: 'quantri/dangnhap',
-                data: $('#loginForm').serialize(),
+                url: 'quen-mat-khau/thay-doi-mat-khau.html',
+                data: $('#form_doi_pass').serialize(),
                 success: function( msg ) {
-                    if(msg != "false"){
-                        location.href = msg;
+                    if(msg == "true"){
+                        $("#success_setpass").css("display", "block");
+                        $('#form_doi_pass').trigger("reset");
                     }
                     else{
                         $("#error_post_login").css("display", "block");
@@ -155,6 +141,9 @@
             });
             return false;
         });
+        function onFocusPass(){
+            $('#loi_mat_khau').text("");
+        }
     </script>
 
 </body>

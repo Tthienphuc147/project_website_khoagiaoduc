@@ -15,7 +15,7 @@ class LoaiMediaController extends Controller
      */
     public function index()
     {
-        if(request()->session()->get('quyen_loai_van_ban'))
+        if(request()->session()->get('quyen_loai_media'))
         {
 
         $loai_media = LoaiMedia::all();
@@ -29,7 +29,7 @@ class LoaiMediaController extends Controller
      * */
     public function indexThemView()
     {
-        if(request()->session()->get('quyen_loai_van_ban'))
+        if(request()->session()->get('quyen_loai_media'))
         {
         return view("admin.pages.loaimedia.them");
     }
@@ -44,7 +44,7 @@ class LoaiMediaController extends Controller
      */
     public function store(Request $request)
     {
-        if(request()->session()->get('quyen_loai_van_ban'))
+        if(request()->session()->get('quyen_loai_media'))
         {
         date_default_timezone_set("Asia/Ho_Chi_Minh");
         try{
@@ -72,7 +72,7 @@ class LoaiMediaController extends Controller
      */
     public function show($id)
     {
-        if(request()->session()->get('quyen_loai_van_ban'))
+        if(request()->session()->get('quyen_loai_media'))
         {
         $loai_media = LoaiMedia::find($id);
         if ($loai_media) return view("admin.pages.loaimedia.sua") -> with('ten', $loai_media->ten) -> with('id', $id);
@@ -90,7 +90,7 @@ class LoaiMediaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        if(request()->session()->get('quyen_loai_van_ban'))
+        if(request()->session()->get('quyen_loai_media'))
         {
         date_default_timezone_set("Asia/Ho_Chi_Minh");
         try{
@@ -116,7 +116,7 @@ class LoaiMediaController extends Controller
      */
     public function destroy($id)
     {
-        if(request()->session()->get('quyen_loai_van_ban'))
+        if(request()->session()->get('quyen_loai_media'))
         {
         $deleteData = LoaiMedia::find($id);
         if (!empty($deleteData)){

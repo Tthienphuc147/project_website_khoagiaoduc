@@ -52,34 +52,45 @@
             <div class="container">
                 <div class="login-wrap">
                     <div class="login-content">
-                        <div class="login-logo">
-                            <a href="#">
-                                {{-- <img src="images/icon/logo.png" alt="CoolAdmin"> --}}
-                            </a>
-                            <h2>ĐĂNG NHẬP</h2>
-                            <div class="alert alert-danger" id="error_post_login">
-                                <center>
-                                    <strong>Tài khoản chưa tồn tại!</strong> Vui lòng kiểm tra lại.
-                                </center>
-                            </div>
-                        </div>
                         <div class="login-form">
-                            <form method="post" id="loginForm">
+                            @if ( Session::has('success') )
+                            <div class="alert alert-success alert-dismissible" role="alert">
+                                <strong>{{ Session::get('success') }}</strong>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    <span class="sr-only">Close</span>
+                                </button>
+                            </div>
+                        @endif
+                        @if ( Session::has('error') )
+                        <div class="alert alert-danger alert-dismissible" role="alert">
+                            <strong>{{ Session::get('error') }}</strong>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                <span class="sr-only">Close</span>
+                            </button>
+                        </div>
+                        @endif
+                            <form method="post" action="quen-mat-khau">
                                 @csrf
-                                <div class="form-group">
-                                    <label>Tên tài khoản</label>
-                                    <input class="au-input au-input--full" id="tai_khoan" name="tai_khoan" type="text" placeholder="Nhập tên tài khoản hoặc email" title="Please enter you username" required="" value="" name="username" id="username" >
-                                	<span class="help-block small error" id="error_name"></span>
+                                <div class="login-form">
+                                    <h4 class="login-title"><center>Nhập email xác thực tài khoản</center></h4>
+                                    @if(Session::has('loi_email_xac_thuc'))
+                                    <div class="alert alert-danger" id="error_post_singin">
+                                        <center>
+                                            {{Session::get('loi_email_xac_thuc')}}
+                                        </center>
+                                    </div>
+                                    @endif
+                                        <div class="form-group">
+                                                <label>Nhập Email của bạn *</label>
+                                                <input class="au-input au-input--full" id="mail_tai_khoan" class="mb-0" type="email" placeholder="Nhập địa chỉ Email" name="email" style="width:100%">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <button type="submit" class="au-btn au-btn--block au-btn--green m-b-20">Nhận mã xác thực</button>
+                                        </div>
                                 </div>
-                                <div class="form-group">
-                                    <label>Mật khẩu</label>
-                                    <input class="au-input au-input--full"id="mat_khau" name="mat_khau" type="password" placeholder="Nhập vào mật khẩu" required="" value="" name="password" id="password">
-                                    <span class="help-block small error" id="error_pass"></span>
-                                </div>
-                                <div class="form-group">
-                                    <a href="quen-mat-khau"> Quên mật khẩu</a>
-                                </div>
-                                <button class="au-btn au-btn--block au-btn--green m-b-20" type="button" id="loginbtn">Đăng nhập</button>
                             </form>
                         </div>
                     </div>
@@ -111,51 +122,7 @@
 
     <!-- Main JS-->
     <script src="{{ asset('/public/admin/js/main.js') }}"></script>
-    <script>
-        function focus(){
-            $('#error_name').text("");
-            $('#error_pass').text("");
-            $("#success_singin").css("display", "none");
-        }
-        $( "#tai_khoan" ).focus(function() {
-            focus();
-        });
 
-        $( "#mat_khau" ).focus(function() {
-            focus();
-        });
-
-        $('#loginbtn').click(function() {
-            $('#error_name').text("");
-            $('#error_pass').text("");
-            $("#success_singin").css("display", "none");
-
-            var check_name = /^[A-Za-z0-9@.]{6,80}$/;
-            if(!$('#tai_khoan').val().match(check_name)){
-                $('#error_name').text("Tên đăng nhập không hợp lệ");
-                return false;
-            }
-            var check_pass = /^([a-zA-Z0-9@*#]{6,30})$/;
-            if(!$('#mat_khau').val().match(check_pass)){
-                $('#error_pass').text("Mật khẩu không hợp lệ");
-                return false;
-            }
-            $.ajax({
-                type: "POST",
-                url: 'quantri/dangnhap',
-                data: $('#loginForm').serialize(),
-                success: function( msg ) {
-                    if(msg != "false"){
-                        location.href = msg;
-                    }
-                    else{
-                        $("#error_post_login").css("display", "block");
-                    }
-                }
-            });
-            return false;
-        });
-    </script>
 
 </body>
 

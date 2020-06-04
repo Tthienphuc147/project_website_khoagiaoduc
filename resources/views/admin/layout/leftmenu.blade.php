@@ -49,7 +49,7 @@
                     </ul>
                 </li>
                 @endif
-                @if (request()->session()->get('quyen_danh_muc_media') != 1)
+                @if (request()->session()->get('quyen_loai_media') == 1)
                 <li class="has-sub">
                     <a class="js-arrow" href="#">
                         <i class="fas fa-copy"></i>Danh Mục Media</a>
