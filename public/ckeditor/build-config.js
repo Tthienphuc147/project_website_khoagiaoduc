@@ -113,7 +113,9 @@ var CKBUILDER_CONFIG = {
 		'undo' : 1,
 		'uploadimage' : 1,
 		'wsc' : 1,
-		'wysiwygarea' : 1
+        'wysiwygarea' : 1,
+        'uploadfile':1,
+        'uploadwidge':1
 	},
 	languages : {
 		'af' : 1,
