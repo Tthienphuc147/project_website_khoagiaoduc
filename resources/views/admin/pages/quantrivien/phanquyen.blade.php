@@ -184,7 +184,7 @@
                                     Không
                                 </option>
                                 <option value="1"
-                                    @if ($permissions->loai_media = 1)
+                                    @if ($permissions->loai_media == 1)
                                     selected="selected"
                                     @endif>
                                     Có
@@ -206,7 +206,7 @@
                                     Không
                                 </option>
                                 <option value="1"
-                                    @if ($permissions->media = 1)
+                                    @if ($permissions->media == 1)
                                     selected="selected"
                                     @endif>
                                     Có
