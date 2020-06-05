@@ -1,3 +1,22 @@
+
+@php
+    function dequy($menu, $parent = 0) {
+		foreach ($menu as $key => $value) {
+          
+			if($value->id_parent ==$parent) {
+                echo '<li>'.'<a href="/loai-bai-viet/'.$value->id.'">'.$value->ten;
+                echo '<ul class="submenu submenu1" style="left: 243px;top: -22px;padding: 2px;">';  
+                    $id = $value->id;
+                dequy($menu, $id);
+                echo '</ul>';
+                echo '</a></li>';
+               
+               
+			}
+		}
+	}
+@endphp
+
 <header>
     <!-- Header Start -->
    <div class="header-area">
@@ -45,6 +64,8 @@
                                                 <li><a href="/thong-diep">Thông điệp của khoa</a></li>
                                                 <li><a href="/lich-su">Lịch sử hình thành & phát triển</a></li>
                                                 <li><a href="/co-cau">Cơ cấu tổ chức</a></li>
+                                                <li><a href="/co-cau">Định hướng phát triển</a></li>
+                                                <li><a href="/co-cau">Mục tiêu đào tạo - chuẩn đầu ra</a></li>
                                             </ul>
                                         </li>
                                         <li><a href="#">Tin tức</a>
@@ -56,9 +77,10 @@
                                         </li>
                                         <li><a href="#">Đào tạo</a>
                                             <ul class="submenu">
-                                                @foreach ($all_share_danh_muc_dao_tao as $item)
+                                                {{dequy($all_share_danh_muc_dao_tao,0)}}
+                                                {{-- @foreach ($all_share_danh_muc_dao_tao as $item)
                                                 <li><a href="/loai-bai-viet/{{$item->id}}">{{$item->ten}}</a></li>
-                                                @endforeach
+                                                @endforeach --}}
                                             </ul>
                                         </li>
                                         <li><a href="#">Nghiên cứu khoa học</a>

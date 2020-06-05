@@ -74,6 +74,7 @@ class AppServiceProvider extends ServiceProvider
             ->get();
             $all_cau_hinh = DB::table('cau_hinh_web')
             ->first();
+            $all_luot_xem = DB::table('bai_viets')->sum('luot_xem');
             $view->with([
                 'all_share_danh_muc_tin_tuc' => $all_share_danh_muc_tin_tuc,
                 'all_share_danh_muc_dao_tao' => $all_share_danh_muc_dao_tao,
@@ -84,7 +85,8 @@ class AppServiceProvider extends ServiceProvider
                 'all_share_danh_muc_hop_tac' => $all_share_danh_muc_hop_tac,
                 'all_share_danh_muc_tuyen_dung' => $all_share_danh_muc_tuyen_dung,
                 'all_share_danh_muc_gioi_thieu' => $all_share_danh_muc_gioi_thieu,
-                'all_cau_hinh' => $all_cau_hinh
+                'all_cau_hinh' => $all_cau_hinh,
+                'all_luot_xem' => $all_luot_xem
             ]);
         });
 

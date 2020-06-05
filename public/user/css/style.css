@@ -2203,6 +2203,28 @@ hr {
   color: #6c5030;
   background: none;
 }
+
+.main-header .main-menu ul ul.submenu1 {
+  position: absolute;
+  width: 250px;
+  background: #fff;
+  left: 0;
+  top: 120%;
+  visibility: hidden;
+  opacity: 0;
+  box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.05);
+  padding: 17px 0;
+  border-top: 5px solid #6c5030;
+  -webkit-transition: all 0.3s ease-out 0s;
+  -moz-transition: all 0.3s ease-out 0s;
+  -ms-transition: all 0.3s ease-out 0s;
+  -o-transition: all 0.3s ease-out 0s;
+  transition: all 0.3s ease-out 0s;
+}
+.main-header .main-menu ul ul.submenu ul.submenu1 >a{
+  display: none !important;
+}
+
 .header-area .header-top .header-info-right .header-social a i {
   -webkit-transition: all 0.4s ease-out 0s;
   -moz-transition: all 0.4s ease-out 0s;
@@ -3261,17 +3283,17 @@ h6{
   }
 }
 .footer-bottom-area .footer-copy-right p {
-  color: #838383;
+  color: #000000;
   font-weight: 300;
   font-size: 16px;
   line-height: 2;
   margin-bottom: 12px;
 }
 .footer-bottom-area .footer-copy-right p i {
-  color: #f27420;
+  color: #000000;
 }
 .footer-bottom-area .footer-copy-right p a {
-  color: #f27420;
+  color: #000000;
 }
 .footer-bottom-area .footer-copy-right p a:hover {
   color: #fff;
@@ -5771,4 +5793,7 @@ del {
 
 .tab-content img{
   width: 100%;
+}
+.submenu ul.submenu1 a{
+  display: none;
 }
