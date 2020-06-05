@@ -2279,8 +2279,8 @@ hr {
   padding: 20px 20px;
 }
 .header-area .slicknav_btn {
-  top: -51px;
-  right: 17px;
+  top: -23px;
+  right: 2px;
 }
 .slicknav_menu .slicknav_nav a:hover {
   background: transparent;
@@ -5773,7 +5773,10 @@ del {
     color: #1967bb;
 }
 .content_area img{
-    width: 100%;
+    width: 100% !important;
+}
+.content_area p img{
+  width: 100% !important;
 }
 
 #main-carousel .carousel-inner{
@@ -5796,4 +5799,18 @@ del {
 }
 .submenu ul.submenu1 a{
   display: none;
+}
+
+@media (max-width: 768px) {
+  #main-carousel .carousel-inner {
+    height: 100%;
+  }
+}
+@media (max-width: 767px) {
+  .what-img img {
+    height: 200px;
+  }
+}
+._2p3a{
+  width: 100% !important;
 }

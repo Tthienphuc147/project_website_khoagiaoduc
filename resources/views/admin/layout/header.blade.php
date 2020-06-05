@@ -35,7 +35,7 @@
                     <div class="account-wrap">
                         <div class="account-item clearfix js-item-menu">
                             <div class="image">
-                                <img src="/public/admin/images/icon/avatar-01.jpg" />
+                                <img src="/public/admin/images/icon/avt.png" />
                             </div>
                             <div class="content">
                                 <a class="js-acc-btn" href="#">{{Auth::guard('web')->user()->ten_dang_nhap}}</a>
@@ -44,7 +44,7 @@
                                 <div class="info clearfix">
                                     <div class="image">
                                         <a href="#">
-                                            <img src="/public/admin/images/icon/avatar-01.jpg"  />
+                                            <img src="/public/admin/images/icon/avt.png"  />
                                         </a>
                                     </div>
 

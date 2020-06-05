@@ -30,7 +30,7 @@
      <link rel="stylesheet" href="{{ asset('/public/css/notifications/Lobibox.min.css') }}">
     <link rel="stylesheet" href="{{ asset('/public/css/notifications/notifications.css') }}">
     <script src="{{asset('/public/ckeditor/ckeditor.js')}}"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
      <!-- Main CSS-->
      <link href="{{ asset('/public/admin/css/theme.css') }}" rel="stylesheet" media="all">
      <link rel="stylesheet" href="/public/admin/css/data-table/bootstrap-table.css">

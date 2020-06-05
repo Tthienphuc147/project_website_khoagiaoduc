@@ -37,7 +37,7 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
-                        <div class="trending-tittle">
+                        <div class="trending-tittle w-100">
                             <strong>Thông báo mới</strong>
                             <!-- <p>Rem ipsum dolor sit amet, consectetur adipisicing elit.</p> -->
                             <div class="trending-animated">
@@ -72,7 +72,7 @@
                                 <div class="trending-bottom">
                                             @foreach ($tin_tuc_top as $item)
                                             <div class="single-bottom mb-10 row">
-                                                <div class="trend-bottom-img col-lg-5 pr-0">
+                                                <div class="trend-bottom-img col-lg-5 pr-1">
                                                     @if ($item->hinh_anh_mo_ta)
                                                     <img src="/public/upload/image/{{$item->hinh_anh_mo_ta}}" alt="">
                                                     @else
@@ -111,7 +111,7 @@
                     </div>
                     <!-- Riht content -->
                     <div class="col-lg-4">
-                        <div class="trand-right-single d-flex">
+                        <div class="trand-right-single d-flex justify-content-center">
                             <div class="inner search-inner">
                                 <select name="weblink" class="w-100" id="cboWebLink" onchange="window.open(this.options[this.selectedIndex].value,'_blank');cboWebLink.option[0].selected=true">
                                     <option  value="#">-- Liên kết website --</option>
@@ -123,22 +123,22 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="trand-right-single d-flex">
+                        <div class="trand-right-single d-flex justify-content-center">
                             <a href="http://ued.udn.vn/" target="_blank"><img src="/public/user/img/sub-banner/1.png" ></a>
                         </div>
                         {{-- <div class="trand-right-single d-flex">
                             <a href="http://tuyensinh.ued.udn.vn/" target="_blank"><img src="/public/user/img/sub-banner/4.png" ></a>
                         </div> --}}
-                        <div class="trand-right-single d-flex">
+                        <div class="trand-right-single d-flex justify-content-center">
                             <a href="http://thuvien.ued.udn.vn:8080/dspace/" target="_blank"><img src="/public/user/img/sub-banner/2.png"></a>
                         </div>
-                        <div class="trand-right-single d-flex">
+                        <div class="trand-right-single d-flex justify-content-center">
                             <a href="http://qlht.ued.udn.vn/" target="_blank"><img src="/public/user/img/sub-banner/3.png"></a>
                         </div>
-                        <div class="trand-right-single d-flex">
+                        <div class="trand-right-single d-flex justify-content-center">
                             <a href="/lich-cong-tac" target="_blank"><img src="/public/user/img/3.png"></a>
                         </div>
-                        <div class="trand-right-single d-flex ">
+                        <div class="trand-right-single d-flex justify-content-center">
                             <div class="trand-right-img mr-2">
                                 <a href="/loai-bai-viet/a{{$all_share_danh_muc_tuyen_dung[0]->id}}"><img src="/public/user/img/td.png" alt="" width="170px"></a>
                             </div>
@@ -371,8 +371,9 @@
                                         <span class="sr-only" aria-hidden="true">Next</span>
                                     </a>
                         </div>
-                        <div class="mt-2" style="min-width: 100%;">
-                            <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FLi%25C3%25AAn-chi-%25C4%2590o%25C3%25A0n-Gi%25C3%25A1o-d%25E1%25BB%25A5c-M%25E1%25BA%25A7m-non-Tr%25C6%25B0%25E1%25BB%259Dng-%25C4%2590%25E1%25BA%25A1i-h%25E1%25BB%258Dc-S%25C6%25B0-ph%25E1%25BA%25A1m-%25C4%2590H%25C4%2590N-168400530464070%2F&tabs&width=340&height=214&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=1942841682494119" width="100%" height="214" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media" style="width: 100%"></iframe>
+                        <div class="mt-2 d-flex justify-content-center" style=" min-width: 100%;">
+                            
+                            <div class="fb-page" data-href="https://www.facebook.com/Li%C3%AAn-chi-%C4%90o%C3%A0n-Gi%C3%A1o-d%E1%BB%A5c-M%E1%BA%A7m-non-Tr%C6%B0%E1%BB%9Dng-%C4%90%E1%BA%A1i-h%E1%BB%8Dc-S%C6%B0-ph%E1%BA%A1m-%C4%90H%C4%90N-168400530464070/" data-tabs="" data-width="370" data-height="" data-small-header="false" data-adapt-container-width="false" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/Li%C3%AAn-chi-%C4%90o%C3%A0n-Gi%C3%A1o-d%E1%BB%A5c-M%E1%BA%A7m-non-Tr%C6%B0%E1%BB%9Dng-%C4%90%E1%BA%A1i-h%E1%BB%8Dc-S%C6%B0-ph%E1%BA%A1m-%C4%90H%C4%90N-168400530464070/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Li%C3%AAn-chi-%C4%90o%C3%A0n-Gi%C3%A1o-d%E1%BB%A5c-M%E1%BA%A7m-non-Tr%C6%B0%E1%BB%9Dng-%C4%90%E1%BA%A1i-h%E1%BB%8Dc-S%C6%B0-ph%E1%BA%A1m-%C4%90H%C4%90N-168400530464070/">Liên chi Đoàn Giáo dục Mầm non - Trường Đại học Sư phạm ĐHĐN</a></blockquote></div>
                         </div>
                     </div>
                 </div>
@@ -381,5 +382,6 @@
         </div>
     </section>
 
-
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v7.0&appId=1942841682494119&autoLogAppEvents=1"></script>
 @endsection

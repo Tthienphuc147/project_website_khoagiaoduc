@@ -68,7 +68,7 @@
                     <ul class="list-unstyled navbar__sub-list js-sub-list">
                         <li>
                             <a href="/quantri/media/danhsach">Danh sách</a>
-                            <a href="/quantri/media/them">Thêm</a>
+                            <a href="/quantri/media/themview">Thêm</a>
                         </li>
                     </ul>
                 </li>

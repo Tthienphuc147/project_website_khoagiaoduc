@@ -36,6 +36,7 @@ class AppServiceProvider extends ServiceProvider
             ->join('loai_bai_viets','loai_bai_viets.id_danh_muc_bai_viet','=','danh_muc_bai_viets.id')
             ->where('danh_muc_bai_viets.id','=','2')
             ->select('loai_bai_viets.*')
+            ->orderBy('created_at','ASC')
             ->get();
             $all_share_danh_muc_ngkh = DB::table('danh_muc_bai_viets')
             ->join('loai_bai_viets','loai_bai_viets.id_danh_muc_bai_viet','=','danh_muc_bai_viets.id')

@@ -19,7 +19,7 @@ class VanBanController extends Controller
         ->get();
         $van_bans = DB::table('van_ban_bieu_maus')
         ->where('id_loai_van_ban','=',$id)
-        ->paginate(10);
+        ->paginate(15);
 
 		if($van_bans != null){
 			return view('user.pages.van-ban',compact('thong_bao_noi_bat','van_bans'));

@@ -5,7 +5,7 @@
             <!-- Hot Aimated News Tittle-->
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="trending-tittle">
+                    <div class="trending-tittle w-100">
                         <strong>Thông báo mới</strong>
                         <!-- <p>Rem ipsum dolor sit amet, consectetur adipisicing elit.</p> -->
                         <div class="trending-animated">
@@ -59,7 +59,11 @@
                         <!-- End Nav Card -->
                         </div>
                     </div>
+                    <div class="row mt-5 d-flex justify-content-end">
+                        {{$lichs->links()}}
+                    </div>
                 </div>
+                
             </div>
         </div>
     </section>

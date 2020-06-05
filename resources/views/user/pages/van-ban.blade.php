@@ -5,7 +5,7 @@
             <!-- Hot Aimated News Tittle-->
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="trending-tittle">
+                    <div class="trending-tittle w-100">
                         <strong>Thông báo mới</strong>
                         <!-- <p>Rem ipsum dolor sit amet, consectetur adipisicing elit.</p> -->
                         <div class="trending-animated">
@@ -51,8 +51,9 @@
                                 
                                 </tbody>
                               </table>
+                             
                         </div>
-
+                        {{$van_bans->links()}}
                     </div>
                 </div>
            </div>

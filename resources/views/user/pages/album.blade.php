@@ -5,7 +5,7 @@
             <!-- Hot Aimated News Tittle-->
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="trending-tittle">
+                    <div class="trending-tittle w-100">
                         <strong>Thông báo mới</strong>
                         <!-- <p>Rem ipsum dolor sit amet, consectetur adipisicing elit.</p> -->
                         <div class="trending-animated">
@@ -32,12 +32,12 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="row">
-                        <div class="col-8">
+                        <div class="col-lg-8  col-md-12">
                             <div class="row">
                                 <div class="row">
                                    @if (sizeof($album)>0)
                                    @foreach ($album as $item)
-                                   <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                                   <div class="col-lg-3 col-md-4 col-xs-6 thumb d-flex justify-content-center">
                                        <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
                                           data-image="/public/upload/image/{{$item->url}}"
                                           data-target="#image-gallery">
@@ -74,7 +74,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-4">
+                        <div class="col-lg-4 d-md-block">
                             <div class="blog_right_sidebar">
                                 <aside class="single_sidebar_widget popular_post_widget">
                                     <h3 class="widget_title">Album khác</h3>

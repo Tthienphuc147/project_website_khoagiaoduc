@@ -45,7 +45,6 @@
                             <table id="table" class="table-style" data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="true" data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true" data-show-export="true" data-click-to-select="true" data-toolbar="#toolbar" data-unique-id="id">
                                 <thead>
                                     <tr>
-                                    <th data-field="state" data-checkbox="true"></th>
                                         <th data-field="id">ID</th>
                                         <th data-field="timestart">Tiêu đề</th>
                                         <th data-field="timeend">Tóm tắt</th>
@@ -55,7 +54,6 @@
                                 <tbody>
                                     @foreach($data as $key=>$item)
                                     <tr>
-                                    <td></td>
                                         <td>{{ $key+1 }}</td>
                                         <td>{{$item->tieu_de}}</td>
                                         <td>{{$item->tom_tat}}</td>

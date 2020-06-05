@@ -5,7 +5,7 @@
             <!-- Hot Aimated News Tittle-->
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="trending-tittle">
+                    <div class="trending-tittle w-100">
                         <strong>Thông báo mới</strong>
                         <!-- <p>Rem ipsum dolor sit amet, consectetur adipisicing elit.</p> -->
                         <div class="trending-animated">
@@ -45,7 +45,13 @@
                                                     <div class="what-img">
                                                         @if ($item->hinh_anh_mo_ta)
 
-                                                        <img src="/public/upload/image/{{$item->hinh_anh_mo_ta}}" alt="" width="370px" height="248px">
+                                                        <img src="/public/upload/image/{{$item->hinh_anh_mo_ta}}" alt="" width="370px" 
+                                                        @if ($item->id_loai_bai_viet == 9)
+                                                        height="400px"
+                                                        @else
+                                                        height="248px"
+                                                        @endif
+                                                        >
                                                         @else
                                                         <img src="/public/user/img/tintuc.jpg" alt=""  >
                                                         @endif

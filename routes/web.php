@@ -11,6 +11,8 @@ Route::group(['prefix'=>''] , function(){
     Route::get('trang-chu','User\HomeController@show')->name('trangchinh');
     Route::get('bai-viet/a{id}','User\BaiVietController@getBaiViet');
     Route::get('thong-diep','User\BaiVietController@getThongDiep');
+    Route::get('dinh-huong-phat-trien','User\BaiVietController@getDinhHuong');
+    Route::get('muc-tieu','User\BaiVietController@getMucTieu');
     Route::get('lich-su','User\BaiVietController@getLichSu');
     Route::get('co-cau','User\CoCauController@showCoCau');
     Route::get('loai-bai-viet/{id}','User\LoaiBaiVietController@getLoaiBaiViet');

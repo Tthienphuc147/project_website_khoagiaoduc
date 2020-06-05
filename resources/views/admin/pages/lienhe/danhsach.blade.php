@@ -50,7 +50,6 @@
                             <table id="table" class="table-style" data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="true" data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true" data-show-export="true" data-click-to-select="true" data-toolbar="#toolbar" data-unique-id="id">
                                 <thead>
                                     <tr>
-                                        <th data-field="state" data-checkbox="true"></th>
                                         <th data-field="id">ID</th>
                                         <th data-field="tieu_de_lien_he">Tiêu đề liên hệ</th>
                                         <th data-field="noi_dung">Nội dung</th>
@@ -65,7 +64,6 @@
                                     @foreach($ho_tro as $item)
                                     @if(!$item->is_read)
                                     <tr >
-                                        <td></td>
                                         <td>{{ $item->id }}</td>
                                         <td>{{ $item->tieu_de_lien_he }}</td>
                                         <td>{{ $item->noi_dung_lien_he }}</td>

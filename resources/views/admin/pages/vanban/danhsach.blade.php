@@ -71,7 +71,6 @@
                             <table id="table" class="table-style" data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="true" data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true" data-show-export="true" data-click-to-select="true" data-toolbar="#toolbar" data-unique-id="id">
                                 <thead>
                                     <tr>
-                                        <th data-field="state" data-checkbox="true"></th>
                                         <th data-field="id">ID</th>
                                         <th data-field="ten">Tên văn bản</th>
                                         <th data-field="image">Mô tả</th>
@@ -81,7 +80,6 @@
                                 <tbody>
                                     @foreach($data as $item)
                                     <tr>
-                                        <td></td>
                                         <td>{{ $item->id }}</td>
                                         <td>{{ $item->ten }}</td>
                                         <td>{{ $item->mo_ta }}</td>

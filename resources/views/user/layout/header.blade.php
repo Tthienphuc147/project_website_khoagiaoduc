@@ -21,7 +21,7 @@
     <!-- Header Start -->
    <div class="header-area">
         <div class="main-header ">
-            <div class="header-top d-none d-md-block">
+            <div class="header-top d-md-block">
                 <div class="container">
                      <div class="row d-flex align-items-center justify-content-end">
                             <div class="header-right-btn f-right d-none d-lg-block">
@@ -39,13 +39,16 @@
                      </div>
                 </div>
              </div>
-            <div class="header-mid d-none d-md-block">
+            <div class="header-mid d-md-block">
                <div class="container">
                     <div class="row d-flex align-items-center">
                         <!-- Logo -->
                         <div class="col-xl-3 col-lg-3 col-md-3">
-                            <div class="logo">
+                            <div class="logo d-none  d-md-block">
                                 <a href="/"><img src="/public/user/img/2.png" alt=""></a>
+                            </div>
+                            <div class="logo  d-md-none">
+                                <a href="/"><img src="/public/user/img/21.png" alt=""></a>
                             </div>
                         </div>
                     </div>
@@ -64,8 +67,8 @@
                                                 <li><a href="/thong-diep">Thông điệp của khoa</a></li>
                                                 <li><a href="/lich-su">Lịch sử hình thành & phát triển</a></li>
                                                 <li><a href="/co-cau">Cơ cấu tổ chức</a></li>
-                                                <li><a href="/co-cau">Định hướng phát triển</a></li>
-                                                <li><a href="/co-cau">Mục tiêu đào tạo - chuẩn đầu ra</a></li>
+                                                <li><a href="/dinh-huong-phat-trien">Định hướng phát triển</a></li>
+                                                <li><a href="/muc-tieu">Mục tiêu đào tạo - chuẩn đầu ra</a></li>
                                             </ul>
                                         </li>
                                         <li><a href="#">Tin tức</a>
@@ -88,12 +91,14 @@
                                                 @foreach ($all_share_danh_muc_ngkh as $item)
                                                 <li><a href="/loai-bai-viet/{{$item->id}}">{{$item->ten}}</a></li>
                                                 @endforeach
+                                                
+                                                <li><a href="http://ued.udn.vn/page/tap-chi-khoa-hoc.html" target="_blank">Tạp chí khoa học</a></li>
                                             </ul>
                                         </li>
                                         <li><a href="#">Học liệu</a>
                                             <ul class="submenu">
                                                 @foreach ($all_share_danh_muc_hoc_lieu as $item)
-                                                <li><a href="/loai-bai-viet/{{$item->id}}">{{$item->ten}}</a></li>
+                                                <li><a href="/loai-bai-viet/{{$item->id}}" >{{$item->ten}}</a></li>
                                                 @endforeach
                                             </ul>
                                         </li>

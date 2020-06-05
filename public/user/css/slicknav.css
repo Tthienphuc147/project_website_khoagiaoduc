@@ -147,7 +147,7 @@
 	position: absolute;
 	right: 10px;
 	width: 96%;
-	z-index: 99;
+	z-index: 99999999;
 }
 .slicknav_menu .slicknav_menutxt {
     display: none;
