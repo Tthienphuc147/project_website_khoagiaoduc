@@ -42,7 +42,7 @@
                             @if ($item1->cap_bac === $item->id)
                             <div class="col-lg-4 mb-2">
                                 <div class="card" style="width: 18rem;">
-                                <img class="card-img-top" src="/public/upload/image/{{$item1->avatar}}" alt="Card image cap" height="250px">
+                                <img class="card-img-top" src="/public/upload/image/{{$item1->avatar}}" alt="Card image cap" height="320px" style="object-fit: cover">
                                     <div class="card-body">
                                       <h5 class="card-title">{{$item1->ho_va_ten}}</h5>
                                     </div>
