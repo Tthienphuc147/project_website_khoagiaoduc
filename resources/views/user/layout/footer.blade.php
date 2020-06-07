@@ -4,14 +4,14 @@
     <div class="footer-area fix">
          <div class="container p-4">
              <div class="row d-flex justify-content-between">
-                 <div class="col-xl-5 col-lg-5 col-md-7 col-sm-12">
+                 <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12">
                      <div class="single-footer-caption">
                          <div class="single-footer-caption">
                              <!-- logo -->
                              <div class="footer-logo mb-0">
                                  <a href="index.html"><img src="/public/user/img/2.png" alt="" width="350px"></a>
                              </div>
-                             <div class="footer-tittle ml-3">
+                             <div class="footer-tittle ml-3 mt-3">
                                  <div class="footer-pera">
                                      <h5 class="text-white" style="font-size: 13px">CƠ QUAN CHỦ QUẢN: TRƯỜNG ĐẠI HỌC SƯ PHẠM - ĐẠI HỌC ĐÀ NẴNG</h5>
                                      <p class="mb-1">
@@ -27,12 +27,12 @@
                          </div>
                      </div>
                  </div>
-              
-                 <div class="col-xl-4 col-lg-4 col-md-12  col-sm-6">
-    
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15336.250608844523!2d108.1595185!3d16.0622383!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa691cb5163d76dae!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBTxrAgUGjhuqFtIC0gxJDhuqFpIGjhu41jIMSQw6AgTuG6tW5n!5e0!3m2!1svi!2s!4v1591171963011!5m2!1svi!2s" width="100%" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+
+                 <div class="col-xl-3 col-lg-3 col-md-12  col-sm-6">
+
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15336.250608844523!2d108.1595185!3d16.0622383!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa691cb5163d76dae!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBTxrAgUGjhuqFtIC0gxJDhuqFpIGjhu41jIMSQw6AgTuG6tW5n!5e0!3m2!1svi!2s!4v1591171963011!5m2!1svi!2s" width="100%" height="250" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
                  </div>
-                 <div class="col-xl-3 col-lg-3 col-md-4  col-sm-6">
+                 <div class="col-xl-2 col-lg-2 col-md-4  col-sm-6">
                     <div class="single-footer-caption mt-60">
                         <div class="footer-tittle">
                             <div class="footer-form" >
@@ -73,7 +73,7 @@
                      <div class="col-lg-12 text-center">
                          <div class="footer-copy-right1 " >
                              <p>BẢN QUYỀN THUỘC VỀ: KHOA GIÁO DỤC MẦM NON</p>
-                           
+
                          </div>
                      </div>
                  </div>
