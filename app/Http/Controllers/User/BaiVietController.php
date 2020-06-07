@@ -20,11 +20,14 @@ class BaiVietController extends Controller
         $bai_viet = DB::table('bai_viets')->where('bai_viets.id','=',$id_bai_viet) ->join('loai_bai_viets','bai_viets.id_loai_bai_viet','=','loai_bai_viets.id')
         ->select('bai_viets.*','loai_bai_viets.ten as ten_loai')
         ->first();
-        $bai_viet_lien_quan = DB::table('bai_viets')->where('bai_viets.id_loai_bai_viet','=',$bai_viet->id_loai_bai_viet)
-        ->inRandomOrder()
-        ->orderBy('created_at', 'DESC')
-        ->take(3)
-        ->get();
+        if($bai_viet!=null){
+            $bai_viet_lien_quan = DB::table('bai_viets')->where('bai_viets.id_loai_bai_viet','=',$bai_viet->id_loai_bai_viet)
+            ->inRandomOrder()
+            ->orderBy('created_at', 'DESC')
+            ->take(3)
+            ->get();
+        }
+
         $user = DB::table('users')->where('id','=',$bai_viet->id_user)->first();
         $loai_bai_viet = $bai_viet->ten_loai;
 		if($bai_viet != null){
