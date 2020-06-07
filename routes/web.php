@@ -23,7 +23,7 @@ Route::group(['prefix'=>''] , function(){
     Route::get('lich-cong-tac','User\LichCongTacController@show');
     Route::get('lich/c{id}','User\LichCongTacController@getLich');
     Route::get('album/b{id}','User\ThuVienController@getAlbum');
-    Route::get('vanban/b{id}','User\VanbanController@getVanBan');
+    Route::get('vanban/b{id}','User\VanBanController@getVanBan');
 });
 // ----------------------------------------- //
 
