@@ -18,7 +18,7 @@ class LichCongTacController extends Controller
         ->take(4)
         ->get();
         $lichs = DB::table('lich_cong_tac')
-        ->orderBy('created_at', 'ASC')
+        ->orderBy('created_at', 'DESC')
         ->paginate(6);
         return view('user.pages.lich-cong-tac',compact('thong_bao_noi_bat','lichs'));
     }

@@ -18,7 +18,7 @@ class ThuVienController extends Controller
         ->take(4)
         ->get();
         $loai_danh_muc = DB::table('loai_media')
-        ->orderBy('created_at', 'ASC')
+        ->orderBy('created_at', 'DESC')
         ->paginate(6);
         return view('user.pages.thuvien',compact('thong_bao_noi_bat','loai_danh_muc'));
     }
