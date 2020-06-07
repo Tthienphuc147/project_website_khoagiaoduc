@@ -30,7 +30,7 @@
                 <div class="card-body card-block">
                     <form id="form-sua-phan-quyen" action="quantri/quantrivien/phanquyen/{{$permissions->id}}" method="POST" enctype="multipart/form-data">
                         @csrf
-                        <div class="row">
+                        {{-- <div class="row">
                             <div class="form-group col-md-3">
                                 <h5>Quyền quản lý trang giới thiệu</h5>
                             </div>
@@ -72,7 +72,7 @@
                                 </option>
                                 </select>
                             </div>
-                        </div>
+                        </div> --}}
                         <div class="row">
                             <div class="form-group col-md-3">
                                 <h5>Quyền quản lý loại bài viết</h5>

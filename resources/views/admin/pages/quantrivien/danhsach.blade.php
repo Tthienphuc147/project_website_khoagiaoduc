@@ -92,7 +92,7 @@
                                         @endif</td>
                                         <td>
                                             <div class="d-flex td--permissisons">
-                                                <span @if ($item->trang_gioi_thieu == 1)
+                                                {{-- <span @if ($item->trang_gioi_thieu == 1)
                                                     class="role user permission"
                                                     @endif
                                                     >
@@ -107,7 +107,7 @@
                                                     @if ($item->danh_muc_bai_viet == 1)
                                                         QL_Danh mục BV
                                                     @endif
-                                                </span>
+                                                </span> --}}
                                                 <span @if ($item->loai_bai_viet == 1)
                                                     class="role user permission"
                                                     @endif
@@ -164,6 +164,14 @@
                                                                             QL_Góc hỏi đáp
                                                                         @endif
                                                 </span>
+                                                <span @if ($item->loai_cap_bac == 1)
+                                                    class="role user permission"
+                                                    @endif
+                                                    >
+                                                    @if ($item->loai_cap_bac == 1)
+                                                        QL_Cấp bậc
+                                                    @endif
+                        </span>
                                                 <span @if ($item->tai_khoan == 1)
                                                                             class="role user permission"
                                                                             @endif

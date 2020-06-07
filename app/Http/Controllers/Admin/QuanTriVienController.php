@@ -245,8 +245,8 @@ class QuanTriVienController extends Controller
             DB::table('phan_quyens')
             ->where('id', $id)
             ->update([
-                    'trang_gioi_thieu' => $request->trang_gioi_thieu,
-                    'danh_muc_bai_viet' => $request->danh_muc_bai_viet,
+                    // 'trang_gioi_thieu' => $request->trang_gioi_thieu,
+                    // 'danh_muc_bai_viet' => $request->danh_muc_bai_viet,
                     'loai_bai_viet' => $request->loai_bai_viet,
                     'loai_van_ban' => $request->loai_van_ban,
                     'loai_van_ban' => $request->loai_van_ban,
@@ -258,6 +258,7 @@ class QuanTriVienController extends Controller
                     'lich_cong_tac' => $request->lich_cong_tac,
                     'cau_hinh_website' => $request->cau_hinh_website,
                     'loai_media'=> $request->loai_media,
+                    'loai_cap_bac'=> $request->loai_cap_bac,
                     'updated_at' => date("Y-m-d H:i:s")
                     ]);
             DB::commit();

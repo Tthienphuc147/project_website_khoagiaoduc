@@ -7,7 +7,7 @@
     <div class="menu-sidebar__content js-scrollbar1">
         <nav class="navbar-sidebar">
             <ul class="list-unstyled navbar__list">
-                @if (request()->session()->get('quyen_danh_muc_bai_viet') == 1)
+                {{-- @if (request()->session()->get('quyen_danh_muc_bai_viet') == 1)
                 <li class="has-sub">
                     <a class="js-arrow" href="#">
                         <i class="fas fa-copy"></i>Danh mục bài viết</a>
@@ -20,7 +20,7 @@
                         </li>
                     </ul>
                 </li>
-                @endif
+                @endif --}}
                 @if (request()->session()->get('quyen_loai_bai_viet') == 1)
                 <li class="has-sub">
                     <a class="js-arrow" href="#">
@@ -94,6 +94,18 @@
                     <ul class="list-unstyled navbar__sub-list js-sub-list">
                         <li>
                             <a href="/quantri/gochoidap/hotro">Danh sách</a>
+                        </li>
+                    </ul>
+                </li>
+                @endif
+                @if (request()->session()->get('quyen_loai_cap_bac') == 1)
+                <li class="has-sub">
+                    <a class="js-arrow" href="#">
+                        <i class="fas fa-copy"></i>Loại cấp bậc</a>
+                    <ul class="list-unstyled navbar__sub-list js-sub-list">
+                        <li>
+                            <a href="/quantri/loaicapbac/danhsach">Danh sách</a>
+                            <a href="/quantri/loaicapbac/themview">Thêm</a>
                         </li>
                     </ul>
                 </li>

@@ -26,10 +26,12 @@ class BaiVietController extends Controller
             ->orderBy('created_at', 'DESC')
             ->take(3)
             ->get();
+            $user = DB::table('users')->where('id','=',$bai_viet->id_user)->first();
+            $loai_bai_viet = $bai_viet->ten_loai;
         }
 
-        $user = DB::table('users')->where('id','=',$bai_viet->id_user)->first();
-        $loai_bai_viet = $bai_viet->ten_loai;
+
+
 		if($bai_viet != null){
 			DB::table('bai_viets')
 			->where('id', $id_bai_viet)

@@ -2475,9 +2475,10 @@ hr {
 .trending-title{
   min-height: 2rem;
   padding: 0.5rem;
-  color:#fff;
+  color:#dd0432;
   background-color: #ADDD7A;
   border-left: 5px solid #5FB322;
+  font-weight: bold;
 
 }
 .trending-area .trending-main .trand-right-single {

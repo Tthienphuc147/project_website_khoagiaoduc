@@ -1,3 +1,4 @@
+
 @extends('user.master')
 @section('content')
 <div class="about-area">
@@ -29,121 +30,33 @@
                     <!-- Trending Tittle -->
 
                     <div class="about-right mb-90 box-shadow">
-                        <h3 class="text-center">THÔNG TIN CƠ CÂU TỔ CHỨC</h3>
-                        <h5 class="text-center mt-3">Trưởng khoa</h5>
-                        <div class="row d-flex justify-content-center">
-                            @foreach ($truong_khoa as $item)
+                        <h3 class="text-center">THÔNG TIN CƠ CẤU TỔ CHỨC</h3>
+                        @foreach ($loai_cap_bac as $item)
+                        <h5 class="text-center mt-3">{{$item->ten}}</h5>
+                        <div class="row d-flex
+                        @if ($item->id == 1  || $item->id == 2)
+                        justify-content-center
+                        @endif
+                        ">
+                            @foreach ($user as $item1)
+                            @if ($item1->cap_bac === $item->id)
                             <div class="col-lg-4 mb-2">
                                 <div class="card" style="width: 18rem;">
-                                <img class="card-img-top" src="/public/upload/image/{{$item->avatar}}" alt="Card image cap" height="250px">
+                                <img class="card-img-top" src="/public/upload/image/{{$item1->avatar}}" alt="Card image cap" height="250px">
                                     <div class="card-body">
-                                      <h5 class="card-title">{{$item->ho_va_ten}}</h5>
+                                      <h5 class="card-title">{{$item1->ho_va_ten}}</h5>
                                     </div>
                                     <div class="card-body">
-                                      Thông tin cá nhân: <a href="{{$item->link}}" class="card-link" target="_blank">Xem tại đây</a>
+                                      Thông tin cá nhân: <a href="{{$item1->link}}" class="card-link" target="_blank">Xem tại đây</a>
                                     </div>
                                   </div>
                             </div>
+                            @endif
+
                             @endforeach
 
                         </div>
-                        <hr class="mt-2">
-                        <h5 class="text-center">Phó trưởng khoa</h5>
-                        <div class="row d-flex justify-content-center">
-                            @foreach ($pho_truong_khoa as $item)
-                            <div class="col-lg-4 mb-2">
-                                <div class="card" style="width: 18rem;">
-                                <img class="card-img-top" src="/public/upload/image/{{$item->avatar}}" alt="Card image cap" height="250px">
-                                    <div class="card-body">
-                                      <h5 class="card-title">{{$item->ho_va_ten}}</h5>
-                                    </div>
-                                    <div class="card-body">
-                                      Thông tin cá nhân: <a href="{{$item->link}}" class="card-link" target="_blank">Xem tại đây</a>
-                                    </div>
-                                  </div>
-                            </div>
-                            @endforeach
-
-                        </div>
-                        <hr class="mt-2">
-                        <div class="row">
-                            <div class="col-6 d-flex justify-content-center flex-column align-items-center">
-                                <h5>Phó trưởng bộ môn cơ sở</h5>
-                                <div class="row ">
-                                    @foreach ($pho_bo_mon_cs as $item)
-                                    <div class="col-lg-4 mb-2">
-                                        <div class="card" style="width: 18rem;">
-                                        <img class="card-img-top" src="/public/upload/image/{{$item->avatar}}" alt="Card image cap" height="250px">
-                                            <div class="card-body">
-                                              <h5 class="card-title">{{$item->ho_va_ten}}</h5>
-                                            </div>
-                                            <div class="card-body">
-                                              Thông tin cá nhân: <a href="{{$item->link}}" class="card-link" target="_blank">Xem tại đây</a>
-                                            </div>
-                                          </div>
-                                    </div>
-                                    @endforeach
-
-                                </div>
-                            </div>
-                            <div class="col-6 d-flex justify-content-center flex-column align-items-center">
-                                <h5>Phó trưởng bộ môn chuyên nghành</h5>
-                                <div class="row ">
-                                    @foreach ($pho_bo_mon_cn as $item)
-                                    <div class="col-lg-4 mb-2">
-                                        <div class="card" style="width: 18rem;">
-                                        <img class="card-img-top" src="/public/upload/image/{{$item->avatar}}" alt="Card image cap" height="250px">
-                                            <div class="card-body">
-                                              <h5 class="card-title">{{$item->ho_va_ten}}</h5>
-                                            </div>
-                                            <div class="card-body">
-                                              Thông tin cá nhân: <a href="{{$item->link}}" class="card-link" target="_blank">Xem tại đây</a>
-                                            </div>
-                                          </div>
-                                    </div>
-                                    @endforeach
-
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <hr class="mt-2">
-                        <h5>Giảng viên tổ cơ sơ</h5>
-                        <div class="row">
-                            @foreach ($gvcs as $item)
-                            <div class="col-lg-4 mb-2">
-                                <div class="card" style="width: 18rem;">
-                                <img class="card-img-top" src="/public/upload/image/{{$item->avatar}}" alt="Card image cap" height="250px">
-                                    <div class="card-body">
-                                      <h5 class="card-title">{{$item->ho_va_ten}}</h5>
-                                    </div>
-                                    <div class="card-body">
-                                      Thông tin cá nhân: <a href="{{$item->link}}" class="card-link" target="_blank">Xem tại đây</a>
-                                    </div>
-                                  </div>
-                            </div>
-                            @endforeach
-
-                        </div>
-                        <hr class="mt-2">
-                        <h5>Giảng viên tổ chuyên ngành</h5>
-                        <div class="row">
-                            @foreach ($gvcn as $item)
-                            <div class="col-lg-4 mb-2">
-                                <div class="card" style="width: 18rem;">
-                                <img class="card-img-top" src="/public/upload/image/{{$item->avatar}}" alt="Card image cap" height="250px">
-                                    <div class="card-body">
-                                      <h5 class="card-title">{{$item->ho_va_ten}}</h5>
-                                    </div>
-                                    <div class="card-body">
-                                      Thông tin cá nhân: <a href="{{$item->link}}" class="card-link" target="_blank">Xem tại đây</a>
-                                    </div>
-                                  </div>
-                            </div>
-                            @endforeach
-
-                        </div>
+                        @endforeach
                     </div>
                 </div>
            </div>

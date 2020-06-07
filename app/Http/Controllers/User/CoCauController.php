@@ -18,25 +18,11 @@ class CoCauController extends Controller
         ->orderBy('created_at', 'DESC')
         ->take(3)
         ->get();
-        $truong_khoa =DB::table('users')
-        ->where('users.cap_bac','=','1')
-        ->where('users.id_role','=','1')
-        ->get();
-        $pho_truong_khoa = DB::table('users')
-        ->where('users.cap_bac','=','2')
-        ->get();
-        $pho_bo_mon_cs = DB::table('users')
-        ->where('users.cap_bac','=','3')
-        ->get();
-        $pho_bo_mon_cn = DB::table('users')
-        ->where('users.cap_bac','=','4')
-        ->get();
-        $gvcs = DB::table('users')
-        ->where('users.cap_bac','=','5')
-        ->get();
-        $gvcn =DB::table('users')
-        ->where('users.cap_bac','=','6')
-        ->get();
-    	return view('user.pages.co-cau',compact('thong_bao_noi_bat','truong_khoa','pho_truong_khoa','pho_bo_mon_cs','pho_bo_mon_cn','gvcs','gvcn'));
+        $loai_cap_bac = DB::table('cap_bac')->get();
+        $user = DB::table('users')->get();
+        // for(var i =0;i<sizeof($loai_cap_bac);i++){
+        //     $tai_khoan = $
+        // }
+    	return view('user.pages.co-cau',compact('thong_bao_noi_bat','loai_cap_bac','user'));
     }
 }

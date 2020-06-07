@@ -58,15 +58,15 @@ Route::group(['prefix'=>'quantri','middleware'=>'check.login.admin'] , function(
         return redirect()->route('trangchu');
     });
     Route::get('dangxuat','Admin\DangNhapController@getLogoutAdmin');
-    //danh_muc_bai_viet
-    Route::group(['prefix'=>'danhmucbaiviet'] , function(){
-        Route::get('danhsach','Admin\DanhMucBaiVietController@index');
-        Route::get('themview','Admin\DanhMucBaiVietController@indexThemView');
-        Route::post('them','Admin\DanhMucBaiVietController@store');
-        Route::get('chinhsua/{id}','Admin\DanhMucBaiVietController@show');
-        Route::post('chinhsua/{id}','Admin\DanhMucBaiVietController@update');
-        Route::get('xoa/{id}','Admin\DanhMucBaiVietController@destroy');
-    });
+    // //danh_muc_bai_viet
+    // Route::group(['prefix'=>'danhmucbaiviet'] , function(){
+    //     Route::get('danhsach','Admin\DanhMucBaiVietController@index');
+    //     Route::get('themview','Admin\DanhMucBaiVietController@indexThemView');
+    //     Route::post('them','Admin\DanhMucBaiVietController@store');
+    //     Route::get('chinhsua/{id}','Admin\DanhMucBaiVietController@show');
+    //     Route::post('chinhsua/{id}','Admin\DanhMucBaiVietController@update');
+    //     Route::get('xoa/{id}','Admin\DanhMucBaiVietController@destroy');
+    // });
     //loai_van_ban
     Route::group(['prefix' => 'loaivanban'] , function(){
         Route::get('danhsach', 'Admin\LoaiVanBanController@index');
@@ -168,6 +168,15 @@ Route::group(['prefix'=>'quantri','middleware'=>'check.login.admin'] , function(
         Route::post('phanquyen/{id}','Admin\QuanTriVienController@updatePermission');
     });
 
+    //loai cap bac
+    Route::group(['prefix'=>'loaicapbac'], function(){
+        Route::get('danhsach','Admin\LoaiCapBacController@index');
+        Route::get('themview','Admin\LoaiCapBacController@indexThemView');
+        Route::post('them','Admin\LoaiCapBacController@store');
+        Route::get('chinhsua/{id1}','Admin\LoaiCapBacController@show');
+        Route::post('chinhsua/{id1}','Admin\LoaiCapBacController@update');
+        Route::get('xoa/{id}','Admin\LoaiCapBacController@destroy');
+    });
 //loi404
     Route::get('loi404','Admin\AdminController@loi404');
 
