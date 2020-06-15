@@ -86,7 +86,7 @@ class DangNhapController extends Controller
                 ];
 
                 Mail::send('admin.pages.mail.reset_pass', $data, function($msg) use ($tim_tai_khoan){
-                    $msg->from('khoamamnon.hotro.ued.udn@gmail.com',"Khoa Giáo dục - Mầm non - Trường Đại học Sư phạm Đà Nẵng");
+                    $msg->from('khoamamnondhsphotro@gmail.com',"Khoa Giáo dục - Mầm non - Trường Đại học Sư phạm Đà Nẵng");
                     $msg->to($tim_tai_khoan->email, $tim_tai_khoan->ho_va_ten)
                     ->subject('Yêu cầu xác thực tài khoản!');
                 });

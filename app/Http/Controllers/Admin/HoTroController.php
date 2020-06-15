@@ -92,7 +92,7 @@ class HoTroController extends Controller
             $tim_lien_he = DB::table('lien_he')->where('id','=',$id)->first();
             $ho_tro = [ 'phan_hoi' => $req->phan_hoi];
             Mail::send('admin.pages.mail.phan_hoi',$ho_tro, function($msg) use ($tim_lien_he){
-                $msg->from('khoamamnon.hotro.ued.udn@gmail.com',"Khoa giáo dục - mầm non");
+                $msg->from('khoamamnondhsphotro@gmail.com',"Khoa giáo dục - mầm non");
                 $msg->to($tim_lien_he->email, $tim_lien_he->ten)
                 ->subject('Gửi liên hệ phản hồi');
             });
