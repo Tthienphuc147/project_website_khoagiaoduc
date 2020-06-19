@@ -82,7 +82,6 @@
                                     </tr>
                                     @else
                                     <tr class="info bg-c1" style="color:#fff !important">
-                                        <td></td>
                                         <td>{{ $item->id }}</td>
                                         <td>{{ $item->tieu_de_lien_he }}</td>
                                         <td>{{ $item->noi_dung_lien_he }}</td>
