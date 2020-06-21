@@ -27,6 +27,15 @@ class AppServiceProvider extends ServiceProvider
     {
         Schema::defaultStringLength(191);
         View::composer('user/*', function ($view) {
+            $thong_bao_noi_bat = DB::table('bai_viets')
+            ->join('loai_bai_viets','bai_viets.id_loai_bai_viet','=','loai_bai_viets.id')
+            ->join('danh_muc_bai_viets','danh_muc_bai_viets.id','=','loai_bai_viets.id_danh_muc_bai_viet')
+            ->select('bai_viets.*','loai_bai_viets.ten as ten_loai')
+            ->where('bai_viets.id_loai_bai_viet','=','2')
+            ->orderBy('created_at', 'DESC')
+            ->take(4)
+            ->get();
+            $now = time(); // or your date as well
             $all_share_danh_muc_tin_tuc = DB::table('danh_muc_bai_viets')
             ->join('loai_bai_viets','loai_bai_viets.id_danh_muc_bai_viet','=','danh_muc_bai_viets.id')
             ->where('danh_muc_bai_viets.id','=','1')
@@ -77,6 +86,8 @@ class AppServiceProvider extends ServiceProvider
             ->first();
             $all_luot_xem = DB::table('bai_viets')->sum('luot_xem');
             $view->with([
+                'thong_bao_noi_bat' => $thong_bao_noi_bat,
+                'now' => $now,
                 'all_share_danh_muc_tin_tuc' => $all_share_danh_muc_tin_tuc,
                 'all_share_danh_muc_dao_tao' => $all_share_danh_muc_dao_tao,
                 'all_share_danh_muc_ngkh' => $all_share_danh_muc_ngkh,

@@ -5,28 +5,18 @@
 @section('admin_content')
 <div class="main-content">
     <div class="container">
-        @if ( Session::has('success') )
-            <div class="alert alert-success alert-dismissible" role="alert">
-                <strong>{{ Session::get('success') }}</strong>
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                    <span class="sr-only">Close</span>
-                </button>
-            </div>
-        @endif
-        @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-        @endif
+
         <h3 class="pb-3">Thêm văn bản mới</h3>
         <div class="row">
           <div class="col-12">
             <div class="card">
+                <div class="card-header">
+                    @if (isset($message))
+                            <div class="alert alert-danger">
+                                {{$message}}
+                            </div>
+                        @endif
+                    </div>
                 <div class="card-body card-block">
                     <form action="quantri/vanban/them" method="post" enctype="multipart/form-data" class="form-horizontal">
                         {{csrf_field()}}

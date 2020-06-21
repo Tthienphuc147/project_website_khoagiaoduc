@@ -68,7 +68,7 @@
                                     @foreach($data as $key=>$item)
                                     <tr>
                                         <td>{{ $key+1 }}</td>
-                                        <td><img src="/public/upload/image/{{$item->url}}"></td>
+                                        <td><img src="/public/upload/image/{{$item->url}}" height="200px" width="200px"></td>
                                         <td>
                                             <a href="quantri/media/chinhsua/{{$item->id}}"><button title="Chỉnh sửa" class="pd-setting-ed" >
                                                 <i class="fa fa-pencil-square-o mr-3" aria-hidden="true"></i>

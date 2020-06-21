@@ -5,18 +5,7 @@
             <!-- Hot Aimated News Tittle-->
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="trending-tittle w-100">
-                        <strong>Thông báo mới</strong>
-                        <!-- <p>Rem ipsum dolor sit amet, consectetur adipisicing elit.</p> -->
-                        <div class="trending-animated">
-                            <ul id="js-news" class="js-hidden">
-                                @foreach ($thong_bao_noi_bat as $item)
-                                <li class="news-item"><a href="/bai-viet/a{{$item->id}}">{{$item->tieu_de}}</a></li>
-                                @endforeach
-                            </ul>
-                        </div>
-
-                    </div>
+                    @include('user.layout.thong-bao')
                 </div>
             </div>
 
@@ -49,8 +38,8 @@
 
                                    @endif
                                 </div>
-                        
-                        
+
+
                                 <div class="modal fade" id="image-gallery" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                     <div class="modal-dialog modal-lg">
                                         <div class="modal-content">
@@ -65,7 +54,7 @@
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary float-left" id="show-previous-image"><i class="fa fa-arrow-left"></i>
                                                 </button>
-                        
+
                                                 <button type="button" id="show-next-image" class="btn btn-secondary float-right"><i class="fa fa-arrow-right"></i>
                                                 </button>
                                             </div>
@@ -89,13 +78,13 @@
                                         </div>
                                     </div>
                                     @endforeach
-        
+
                                 </aside>
-        
-        
-        
-        
-        
+
+
+
+
+
                             </div>
                         </div>
                     </div>

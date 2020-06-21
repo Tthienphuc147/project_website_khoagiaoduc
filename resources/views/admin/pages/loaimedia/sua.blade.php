@@ -28,7 +28,7 @@
           <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <strong>Danh mục media/strong>
+                    <strong>Danh mục media</strong>
                 </div>
                 <div class="card-body card-block">
                     <form action="quantri/loaimedia/chinhsua/{{$id}}" method="post" enctype="multipart/form-data" class="form-horizontal">

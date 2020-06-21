@@ -5,18 +5,7 @@
             <!-- Hot Aimated News Tittle-->
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="trending-tittle w-100">
-                        <strong>Thông báo mới</strong>
-                        <!-- <p>Rem ipsum dolor sit amet, consectetur adipisicing elit.</p> -->
-                        <div class="trending-animated">
-                            <ul id="js-news" class="js-hidden">
-                                @foreach ($thong_bao_noi_bat as $item)
-                                <li class="news-item"><a href="/bai-viet/a{{$item->id}}">{{$item->tieu_de}}</a></li>
-                                @endforeach
-                            </ul>
-                        </div>
-
-                    </div>
+                    @include('user.layout.thong-bao')
                 </div>
             </div>
 
@@ -45,7 +34,7 @@
                                                     <div class="what-img">
                                                         @if ($item->hinh_anh_mo_ta)
 
-                                                        <img src="/public/upload/image/{{$item->hinh_anh_mo_ta}}" alt="" width="370px" 
+                                                        <img src="/public/upload/image/{{$item->hinh_anh_mo_ta}}" alt="" width="370px"
                                                         @if ($item->id_loai_bai_viet == 9)
                                                         height="400px"
                                                         @else

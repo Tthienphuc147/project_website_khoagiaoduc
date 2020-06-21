@@ -37,18 +37,7 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
-                        <div class="trending-tittle w-100">
-                            <strong>Thông báo mới</strong>
-                            <!-- <p>Rem ipsum dolor sit amet, consectetur adipisicing elit.</p> -->
-                            <div class="trending-animated">
-                                <ul id="js-news" class="js-hidden">
-                                    @foreach ($thong_bao_noi_bat as $item)
-                                    <li class="news-item"><a href="/bai-viet/a{{$item->id}}" title="{{$item->tieu_de}}">{{$item->tieu_de}}</a></li>
-                                    @endforeach
-                                </ul>
-                            </div>
-
-                        </div>
+                        @include('user.layout.thong-bao')
                     </div>
                 </div>
                 <div class="row">
@@ -372,7 +361,7 @@
                                     </a>
                         </div>
                         <div class="mt-2 d-flex justify-content-center" style=" min-width: 100%;">
-                            
+
                             <div class="fb-page" data-href="https://www.facebook.com/Li%C3%AAn-chi-%C4%90o%C3%A0n-Gi%C3%A1o-d%E1%BB%A5c-M%E1%BA%A7m-non-Tr%C6%B0%E1%BB%9Dng-%C4%90%E1%BA%A1i-h%E1%BB%8Dc-S%C6%B0-ph%E1%BA%A1m-%C4%90H%C4%90N-168400530464070/" data-tabs="" data-width="370" data-height="" data-small-header="false" data-adapt-container-width="false" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/Li%C3%AAn-chi-%C4%90o%C3%A0n-Gi%C3%A1o-d%E1%BB%A5c-M%E1%BA%A7m-non-Tr%C6%B0%E1%BB%9Dng-%C4%90%E1%BA%A1i-h%E1%BB%8Dc-S%C6%B0-ph%E1%BA%A1m-%C4%90H%C4%90N-168400530464070/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Li%C3%AAn-chi-%C4%90o%C3%A0n-Gi%C3%A1o-d%E1%BB%A5c-M%E1%BA%A7m-non-Tr%C6%B0%E1%BB%9Dng-%C4%90%E1%BA%A1i-h%E1%BB%8Dc-S%C6%B0-ph%E1%BA%A1m-%C4%90H%C4%90N-168400530464070/">Liên chi Đoàn Giáo dục Mầm non - Trường Đại học Sư phạm ĐHĐN</a></blockquote></div>
                         </div>
                     </div>

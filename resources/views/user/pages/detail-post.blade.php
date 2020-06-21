@@ -5,18 +5,7 @@
             <!-- Hot Aimated News Tittle-->
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="trending-tittle w-100">
-                        <strong>Thông báo mới</strong>
-                        <!-- <p>Rem ipsum dolor sit amet, consectetur adipisicing elit.</p> -->
-                        <div class="trending-animated">
-                            <ul id="js-news" class="js-hidden">
-                                @foreach ($thong_bao_noi_bat as $item)
-                                <li class="news-item"><a href="/bai-viet/a{{$item->id}}">{{$item->tieu_de}}</a></li>
-                                @endforeach
-                            </ul>
-                        </div>
-
-                    </div>
+                    @include('user.layout.thong-bao')
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
                         <li class="breadcrumb-item active">{{$loai_bai_viet}}</li>
@@ -39,7 +28,8 @@
                                 </div>
                             </div>
                             <div class="d-flex align-center justify-content-lg-end mt-2">
-                                <div class="fb-like" data-href="https://testingdn.com/bai-viet/a{{$bai_viet->id}}" data-width="" data-layout="button" data-action="like" data-size="small" data-share="true"></div>
+                            <a class="share" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo 'https://testingdn.com/bai-viet/a'.$bai_viet->id; ?>" target="_blank" style="color:blue;font-weight:bold">SHARE <i class="fab fa-facebook-square"></i></a>
+                                {{-- <div class="fb-like" data-href="https://testingdn.com/bai-viet/a{{$bai_viet->id}}" data-width="" data-layout="button" data-action="like" data-size="small" data-share="true"></div> --}}
                             </div>
                         </div>
                         <div class="content_area">
@@ -80,5 +70,16 @@
     </div>
 </div>
 @endsection
-<div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v7.0&appId=1942841682494119&autoLogAppEvents=1"></script>
+<script
+  src="https://code.jquery.com/jquery-3.5.1.slim.js"
+  integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM="
+  crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function() {
+    $('.share').click(function(e) {
+    e.preventDefault();
+    window.open($(this).attr('href'), 'fbShareWindow', 'height=450, width=550, top=' + ($(window).height() / 2 - 275) + ', left=' + ($(window).width() / 2 - 225) + ', toolbar=0, location=0, menubar=0,         directories=0, scrollbars=0');
+    return false;
+    });
+    });
+    </script>

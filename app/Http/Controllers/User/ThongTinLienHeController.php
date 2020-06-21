@@ -10,27 +10,11 @@ class ThongTinLienHeController extends Controller
 {
 
     public function getLienHe(){
-        $thong_bao_noi_bat = DB::table('bai_viets')
-        ->join('loai_bai_viets','bai_viets.id_loai_bai_viet','=','loai_bai_viets.id')
-        ->join('danh_muc_bai_viets','danh_muc_bai_viets.id','=','loai_bai_viets.id_danh_muc_bai_viet')
-        ->select('bai_viets.*','loai_bai_viets.ten as ten_loai')
-        ->where('bai_viets.id_loai_bai_viet','=','2')
-        ->orderBy('created_at', 'DESC')
-        ->take(3)
-        ->get();
-    	return view('user.pages.contact',compact('thong_bao_noi_bat'));
+    	return view('user.pages.contact');
     }
     public function postLienHe(Request $req){
       try{
         DB::beginTransaction();
-        $thong_bao_noi_bat = DB::table('bai_viets')
-        ->join('loai_bai_viets','bai_viets.id_loai_bai_viet','=','loai_bai_viets.id')
-        ->join('danh_muc_bai_viets','danh_muc_bai_viets.id','=','loai_bai_viets.id_danh_muc_bai_viet')
-        ->select('bai_viets.*','loai_bai_viets.ten as ten_loai')
-        ->where('bai_viets.id_loai_bai_viet','=','2')
-        ->orderBy('created_at', 'DESC')
-        ->take(3)
-        ->get();
         $new_contact = DB::table('lien_he')->insert(
             [
                 'ten' => $req->ten,
@@ -51,7 +35,7 @@ class ThongTinLienHeController extends Controller
     catch (Exception $e){
         Session::flash('error', 'Liên hệ của bạn đã gửi thất bại');
     } finally{
-        return view("user.pages.contact",compact('thong_bao_noi_bat'));
+        return view("user.pages.contact");
     }
     }
 }

@@ -30,49 +30,6 @@
                 <div class="card-body card-block">
                     <form id="form-sua-phan-quyen" action="quantri/quantrivien/phanquyen/{{$permissions->id}}" method="POST" enctype="multipart/form-data">
                         @csrf
-                        {{-- <div class="row">
-                            <div class="form-group col-md-3">
-                                <h5>Quyền quản lý trang giới thiệu</h5>
-                            </div>
-                            <div class="form-group col-md-4">
-                                <select class="form-control custom-select-value" name="trang_gioi_thieu" required="" oninvalid="this.setCustomValidity('Vui lòng chọn phân quyền')" oninput="setCustomValidity('')">
-                                    <option value="0"
-                                        @if ($permissions->trang_gioi_thieu == 0)
-                                            selected="selected"
-                                        @endif>
-                                        Không
-                                    </option>
-                                    <option value="1"
-                                        @if ($permissions->trang_gioi_thieu == 1)
-                                        selected="selected"
-                                        @endif>
-                                        Có
-                                    </option>
-
-                            </select>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-md-3">
-                                <h5>Quyền quản lý danh mục bài viết</h5>
-                            </div>
-                            <div class="form-group col-md-4">
-                                <select class="form-control custom-select-value" name="danh_muc_bai_viet" required="" oninvalid="this.setCustomValidity('Vui lòng chọn phân quyền')" oninput="setCustomValidity('')">
-                                    <option value="0"
-                                    @if ($permissions->danh_muc_bai_viet == 0)
-                                        selected="selected"
-                                    @endif>
-                                    Không
-                                </option>
-                                <option value="1"
-                                    @if ($permissions->danh_muc_bai_viet == 1)
-                                    selected="selected"
-                                    @endif>
-                                    Có
-                                </option>
-                                </select>
-                            </div>
-                        </div> --}}
                         <div class="row">
                             <div class="form-group col-md-3">
                                 <h5>Quyền quản lý loại bài viết</h5>
@@ -165,7 +122,7 @@
                                 <h5>Quyền quản lý loại media</h5>
                             </div>
                             <div class="form-group col-md-4">
-                                <select class="form-control custom-select-value" name="media" required="" oninvalid="this.setCustomValidity('Vui lòng chọn phân quyền')" oninput="setCustomValidity('')">
+                                <select class="form-control custom-select-value" name="loai_media" required="" oninvalid="this.setCustomValidity('Vui lòng chọn phân quyền')" oninput="setCustomValidity('')">
                                     <option value="0"
                                     @if ($permissions->loai_media == 0)
                                         selected="selected"
@@ -282,6 +239,27 @@
                                 </option>
                                 <option value="1"
                                     @if ($permissions->cau_hinh_website== 1)
+                                    selected="selected"
+                                    @endif>
+                                    Có
+                                </option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-3">
+                                <h5>Quyền quản lý cấp bậc</h5>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <select class="form-control custom-select-value" name="loai_cap_bac" required="" oninvalid="this.setCustomValidity('Vui lòng chọn phân quyền')" oninput="setCustomValidity('')">
+                                    <option value="0"
+                                    @if ($permissions->loai_cap_bac == 0)
+                                        selected="selected"
+                                    @endif>
+                                    Không
+                                </option>
+                                <option value="1"
+                                    @if ($permissions->loai_cap_bac== 1)
                                     selected="selected"
                                     @endif>
                                     Có

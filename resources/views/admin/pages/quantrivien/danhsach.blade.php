@@ -208,10 +208,13 @@
                                             <button title="Xóa" class="pd-setting-ed">
                                                 <i class="fa fa-trash mr-3" aria-hidden="true"></i>
                                             </button>
+                                            </a>
                                             <a href="quantri/quantrivien/phanquyen/{{$item->id_admin}}">
                                                 <button title="Phân quyền" class="pd-setting-ed">
                                                     <i class="fa fa-user mr-3" aria-hidden="true"></i>
                                                 </button>
+                                            </a>
+
                                         </td>
                                     </tr>
                                     @endforeach
